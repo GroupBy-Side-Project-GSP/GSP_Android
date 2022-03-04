@@ -53,6 +53,7 @@ dependencies {
     implementation(Dependency.AndroidX.COMPOSE_MATERIAL)
     implementation(Dependency.AndroidX.COMPOSE_PREVIEW)
     implementation(Dependency.AndroidX.COMPOSE_TOOLING)
+    implementation(Dependency.AndroidX.COIL_COMPOSE)
 
     implementation(Dependency.AndroidX.ROOM_KTX)
     kapt(Dependency.AndroidX.ROOM_COMPILER)
