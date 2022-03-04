@@ -31,6 +31,19 @@ object Dependency {
         const val ROOM_RUNTIME = "androidx.room:room-runtime:${Versions.ROOM}"
         const val ROOM_KTX = "androidx.room:room-ktx:${Versions.ROOM}"
         const val ROOM_COMPILER = "androidx.room:room-compiler:${Versions.ROOM}"
+
+        const val COMPOSE = "androidx.compose.ui:ui:${Versions.COMPOSE}"
+        const val COMPOSE_TOOLING = "androidx.compose.ui:ui-tooling:${Versions.COMPOSE}"
+        const val COMPOSE_PREVIEW =
+            "androidx.compose.ui:ui-tooling-preview:${Versions.COMPOSE}"
+        const val COMPOSE_MATERIAL =
+            "androidx.compose.material:material:${Versions.COMPOSE}"
+        const val COMPOSE_COMPILER =
+            "androidx.compose.compiler:compiler:${Versions.COMPOSE}"
+        const val COMPOSE_ACTIVITY =
+            "androidx.activity:activity-compose:${Versions.COMPOSE}"
+        const val COIL_COMPOSE =
+            "io.coil-kt:coil-compose:${Versions.COIL_COMPOSE}"
     }
 
     object Google {

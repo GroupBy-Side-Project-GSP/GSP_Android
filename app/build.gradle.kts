@@ -47,6 +47,13 @@ dependencies {
     implementation(Dependency.AndroidX.CONSTRAINT_LAYOUT)
     implementation(Dependency.AndroidX.LIFECYCLE_VIEWMODEL_KTX)
 
+    implementation(Dependency.AndroidX.COMPOSE)
+    implementation(Dependency.AndroidX.COMPOSE_ACTIVITY)
+    implementation(Dependency.AndroidX.COMPOSE_COMPILER)
+    implementation(Dependency.AndroidX.COMPOSE_MATERIAL)
+    implementation(Dependency.AndroidX.COMPOSE_PREVIEW)
+    implementation(Dependency.AndroidX.COMPOSE_TOOLING)
+
     implementation(Dependency.AndroidX.ROOM_KTX)
     kapt(Dependency.AndroidX.ROOM_COMPILER)
 
