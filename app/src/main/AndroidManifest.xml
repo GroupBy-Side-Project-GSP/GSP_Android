@@ -10,8 +10,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GSP_Android">
         <activity
+            android:name=".ui.main.ProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.main.InterestActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.main.InterestActivity2"
+            android:exported="false" />
+        <activity
             android:name=".ui.splash.SplashActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

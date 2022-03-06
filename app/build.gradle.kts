@@ -56,6 +56,9 @@ dependencies {
     implementation(Dependency.AndroidX.COIL_COMPOSE)
 
     implementation(Dependency.AndroidX.ROOM_KTX)
+    implementation("androidx.appcompat:appcompat:1.4.1")
+    implementation("com.google.android.material:material:1.5.0")
+    implementation("androidx.constraintlayout:constraintlayout:2.1.3")
     kapt(Dependency.AndroidX.ROOM_COMPILER)
 
     implementation(Dependency.Kotlin.COROUTINES_CORE)

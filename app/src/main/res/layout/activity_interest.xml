@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name=""
+            type="" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.main.InterestActivity">
+
+
+        <ImageButton
+            android:id="@+id/IbInterestBack"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:background="#FFFFFF"
+            android:src="@drawable/ic_baseline_arrow_back_ios_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/TvInterestTitle"
+            android:layout_marginTop="14dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="100dp" />
+
+        <TextView
+            android:id="@+id/TvInterestTitle"
+            android:layout_width="108dp"
+            android:layout_height="27dp"
+            android:includeFontPadding="false"
+            android:layout_marginStart="126dp"
+            android:layout_marginTop="14dp"
+            android:layout_marginEnd="126dp"
+            android:color="#000000"
+            android:fontFamily="@font/notosan_font"
+            android:gravity="center"
+            android:text="관심 분야 선택"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/TvInterestExplan"
+            android:layout_width="149dp"
+            android:layout_height="18dp"
+            android:includeFontPadding="false"
+            android:layout_marginStart="106dp"
+            android:layout_marginTop="17dp"
+            android:layout_marginEnd="106dp"
+            android:fontFamily="@font/notosan_font"
+            android:gravity="center"
+            android:text="종아하는 분야를 선택해주세요"
+            android:textColor="#939393"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/TvInterestTitle" />
+
+        <EditText
+            android:id="@+id/EtInterestCount"
+            android:layout_width="26dp"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:layout_marginStart="166dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="168dp"
+            android:fontFamily="@font/notosan_font"
+            android:hint="set"
+            android:textSize="12sp"
+            android:textColor="#540FCC"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/TvInterestExplan" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/RcInterestMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/EtInterestCount" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/BtnInterestComplete"
+            android:layout_width="320dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="112dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/button_style"
+            android:fontFamily="@font/notosan_font"
+            android:text="완료"
+            android:textColor="#FFFFFF"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/RcInterestMenu" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/BtnInterestSigin"
+            android:layout_width="320dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/button_style2"
+            android:fontFamily="@font/notosan_font"
+            android:text="건너뛰기"
+            android:textColor="#939393"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/BtnInterestComplete" />
+        <!--    android:layout_marginBottom="20dp"-->
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

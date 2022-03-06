@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--버튼이 눌린 상태-->
+    <item
+        android:state_pressed="false">
+        <shape
+            android:shape="oval">
+            <solid android:color="#FF1883"/>
+            <stroke android:color="#FFFFFF"/>
+<!--            <corners android:radius="8dp"/>-->
+        </shape>
+    </item>
+    <item
+        android:state_pressed="true">
+        <shape
+            android:shape="oval">
+            <solid android:color="#FF1883"/>
+            <stroke android:color="#FFFFFF"/>
+            <!--            <corners android:radius="8dp"/>-->
+        </shape>
+    </item>
+    <!--버튼이 안눌린 상태-->
+<!--    <item-->
+<!--        android:state_pressed="false"-->
+<!--        android:drawable="@drawable/ic_baseline_edit_24">-->
+<!--        <shape-->
+<!--            android:shape="oval">-->
+<!--            <solid android:color="#FF1883"/>-->
+<!--&lt;!&ndash;            <corners android:radius="8dp"/>&ndash;&gt;-->
+<!--        </shape>-->
+<!--    </item>-->
+</selector>
