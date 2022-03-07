@@ -13,7 +13,17 @@
 <!--    </item>-->
     <!--버튼이 안눌린 상태-->
 <!--    <item android:state_pressed="false" android:color="#939393">-->
-    <item>
+    <item android:state_checked="true">
+        <shape>
+            <solid android:color="#6B17FE"/>
+            <corners android:radius="8dp"/>
+            <stroke
+                android:color="#6B17FE"
+                android:width="1dp"
+                />
+        </shape>
+    </item>
+    <item android:state_checked="false">
         <shape>
             <solid android:color="#FFFFFF"/>
             <corners android:radius="8dp"/>

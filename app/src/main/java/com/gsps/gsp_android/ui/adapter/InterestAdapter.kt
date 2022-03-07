@@ -25,13 +25,15 @@ class InterestAdapter (val interestList: ArrayList<InterestModel>) : RecyclerVie
         holder.bind(interestList[position])
 
         holder.itemView.setOnClickListener {
-            itemClickListener.onClick(it, position)
+            itemClickListener.onCheckedChanged(it, position, false)
+//            itemClickListener.onClick(it, position)
         }
     }
 
     // (2) 리스너 인터페이스
     interface OnItemClickListener {
-        fun onClick(v: View, position: Int)
+//        fun onClick(v: View, position: Int)
+        fun onCheckedChanged( v: View, position: Int, isChecked: Boolean)
     }
     // (3) 외부에서 클릭 시 이벤트 설정
     fun setItemClickListener(onItemClickListener: OnItemClickListener) {
@@ -50,7 +52,7 @@ class InterestAdapter (val interestList: ArrayList<InterestModel>) : RecyclerVie
 
     class CustomViewHolder(itemView: View?) : RecyclerView.ViewHolder(itemView!!){
 
-        val interest = itemView?.findViewById<TextView>(R.id.TvItem)
+        val interest = itemView?.findViewById<TextView>(R.id.TbnItem)
 
         fun bind(interestmodel: InterestModel){
             interest?.text = interestmodel.interest.toString()

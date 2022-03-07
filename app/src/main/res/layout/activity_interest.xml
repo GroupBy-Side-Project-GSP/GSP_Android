@@ -3,11 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <data>
-        <variable
-            name=""
-            type="" />
-    </data>
+
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -62,8 +58,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/TvInterestTitle" />
 
-        <EditText
-            android:id="@+id/EtInterestCount"
+        <TextView
+            android:id="@+id/TvInterestCount"
             android:layout_width="26dp"
             android:layout_height="wrap_content"
             android:includeFontPadding="false"
@@ -79,13 +75,13 @@
             app:layout_constraintTop_toBottomOf="@id/TvInterestExplan" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/RcInterestMenu"
+            android:id="@+id/RvInterestMenu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/EtInterestCount" />
+            app:layout_constraintTop_toBottomOf="@id/TvInterestCount" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/BtnInterestComplete"
@@ -100,7 +96,7 @@
             android:textColor="#FFFFFF"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/RcInterestMenu" />
+            app:layout_constraintTop_toBottomOf="@id/RvInterestMenu" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/BtnInterestSigin"
