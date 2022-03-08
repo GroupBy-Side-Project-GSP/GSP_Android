@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">GSP_Android</string>
+    <string name="app_name">Bridge</string>
+    <string name="sign_in">로그인</string>
+    <string name="input_id">아이디 입력</string>
+    <string name="input_pw">비밀번호 입력</string>
+    <string name="find_id">아이디 찾기</string>
+    <string name="find_pw">비밀번호 찾기</string>
 </resources>
