@@ -50,7 +50,7 @@
             android:layout_height="18dp"
             android:fontFamily="@font/notosan_font"
             android:includeFontPadding="false"
-            android:textColor="#939393"
+            android:textColor="@color/base_gray"
             android:textSize="12sp"
             android:text="프로필과 회사 이름을 설정해주세요"
             app:layout_constraintStart_toStartOf="parent"
