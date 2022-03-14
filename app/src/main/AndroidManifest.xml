@@ -19,10 +19,14 @@
         android:theme="@style/Theme.GSP_Android">
         <activity
             android:name=".ui.main.ProfileActivity"
-            android:exported="false" />
+            android:exported="false" >
+
+        </activity>
         <activity
             android:name=".ui.main.InterestActivity"
-            android:exported="false" />
+            android:exported="false" >
+
+        </activity>
         <activity
             android:name=".ui.splash.SplashActivity"
             android:exported="true">
@@ -35,6 +39,7 @@
         <activity
             android:name=".ui.main.MainActivity"
             android:exported="false" />
+
     </application>
 
 </manifest>
