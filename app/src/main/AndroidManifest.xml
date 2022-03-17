@@ -11,7 +11,7 @@
         android:theme="@style/Theme.GSP_Android">
         <activity
             android:name=".ui.main.SignInActivity"
-            android:exported="true"
+            android:exported="false"
             android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar" />
         <activity
             android:name=".ui.splash.SplashActivity"
