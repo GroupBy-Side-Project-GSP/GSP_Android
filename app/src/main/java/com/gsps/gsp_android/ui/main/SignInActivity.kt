@@ -22,21 +22,6 @@ class SignInActivity : AppCompatActivity() {
     var booleanPw: Boolean = false
     lateinit var backgroundColorButtonSignIn: GradientDrawable
 
-    fun checkId() {
-        val id = userId.text.toString().trim()
-        val patternId: String = """^[0-9a-zA-Z!@#$%^+_\-=]*$"""
-        val match = Pattern.matches(patternId, id)
-
-        return if (!match) {
-            userId.setTextColor(getColor(R.color.system_red))
-            userIdTil.error = getString(R.string.error_wrong_id)
-            booleanId = false
-        } else {
-            userId.setTextColor(getColor(R.color.black))
-            userIdTil.error = null
-            booleanId = id != ""
-        }
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -67,6 +52,23 @@ class SignInActivity : AppCompatActivity() {
 
             override fun afterTextChanged(s: Editable?) {}
         })
-
     }
+
+
+    fun checkId() {
+        val id = userId.text.toString().trim()
+        val patternId: String = """^[0-9a-zA-Z!@#$%^+_\-=]*$"""
+        val match = Pattern.matches(patternId, id)
+
+        return if (!match) {
+            userId.setTextColor(getColor(R.color.system_red))
+            userIdTil.error = getString(R.string.error_wrong_id)
+            booleanId = false
+        } else {
+            userId.setTextColor(getColor(R.color.black))
+            userIdTil.error = null
+            booleanId = id != ""
+        }
+    }
+
 }
