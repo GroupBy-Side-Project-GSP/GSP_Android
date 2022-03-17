@@ -2,8 +2,8 @@
     <!-- Base application theme. -->
     <style name="Theme.GSP_Android" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/Main</item>
-        <item name="colorPrimaryVariant">@color/Main_darken</item>
+        <item name="colorPrimary">@color/main</item>
+        <item name="colorPrimaryVariant">@color/main_darken</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/system_yellow</item>
