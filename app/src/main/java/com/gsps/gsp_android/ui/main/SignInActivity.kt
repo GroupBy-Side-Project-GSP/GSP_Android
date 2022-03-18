@@ -9,9 +9,10 @@ import androidx.appcompat.widget.AppCompatButton
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import com.gsps.gsp_android.R
+import com.gsps.gsp_android.ui.base.BaseActivity
 import java.util.regex.Pattern
 
-class SignInActivity : AppCompatActivity() {
+class SignInActivity : BaseActivity<ActivitySignInBinding>(R.layout.activity_sign_in) {
 
     private val userIdTil: TextInputLayout by lazy { findViewById(R.id.sign_in_til_id) }
     private val userId: TextInputEditText by lazy { findViewById(R.id.sign_in_et_id) }
@@ -21,6 +22,10 @@ class SignInActivity : AppCompatActivity() {
     var booleanId: Boolean = false
     var booleanPw: Boolean = false
     lateinit var backgroundColorButtonSignIn: GradientDrawable
+
+    override fun ActivitySignInBinding.onCreate(){
+        
+    }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
