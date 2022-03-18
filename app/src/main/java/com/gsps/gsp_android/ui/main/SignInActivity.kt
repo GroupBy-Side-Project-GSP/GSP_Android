@@ -9,6 +9,7 @@ import androidx.appcompat.widget.AppCompatButton
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import com.gsps.gsp_android.R
+import com.gsps.gsp_android.databinding.ActivitySignInBinding
 import com.gsps.gsp_android.ui.base.BaseActivity
 import java.util.regex.Pattern
 
@@ -74,6 +75,10 @@ class SignInActivity : BaseActivity<ActivitySignInBinding>(R.layout.activity_sig
             userIdTil.error = null
             booleanId = id != ""
         }
+    }
+
+    override fun initView() {
+        TODO("Not yet implemented")
     }
 
 }
