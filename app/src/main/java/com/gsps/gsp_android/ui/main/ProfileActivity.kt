@@ -1,21 +1,15 @@
 package com.gsps.gsp_android.ui.main
 
-import android.app.Activity
+
 import android.content.Intent
-import android.graphics.Color
-import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
+
 import android.provider.MediaStore
-import android.widget.Gallery
 import android.widget.ImageView
 import android.widget.Toast
 import com.gsps.gsp_android.R
 import com.gsps.gsp_android.databinding.ActivityProfileBinding
 import com.gsps.gsp_android.ui.base.BaseActivity
-import dagger.hilt.android.AndroidEntryPoint
 
-//@AndroidEntryPoint
 class ProfileActivity : BaseActivity<ActivityProfileBinding>(
 R.layout.activity_profile
 ) {

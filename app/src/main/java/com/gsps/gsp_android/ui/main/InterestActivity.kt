@@ -1,28 +1,12 @@
 package com.gsps.gsp_android.ui.main
 
-import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
-import android.util.Log
-import android.view.View
+
 import android.widget.*
-import androidx.activity.viewModels
-import androidx.annotation.CheckResult
-import androidx.annotation.RequiresApi
-import androidx.databinding.ViewDataBinding
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.findViewTreeViewModelStoreOwner
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.StaggeredGridLayoutManager
+
 import com.gsps.gsp_android.R
 import com.gsps.gsp_android.databinding.ActivityInterestBinding
-import com.gsps.gsp_android.databinding.ActivityProfileBinding
 import com.gsps.gsp_android.ui.base.BaseActivity
-//import com.gsps.gsp_android.ui.model.InterestModel
-import dagger.hilt.android.AndroidEntryPoint
-import java.util.*
-import kotlin.collections.ArrayList
+
 
 
 
