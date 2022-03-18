@@ -11,16 +11,18 @@
         android:theme="@style/Theme.GSP_Android">
         <activity
             android:name=".ui.main.SignInActivity"
-            android:exported="false"
-            android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar" />
-        <activity
-            android:name=".ui.splash.SplashActivity"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.splash.SplashActivity"
+            android:exported="true">
+
         </activity>
         <activity
             android:name=".ui.main.MainActivity"
