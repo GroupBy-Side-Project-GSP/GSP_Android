@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+   
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.main.ProfileTextActivity">
+
+        <TextView
+            android:id="@+id/TvProfileTitleText"
+            android:layout_width="87dp"
+            android:layout_height="27dp"
+            android:text="프로필 설정"
+            android:textSize="18sp"
+            android:includeFontPadding="false"
+            android:fontFamily="@font/notosan_font"
+            android:color="#000000"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="137dp"
+            android:layout_marginEnd="136dp"
+            android:layout_marginTop="19dp" />
+
+        <EditText
+            android:id="@+id/TvProfileTextExplan"
+            android:layout_width="174dp"
+            android:layout_height="18dp"
+            android:fontFamily="@font/notosan_font"
+            android:includeFontPadding="false"
+            android:textColor="@color/dark_gray"
+            android:textSize="12sp"
+            android:hint="회사의 한 줄 소개를 입력해주세요"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/TvProfileTitleText"
+            android:layout_marginStart="93dp"
+            android:layout_marginEnd="93dp"
+            android:layout_marginTop="17dp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/BtnProfileComplete"
+            android:layout_width="320dp"
+            android:layout_height="36dp"
+            android:text="다음"
+            android:fontFamily="@font/notosan_font"
+            android:textColor="@color/white"
+            android:background="@drawable/button_style"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/TvProfileTextExplan"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="260dp"
+            android:layout_marginBottom="198dp" />
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
