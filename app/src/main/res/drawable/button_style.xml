@@ -3,14 +3,14 @@
     <!--버튼이 눌린 상태-->
     <item android:state_pressed="true"> <!--pressed 눌린상태-->
         <shape>
-            <solid android:color="#6B17FE"/>
+            <solid android:color="@color/main"/>
             <corners android:radius="8dp"/>
         </shape>
     </item>
     <!--버튼이 안눌린 상태-->
     <item android:state_pressed="false">
         <shape>
-            <solid android:color="#BD98FF"/>
+            <solid android:color="@color/main_lighten"/>
             <corners android:radius="8dp"/>
         </shape>
     </item>
