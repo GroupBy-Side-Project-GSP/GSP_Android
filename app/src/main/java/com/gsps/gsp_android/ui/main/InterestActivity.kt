@@ -26,11 +26,10 @@ import kotlin.collections.ArrayList
 
 
 
-//@AndroidEntryPoint
+
 class InterestActivity : BaseActivity<ActivityInterestBinding>(
     R.layout.activity_interest
 ) {
-    private lateinit var ibinding: ActivityInterestBinding
 
     companion object{
         var count:Int =0
@@ -38,8 +37,6 @@ class InterestActivity : BaseActivity<ActivityInterestBinding>(
 
 
     override fun initView() {
-        ibinding = ActivityInterestBinding.inflate(layoutInflater)
-        setContentView(ibinding.root)
         check()
     }
 
@@ -49,74 +46,74 @@ class InterestActivity : BaseActivity<ActivityInterestBinding>(
             if(isChecked){
                 if(count<=4){
                     when(buttonView){
-                        ibinding.designCheckBox -> {ibinding.TvInterestCount.text="(${++count}/5)"}
-                        ibinding.managementCheckBox -> {ibinding.TvInterestCount.text="(${++count}/5)"}
-                        ibinding.healthCheckBox -> {ibinding.TvInterestCount.text="(${++count}/5)"}
-                        ibinding.environmentCheckBox -> {ibinding.TvInterestCount.text="(${++count}/5)"}
-                        ibinding.materialCheckBox -> {ibinding.TvInterestCount.text="(${++count}/5)"}
-                        ibinding.electronicCheckBox -> {ibinding.TvInterestCount.text="(${++count}/5)"}
-                        ibinding.erectionCheckBox -> {ibinding.TvInterestCount.text="(${++count}/5)"}
-                        ibinding.chemistryCheckBox -> {ibinding.TvInterestCount.text="(${++count}/5)"}
-                        ibinding.planCheckBox -> {ibinding.TvInterestCount.text="(${++count}/5)"}
-                        ibinding.printCheckBox -> {ibinding.TvInterestCount.text="(${++count}/5)"}
-                        ibinding.salesCheckBox -> {ibinding.TvInterestCount.text="(${++count}/5)"}
-                        ibinding.welfareCheckBox -> {ibinding.TvInterestCount.text="(${++count}/5)"}
-                        ibinding.AffairsCheckBox -> {ibinding.TvInterestCount.text="(${++count}/5)"}
-                        ibinding.clothCheckBox -> {ibinding.TvInterestCount.text="(${++count}/5)"}
+                        binding.designCheckBox -> {binding.TvInterestCount.text="(${++count}/5)"}
+                        binding.managementCheckBox -> {binding.TvInterestCount.text="(${++count}/5)"}
+                        binding.healthCheckBox -> {binding.TvInterestCount.text="(${++count}/5)"}
+                        binding.environmentCheckBox -> {binding.TvInterestCount.text="(${++count}/5)"}
+                        binding.materialCheckBox -> {binding.TvInterestCount.text="(${++count}/5)"}
+                        binding.electronicCheckBox -> {binding.TvInterestCount.text="(${++count}/5)"}
+                        binding.erectionCheckBox -> {binding.TvInterestCount.text="(${++count}/5)"}
+                        binding.chemistryCheckBox -> {binding.TvInterestCount.text="(${++count}/5)"}
+                        binding.planCheckBox -> {binding.TvInterestCount.text="(${++count}/5)"}
+                        binding.printCheckBox -> {binding.TvInterestCount.text="(${++count}/5)"}
+                        binding.salesCheckBox -> {binding.TvInterestCount.text="(${++count}/5)"}
+                        binding.welfareCheckBox -> {binding.TvInterestCount.text="(${++count}/5)"}
+                        binding.AffairsCheckBox -> {binding.TvInterestCount.text="(${++count}/5)"}
+                        binding.clothCheckBox -> {binding.TvInterestCount.text="(${++count}/5)"}
                     }
                 }else{
                     Toast.makeText(this, "선택 갯수 초과입니다.", Toast.LENGTH_SHORT).show()
                     when(buttonView){
-                        ibinding.designCheckBox -> {ibinding.designCheckBox.isChecked=false}
-                        ibinding.managementCheckBox -> {ibinding.managementCheckBox.isChecked=false}
-                        ibinding.healthCheckBox -> {ibinding.healthCheckBox.isChecked=false}
-                        ibinding.environmentCheckBox -> {ibinding.environmentCheckBox.isChecked=false}
-                        ibinding.materialCheckBox -> {ibinding.materialCheckBox.isChecked=false}
-                        ibinding.electronicCheckBox -> {ibinding.electronicCheckBox.isChecked=false}
-                        ibinding.erectionCheckBox -> {ibinding.erectionCheckBox.isChecked=false}
-                        ibinding.chemistryCheckBox -> {ibinding.chemistryCheckBox.isChecked=false}
-                        ibinding.planCheckBox -> {ibinding.planCheckBox.isChecked=false}
-                        ibinding.printCheckBox -> {ibinding.printCheckBox.isChecked=false}
-                        ibinding.salesCheckBox -> {ibinding.salesCheckBox.isChecked=false}
-                        ibinding.welfareCheckBox -> {ibinding.welfareCheckBox.isChecked=false}
-                        ibinding.AffairsCheckBox -> {ibinding.AffairsCheckBox.isChecked=false}
-                        ibinding.clothCheckBox -> {ibinding.clothCheckBox.isChecked=false}
+                        binding.designCheckBox -> {binding.designCheckBox.isChecked=false}
+                        binding.managementCheckBox -> {binding.managementCheckBox.isChecked=false}
+                        binding.healthCheckBox -> {binding.healthCheckBox.isChecked=false}
+                        binding.environmentCheckBox -> {binding.environmentCheckBox.isChecked=false}
+                        binding.materialCheckBox -> {binding.materialCheckBox.isChecked=false}
+                        binding.electronicCheckBox -> {binding.electronicCheckBox.isChecked=false}
+                        binding.erectionCheckBox -> {binding.erectionCheckBox.isChecked=false}
+                        binding.chemistryCheckBox -> {binding.chemistryCheckBox.isChecked=false}
+                        binding.planCheckBox -> {binding.planCheckBox.isChecked=false}
+                        binding.printCheckBox -> {binding.printCheckBox.isChecked=false}
+                        binding.salesCheckBox -> {binding.salesCheckBox.isChecked=false}
+                        binding.welfareCheckBox -> {binding.welfareCheckBox.isChecked=false}
+                        binding.AffairsCheckBox -> {binding.AffairsCheckBox.isChecked=false}
+                        binding.clothCheckBox -> {binding.clothCheckBox.isChecked=false}
                     }
                 }
 
             }else{
                 when(buttonView){
-                    ibinding.designCheckBox -> {ibinding.TvInterestCount.text="(${--count}/5)"}
-                    ibinding.managementCheckBox -> {ibinding.TvInterestCount.text="(${--count}/5)"}
-                    ibinding.healthCheckBox -> {ibinding.TvInterestCount.text="(${--count}/5)"}
-                    ibinding.environmentCheckBox -> {ibinding.TvInterestCount.text="(${--count}/5)"}
-                    ibinding.materialCheckBox -> {ibinding.TvInterestCount.text="(${--count}/5)"}
-                    ibinding.electronicCheckBox -> {ibinding.TvInterestCount.text="(${--count}/5)"}
-                    ibinding.erectionCheckBox -> {ibinding.TvInterestCount.text="(${--count}/5)"}
-                    ibinding.chemistryCheckBox -> {ibinding.TvInterestCount.text="(${--count}/5)"}
-                    ibinding.planCheckBox -> {ibinding.TvInterestCount.text="(${--count}/5)"}
-                    ibinding.printCheckBox -> {ibinding.TvInterestCount.text="(${--count}/5)"}
-                    ibinding.salesCheckBox -> {ibinding.TvInterestCount.text="(${--count}/5)"}
-                    ibinding.welfareCheckBox -> {ibinding.TvInterestCount.text="(${--count}/5)"}
-                    ibinding.AffairsCheckBox -> {ibinding.TvInterestCount.text="(${--count}/5)"}
-                    ibinding.clothCheckBox -> {ibinding.TvInterestCount.text="(${--count}/5)"}
+                    binding.designCheckBox -> {binding.TvInterestCount.text="(${--count}/5)"}
+                    binding.managementCheckBox -> {binding.TvInterestCount.text="(${--count}/5)"}
+                    binding.healthCheckBox -> {binding.TvInterestCount.text="(${--count}/5)"}
+                    binding.environmentCheckBox -> {binding.TvInterestCount.text="(${--count}/5)"}
+                    binding.materialCheckBox -> {binding.TvInterestCount.text="(${--count}/5)"}
+                    binding.electronicCheckBox -> {binding.TvInterestCount.text="(${--count}/5)"}
+                    binding.erectionCheckBox -> {binding.TvInterestCount.text="(${--count}/5)"}
+                    binding.chemistryCheckBox -> {binding.TvInterestCount.text="(${--count}/5)"}
+                    binding.planCheckBox -> {binding.TvInterestCount.text="(${--count}/5)"}
+                    binding.printCheckBox -> {binding.TvInterestCount.text="(${--count}/5)"}
+                    binding.salesCheckBox -> {binding.TvInterestCount.text="(${--count}/5)"}
+                    binding.welfareCheckBox -> {binding.TvInterestCount.text="(${--count}/5)"}
+                    binding.AffairsCheckBox -> {binding.TvInterestCount.text="(${--count}/5)"}
+                    binding.clothCheckBox -> {binding.TvInterestCount.text="(${--count}/5)"}
                 }
             }
         }
-        ibinding.designCheckBox.setOnCheckedChangeListener(listener)
-        ibinding.managementCheckBox.setOnCheckedChangeListener(listener)
-        ibinding.healthCheckBox.setOnCheckedChangeListener(listener)
-        ibinding.environmentCheckBox.setOnCheckedChangeListener(listener)
-        ibinding.materialCheckBox.setOnCheckedChangeListener(listener)
-        ibinding.electronicCheckBox.setOnCheckedChangeListener(listener)
-        ibinding.erectionCheckBox.setOnCheckedChangeListener(listener)
-        ibinding.chemistryCheckBox.setOnCheckedChangeListener(listener)
-        ibinding.planCheckBox.setOnCheckedChangeListener(listener)
-        ibinding.printCheckBox.setOnCheckedChangeListener(listener)
-        ibinding.salesCheckBox.setOnCheckedChangeListener(listener)
-        ibinding.welfareCheckBox.setOnCheckedChangeListener(listener)
-        ibinding.AffairsCheckBox.setOnCheckedChangeListener(listener)
-        ibinding.clothCheckBox.setOnCheckedChangeListener(listener)
+        binding.designCheckBox.setOnCheckedChangeListener(listener)
+        binding.managementCheckBox.setOnCheckedChangeListener(listener)
+        binding.healthCheckBox.setOnCheckedChangeListener(listener)
+        binding.environmentCheckBox.setOnCheckedChangeListener(listener)
+        binding.materialCheckBox.setOnCheckedChangeListener(listener)
+        binding.electronicCheckBox.setOnCheckedChangeListener(listener)
+        binding.erectionCheckBox.setOnCheckedChangeListener(listener)
+        binding.chemistryCheckBox.setOnCheckedChangeListener(listener)
+        binding.planCheckBox.setOnCheckedChangeListener(listener)
+        binding.printCheckBox.setOnCheckedChangeListener(listener)
+        binding.salesCheckBox.setOnCheckedChangeListener(listener)
+        binding.welfareCheckBox.setOnCheckedChangeListener(listener)
+        binding.AffairsCheckBox.setOnCheckedChangeListener(listener)
+        binding.clothCheckBox.setOnCheckedChangeListener(listener)
     }
 }
 

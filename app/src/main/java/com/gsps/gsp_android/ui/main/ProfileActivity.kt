@@ -2,6 +2,7 @@ package com.gsps.gsp_android.ui.main
 
 import android.app.Activity
 import android.content.Intent
+import android.graphics.Color
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -19,18 +20,17 @@ class ProfileActivity : BaseActivity<ActivityProfileBinding>(
 R.layout.activity_profile
 ) {
 
-    private lateinit var pbinding: ActivityProfileBinding
     val REQ_GALLERL = 1
 
     override fun initView() {
-        pbinding = ActivityProfileBinding.inflate(layoutInflater)
-        setContentView(pbinding.root)
+        binding = ActivityProfileBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        pbinding.IbProfileImage.setOnClickListener{
+        binding.btnPen.setOnClickListener{
             openGallary()
 
         }
-        pbinding.BtnProfileComplete.setOnClickListener{
+        binding.BtnProfileComplete.setOnClickListener{
             next()
         }
     }
@@ -52,9 +52,9 @@ R.layout.activity_profile
             when(requestCode){
                 REQ_GALLERL -> {
                     data?.data.let { uri ->
-                        pbinding.IbProfileImage.setScaleType(ImageView.ScaleType.FIT_XY)
-                        pbinding.IbProfileImage.setBackgroundColor(getColor(R.color.white))
-                        pbinding.IbProfileImage.setImageURI(uri)
+                        binding.IbProfileImage.setScaleType(ImageView.ScaleType.FIT_XY)
+                        binding.IbProfileImage.setBackgroundColor(getColor(R.color.white))
+                        binding.IbProfileImage.setImageURI(uri)
                     }
                 }
             }
@@ -63,7 +63,7 @@ R.layout.activity_profile
 
 
     fun next(){
-        if(pbinding.EdProfileName.text.isEmpty()){
+        if(binding.EdProfileName.text.isEmpty()){
             Toast.makeText(this, "기업 이름이 비어있습니다.", Toast.LENGTH_SHORT).show()
         }else{
             val intent = Intent(this,InterestActivity::class.java)
