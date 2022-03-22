@@ -1,7 +1,13 @@
 package com.gsps.gsp_android.ui.main
 
 
+import android.content.Intent
+import android.graphics.drawable.GradientDrawable
+import android.text.Editable
+import android.text.TextWatcher
 import android.widget.*
+import androidx.appcompat.widget.AppCompatButton
+import androidx.core.widget.addTextChangedListener
 
 import com.gsps.gsp_android.R
 import com.gsps.gsp_android.databinding.ActivityInterestBinding
@@ -9,24 +15,34 @@ import com.gsps.gsp_android.ui.base.BaseActivity
 
 
 
-
-
 class InterestActivity : BaseActivity<ActivityInterestBinding>(
     R.layout.activity_interest
 ) {
+    private val buttonSignIn: AppCompatButton by lazy { findViewById(R.id.BtnInterestComplete) }
+
+
+
 
     companion object{
         var count:Int =0
     }
-
-
     override fun initView() {
         check()
+
+
+        binding.IbInterestBack.setOnClickListener{
+            val intent = Intent(this, ProfileActivity::class.java)
+            startActivity(intent)
+        }
+
+
     }
 
 
+
+
     fun check(){
-        var listener =CompoundButton.OnCheckedChangeListener { buttonView, isChecked ->
+        val listener =CompoundButton.OnCheckedChangeListener { buttonView, isChecked ->
             if(isChecked){
                 if(count<=4){
                     when(buttonView){
@@ -44,6 +60,11 @@ class InterestActivity : BaseActivity<ActivityInterestBinding>(
                         binding.welfareCheckBox -> {binding.TvInterestCount.text="(${++count}/5)"}
                         binding.AffairsCheckBox -> {binding.TvInterestCount.text="(${++count}/5)"}
                         binding.clothCheckBox -> {binding.TvInterestCount.text="(${++count}/5)"}
+                    }
+                    if(count==0){
+                        binding.BtnInterestComplete.isEnabled=false
+                    }else{
+                        binding.BtnInterestComplete.isEnabled=true
                     }
                 }else{
                     Toast.makeText(this, "선택 갯수 초과입니다.", Toast.LENGTH_SHORT).show()
@@ -81,6 +102,11 @@ class InterestActivity : BaseActivity<ActivityInterestBinding>(
                     binding.welfareCheckBox -> {binding.TvInterestCount.text="(${--count}/5)"}
                     binding.AffairsCheckBox -> {binding.TvInterestCount.text="(${--count}/5)"}
                     binding.clothCheckBox -> {binding.TvInterestCount.text="(${--count}/5)"}
+                }
+                if(count==0){
+                    binding.BtnInterestComplete.isEnabled=false
+                }else{
+                    binding.BtnInterestComplete.isEnabled=true
                 }
             }
         }
