@@ -22,6 +22,7 @@
 
         <!--logo-->
         <ImageView
+            android:id="@+id/image_logo"
             android:layout_width="45dp"
             android:layout_height="20dp"
             android:layout_centerVertical="true"
@@ -30,24 +31,23 @@
 
         <!--search button-->
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_search"
             android:layout_width="15dp"
             android:layout_height="15dp"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             android:layout_marginEnd="21dp"
             android:background="@color/medium_gray" />
-
     </RelativeLayout>
 
     <FrameLayout
+        android:id="@+id/frame_new_member"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/layout_top" />
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

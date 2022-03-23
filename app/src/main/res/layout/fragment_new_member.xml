@@ -5,10 +5,14 @@
     android:layout_height="match_parent"
     tools:context=".ui.main.NewMemberFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_width="wrap_content"
+        android:layout_height="24dp"
+        android:fontFamily="@font/noto_sans_kr_bold"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:text="신규가입회사"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
 
 </FrameLayout>

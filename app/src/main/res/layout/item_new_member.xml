@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="155dp"
+    android:layout_height="156dp">
+
+    <!--회사 메인 사진-->
+    <ImageView
+        android:id="@+id/image_main"
+        android:layout_width="match_parent"
+        android:layout_height="88dp"
+        android:src="@drawable/rounded_corner_main_lignten"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--회사 로고-->
+    <ImageView
+        android:id="@+id/image_logo"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="4dp"
+        android:src="@drawable/rounded_corner_4dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/image_main" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:fontFamily="@font/noto_sans_kr_regular"
+        android:includeFontPadding="false"
+        android:text="회사 이름"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/image_logo"
+        app:layout_constraintStart_toEndOf="@id/image_logo"
+        app:layout_constraintTop_toTopOf="@id/image_logo" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/image_logo"
+        android:text="회사 설명"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
