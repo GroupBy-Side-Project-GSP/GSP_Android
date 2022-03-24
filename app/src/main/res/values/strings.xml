@@ -7,4 +7,11 @@
     <string name="find_pw">비밀번호 찾기</string>
     <string name="sign_up_with_email">이메일로 가입하기</string>
     <string name="error_wrong_id">아이디 형식이 잘못되었습니다</string>
+    <string name="sign_up_title">회원가입</string>
+    <string name="sign_up_certification">인증</string>
+    <string name="sign_up_hint_email">이메일 입력</string>
+    <string name="sign_up_hint_pw">비밀번호 입력</string>
+    <string name="sign_up_hint_repw">비밀번호 재입력</string>
+    <string name="sign_up_text_next">다음</string>
+    <string name="sign_up_hint_id">아이디 입력</string>
 </resources>
