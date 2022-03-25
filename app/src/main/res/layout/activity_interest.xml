@@ -15,20 +15,20 @@
 
 
         <ImageButton
-            android:id="@+id/IbInterestBack"
+            android:id="@+id/ibInterestBack"
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:background="@color/white"
             android:src="@drawable/ic_baseline_arrow_back_ios_24"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/TvInterestTitle"
+            app:layout_constraintEnd_toStartOf="@id/tvInterestTitle"
             android:layout_marginTop="14dp"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="100dp" />
 
         <TextView
-            android:id="@+id/TvInterestTitle"
+            android:id="@+id/tvInterestTitle"
             android:layout_width="109dp"
             android:layout_height="27dp"
             android:includeFontPadding="false"
@@ -45,7 +45,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/TvInterestExplan"
+            android:id="@+id/tvInterestExplan"
             android:layout_width="149dp"
             android:layout_height="18dp"
             android:includeFontPadding="false"
@@ -59,10 +59,10 @@
             android:textSize="12sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/TvInterestTitle" />
+            app:layout_constraintTop_toBottomOf="@id/tvInterestTitle" />
 
         <TextView
-            android:id="@+id/TvInterestCount"
+            android:id="@+id/tvInterestCount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:includeFontPadding="false"
@@ -77,7 +77,7 @@
             android:textColor="@color/main_darken"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/TvInterestExplan" />
+            app:layout_constraintTop_toBottomOf="@id/tvInterestExplan" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/conCheckBox"
@@ -85,7 +85,7 @@
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/TvInterestCount"
+            app:layout_constraintTop_toBottomOf="@id/tvInterestCount"
             android:layout_marginTop="40dp"
             >
             <CheckBox
@@ -294,7 +294,7 @@
                 android:layout_marginEnd="31dp"
                 />
             <CheckBox
-                android:id="@+id/AffairsCheckBox"
+                android:id="@+id/affairsCheckBox"
                 android:layout_width="66dp"
                 android:layout_height="32dp"
                 android:textSize="14sp"
@@ -322,7 +322,7 @@
                 android:text="섬유\u0026의복"
                 android:fontFamily="@font/noto_sans_kr_medium"
                 app:layout_constraintTop_toBottomOf="@id/salesCheckBox"
-                app:layout_constraintStart_toEndOf="@id/AffairsCheckBox"
+                app:layout_constraintStart_toEndOf="@id/affairsCheckBox"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginEnd="161dp"
                 android:layout_marginStart="12dp"
@@ -333,7 +333,7 @@
 
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/BtnInterestComplete"
+            android:id="@+id/btnInterestComplete"
             android:layout_width="320dp"
             android:layout_height="36dp"
             android:layout_marginStart="20dp"
@@ -349,7 +349,7 @@
             app:layout_constraintTop_toBottomOf="@id/conCheckBox" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/BtnInterestSigin"
+            android:id="@+id/btnInterestSigin"
             android:layout_width="320dp"
             android:layout_height="36dp"
             android:layout_marginStart="20dp"
@@ -362,7 +362,7 @@
             android:textColor="@color/dark_gray"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/BtnInterestComplete" />
+            app:layout_constraintTop_toBottomOf="@id/btnInterestComplete" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

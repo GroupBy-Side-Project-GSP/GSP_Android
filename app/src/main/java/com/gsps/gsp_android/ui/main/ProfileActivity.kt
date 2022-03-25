@@ -29,20 +29,20 @@ R.layout.activity_profile
             openGallary()
 
         }
-        binding.EdProfileName.addTextChangedListener(object :TextWatcher{
+        binding.edProfileName.addTextChangedListener(object :TextWatcher{
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
 
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                if(binding.EdProfileName.length()==0){
-                    binding.BtnProfileComplete.isEnabled=false
+                if(binding.edProfileName.length()==0){
+                    binding.btnProfileComplete.isEnabled=false
                 }else{
-                    binding.BtnProfileComplete.isEnabled=true
+                    binding.btnProfileComplete.isEnabled=true
                 }
             }
             override fun afterTextChanged(p0: Editable?) {}
         })
 
-        binding.BtnProfileComplete.setOnClickListener{
+        binding.btnProfileComplete.setOnClickListener{
             next()
         }
 
@@ -66,9 +66,9 @@ R.layout.activity_profile
             when(requestCode){
                 REQ_GALLERL -> {
                     data?.data.let { uri ->
-                        binding.IbProfileImage.setScaleType(ImageView.ScaleType.FIT_XY)
-                        binding.IbProfileImage.setBackgroundColor(getColor(R.color.white))
-                        binding.IbProfileImage.setImageURI(uri)
+                        binding.ibProfileImage.setScaleType(ImageView.ScaleType.FIT_XY)
+                        binding.ibProfileImage.setBackgroundColor(getColor(R.color.white))
+                        binding.ibProfileImage.setImageURI(uri)
                     }
                 }
             }
