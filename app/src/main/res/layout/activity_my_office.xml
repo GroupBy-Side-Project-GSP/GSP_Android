@@ -24,10 +24,12 @@
                 android:layout_height="24dp"
                 android:background="@drawable/ic_myoffice_back"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/tvOfficeTitle"
                 app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
                 android:layout_marginStart="12dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+
                 />
             <TextView
                 android:id="@+id/tvOfficeTitle"
@@ -38,13 +40,14 @@
                 android:includeFontPadding="false"
                 android:fontFamily="@font/noto_sans_kr_bold"
                 android:textSize="14sp"
-                app:layout_constraintStart_toEndOf="@id/btnOfficeBack"
+                android:gravity="center"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 android:layout_marginTop="12dp"
-                android:layout_marginStart="98dp"
-                android:layout_marginEnd="133dp"/>
+                android:layout_marginBottom="12dp"
+                />
         </androidx.constraintlayout.widget.ConstraintLayout>
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/conOfficeBottom"
