@@ -9,7 +9,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     
     <androidx.cardview.widget.CardView
-        android:id="@+id/CvRvItemMyOffice"
+        android:id="@+id/cvRvItemMyOffice"
         android:layout_width="155dp"
         android:layout_height="90dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -19,7 +19,7 @@
         app:cardElevation="0dp"
         >
         <ImageView
-            android:id="@+id/IvRvItemMyOfficePhoto"
+            android:id="@+id/ivRvItemMyOfficePhoto"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="#FFEB3B"
@@ -27,31 +27,31 @@
 
     </androidx.cardview.widget.CardView>
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/BtnMyOfficeFavorite"
+        android:id="@+id/btnMyOfficeFavorite"
         android:layout_width="26dp"
         android:layout_height="25dp"
         android:background="@color/main"
         android:layout_marginTop="65dp"
         android:layout_marginStart="129dp"
-        app:layout_constraintStart_toStartOf="@id/CvRvItemMyOffice"
-        app:layout_constraintTop_toTopOf="@id/CvRvItemMyOffice"
-        app:layout_constraintEnd_toEndOf="@id/CvRvItemMyOffice"
-        app:layout_constraintBottom_toBottomOf="@id/CvRvItemMyOffice"
+        app:layout_constraintStart_toStartOf="@id/cvRvItemMyOffice"
+        app:layout_constraintTop_toTopOf="@id/cvRvItemMyOffice"
+        app:layout_constraintEnd_toEndOf="@id/cvRvItemMyOffice"
+        app:layout_constraintBottom_toBottomOf="@id/cvRvItemMyOffice"
 
         />
     <androidx.cardview.widget.CardView
-        android:id="@+id/CvRvItemMyOfficeLog"
+        android:id="@+id/cvRvItemMyOfficeLog"
         android:layout_width="20dp"
         android:layout_height="20dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/CvRvItemMyOffice"
-        app:layout_constraintEnd_toStartOf="@id/TvRvItemMyOfficeName"
+        app:layout_constraintTop_toBottomOf="@id/cvRvItemMyOffice"
+        app:layout_constraintEnd_toStartOf="@id/tvRvItemMyOfficeName"
         android:layout_marginTop="8dp"
         app:cardCornerRadius="4dp"
         app:cardElevation="0dp"
         >
         <ImageView
-            android:id="@+id/IvRvItemMyOfficeLog"
+            android:id="@+id/ivRvItemMyOfficeLog"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/black"
@@ -59,7 +59,7 @@
     </androidx.cardview.widget.CardView>
 
     <TextView
-        android:id="@+id/TvRvItemMyOfficeName"
+        android:id="@+id/tvRvItemMyOfficeName"
         android:layout_width="wrap_content"
         android:layout_height="20dp"
         android:text="test"
@@ -70,12 +70,12 @@
         android:fontFamily="@font/noto_sans_kr_regular"
         android:layout_marginTop="8dp"
         android:layout_marginStart="8dp"
-        app:layout_constraintTop_toBottomOf="@id/CvRvItemMyOffice"
-        app:layout_constraintStart_toEndOf="@id/CvRvItemMyOfficeLog"
-        app:layout_constraintEnd_toStartOf="@id/TvRvItemMyOfficeCate"
+        app:layout_constraintTop_toBottomOf="@id/cvRvItemMyOffice"
+        app:layout_constraintStart_toEndOf="@id/cvRvItemMyOfficeLog"
+        app:layout_constraintEnd_toStartOf="@id/tvRvItemMyOfficeCate"
         />
     <TextView
-        android:id="@+id/TvRvItemMyOfficeCate"
+        android:id="@+id/tvRvItemMyOfficeCate"
         android:layout_width="39dp"
         android:layout_height="20dp"
         android:text="test2"
@@ -87,8 +87,8 @@
         android:layout_marginTop="8dp"
         android:layout_marginStart="18dp"
         android:layout_marginEnd="28dp"
-        app:layout_constraintStart_toEndOf="@id/TvRvItemMyOfficeName"
-        app:layout_constraintTop_toBottomOf="@id/CvRvItemMyOffice"
+        app:layout_constraintStart_toEndOf="@id/tvRvItemMyOfficeName"
+        app:layout_constraintTop_toBottomOf="@id/cvRvItemMyOffice"
         app:layout_constraintEnd_toEndOf="parent"
         />
     <TextView
@@ -96,9 +96,9 @@
         android:layout_height="wrap_content"
         android:text="・"
         android:layout_marginTop="8dp"
-        app:layout_constraintStart_toEndOf="@id/TvRvItemMyOfficeName"
-        app:layout_constraintEnd_toStartOf="@id/TvRvItemMyOfficeCate"
-        app:layout_constraintTop_toBottomOf="@id/CvRvItemMyOffice"
+        app:layout_constraintStart_toEndOf="@id/tvRvItemMyOfficeName"
+        app:layout_constraintEnd_toStartOf="@id/tvRvItemMyOfficeCate"
+        app:layout_constraintTop_toBottomOf="@id/cvRvItemMyOffice"
         />
 
 

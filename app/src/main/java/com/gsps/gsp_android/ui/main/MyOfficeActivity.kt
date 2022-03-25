@@ -21,7 +21,7 @@ class MyOfficeActivity : BaseActivity<ActivityMyOfficeBinding>(
     }
 
     fun next(){
-        binding.BtnOfficeBack.setOnClickListener{
+        binding.btnOfficeBack.setOnClickListener{
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
@@ -39,8 +39,8 @@ class MyOfficeActivity : BaseActivity<ActivityMyOfficeBinding>(
 
         val gridLayoutManager = GridLayoutManager(applicationContext,2)
         adapter.addItems(testList)
-        binding.RvOffice.layoutManager=gridLayoutManager
-        binding.RvOffice.adapter=adapter
+        binding.rvOffice.layoutManager=gridLayoutManager
+        binding.rvOffice.adapter=adapter
     }
 
 

@@ -49,9 +49,9 @@ class MyOfficeAdapter : RecyclerView.Adapter<MyOfficeAdapter.MyOfficeViewHolder>
     inner class MyOfficeViewHolder(v: View) : RecyclerView.ViewHolder(v) {
 //        var itemphoto = v.findViewById<ImageView>(R.id.IvRvItemMyOfficePhoto)
 //        var itemlog = v.findViewById<ImageView>(R.id.IvRvItemMyOfficeLog)
-        var itemname = v.findViewById<TextView>(R.id.TvRvItemMyOfficeName)
-        var itemcategory = v.findViewById<TextView>(R.id.TvRvItemMyOfficeCate)
-        var itemheart = v.findViewById<Button>(R.id.BtnMyOfficeFavorite)
+        var itemname = v.findViewById<TextView>(R.id.tvRvItemMyOfficeName)
+        var itemcategory = v.findViewById<TextView>(R.id.tvRvItemMyOfficeCate)
+        var itemheart = v.findViewById<Button>(R.id.btnMyOfficeFavorite)
 
 
         fun bind(model: MyOfficeModel){
