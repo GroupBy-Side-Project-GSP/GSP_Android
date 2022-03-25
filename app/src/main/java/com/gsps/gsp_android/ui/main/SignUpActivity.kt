@@ -20,7 +20,7 @@ class SignUpActivity : BaseActivity<ActivitySignUpBinding>(
 
 
 
-        binding.TietSignUpEmail.addTextChangedListener(object :TextWatcher{
+        binding.tietSignUpEmail.addTextChangedListener(object :TextWatcher{
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                 checkemail()
@@ -30,7 +30,7 @@ class SignUpActivity : BaseActivity<ActivitySignUpBinding>(
             override fun afterTextChanged(p0: Editable?) {}
         })
 
-        binding.TietSignUpId.addTextChangedListener(object :TextWatcher{
+        binding.tietSignUpId.addTextChangedListener(object :TextWatcher{
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                 checkid()
@@ -41,7 +41,7 @@ class SignUpActivity : BaseActivity<ActivitySignUpBinding>(
 
         })
 
-        binding.TietSignUpPw.addTextChangedListener(object :TextWatcher{
+        binding.tietSignUpPw.addTextChangedListener(object :TextWatcher{
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                 checkpw()
@@ -51,7 +51,7 @@ class SignUpActivity : BaseActivity<ActivitySignUpBinding>(
             override fun afterTextChanged(p0: Editable?) {}
         })
 
-        binding.TietSignUpRePw.addTextChangedListener(object :TextWatcher{
+        binding.tietSignUpRePw.addTextChangedListener(object :TextWatcher{
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                 checkrepw()
@@ -63,17 +63,17 @@ class SignUpActivity : BaseActivity<ActivitySignUpBinding>(
 
 
 
-        binding.BtnCertification.setOnClickListener {
+        binding.btnCertification.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
 
-        binding.BtnSignUpNext.setOnClickListener{
+        binding.btnSignUpNext.setOnClickListener{
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
 
-        binding.BtnSignUpLogin.setOnClickListener {
+        binding.btnSignUpLogin.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
@@ -83,62 +83,62 @@ class SignUpActivity : BaseActivity<ActivitySignUpBinding>(
 
 
     fun checkemail():Boolean{
-        val email = binding.TietSignUpEmail.text.toString().trim()
+        val email = binding.tietSignUpEmail.text.toString().trim()
         val patternemail = "^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$"
         val match = Pattern.matches(patternemail, email)
 
         if (match) {
-            binding.TietSignUpEmail.setTextColor(getColor(R.color.black))
-            binding.TilSignUpEmail.error= null
+            binding.tietSignUpEmail.setTextColor(getColor(R.color.black))
+            binding.tilSignUpEmail.error= null
             return true
         } else {
-            binding.TietSignUpEmail.setTextColor(getColor(R.color.system_red))
-            binding.TilSignUpEmail.error="이메일 형식이 잘못되었습니다"
+            binding.tietSignUpEmail.setTextColor(getColor(R.color.system_red))
+            binding.tilSignUpEmail.error="이메일 형식이 잘못되었습니다"
             return false
         }
     }
 
     fun checkid():Boolean{
-        val id = binding.TietSignUpId.text.toString().trim()
+        val id = binding.tietSignUpId.text.toString().trim()
         val patternid = """^[0-9a-zA-Z!@#$%^+_\-=]*$"""
         val match = Pattern.matches(patternid, id)
 
         if (match) {
-            binding.TietSignUpId.setTextColor(getColor(R.color.black))
-            binding.TilSignUpId.error= null
+            binding.tietSignUpId.setTextColor(getColor(R.color.black))
+            binding.tilSignUpId.error= null
             return true
         } else {
-            binding.TietSignUpId.setTextColor(getColor(R.color.system_red))
-            binding.TilSignUpId.error="아이디 형식이 잘못되었습니다"
+            binding.tietSignUpId.setTextColor(getColor(R.color.system_red))
+            binding.tilSignUpId.error="아이디 형식이 잘못되었습니다"
             return false
         }
     }
 
     fun checkpw():Boolean{
 //        비밀번호 (숫자, 문자, 특수문자 포함 8~15자리 이내)
-        val pw = binding.TietSignUpPw.text.toString().trim()
+        val pw = binding.tietSignUpPw.text.toString().trim()
         val patternpw = "^.*(?=^.{8,15}$)(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&+=]).*$"
         val match = Pattern.matches(patternpw, pw)
 
         if (match) {
-            binding.TietSignUpPw.setTextColor(getColor(R.color.black))
-            binding.TilSignUpPw.error= null
+            binding.tietSignUpPw.setTextColor(getColor(R.color.black))
+            binding.tilSignUpPw.error= null
             return true
         } else {
-            binding.TietSignUpPw.setTextColor(getColor(R.color.system_red))
-            binding.TilSignUpPw.error="비밀번호 형식이 잘못되었습니다"
+            binding.tietSignUpPw.setTextColor(getColor(R.color.system_red))
+            binding.tilSignUpPw.error="비밀번호 형식이 잘못되었습니다"
             return false
         }
     }
     fun checkrepw():Boolean{
-        if(binding.TietSignUpRePw.text.toString().equals(binding.TietSignUpPw.text.toString())) {
-            binding.TietSignUpRePw.setTextColor(getColor(R.color.black))
-            binding.TilSignUpRePw.error= null
+        if(binding.tietSignUpRePw.text.toString().equals(binding.tietSignUpPw.text.toString())) {
+            binding.tietSignUpRePw.setTextColor(getColor(R.color.black))
+            binding.tilSignUpRePw.error= null
             return true
 
         }else{
-            binding.TietSignUpRePw.setTextColor(getColor(R.color.system_red))
-            binding.TilSignUpRePw.error="비밀번호가 다릅니다."
+            binding.tietSignUpRePw.setTextColor(getColor(R.color.system_red))
+            binding.tilSignUpRePw.error="비밀번호가 다릅니다."
             return false
         }
     }
@@ -146,18 +146,18 @@ class SignUpActivity : BaseActivity<ActivitySignUpBinding>(
 
     fun certificationbtn(){
         if(checkemail()){
-            binding.BtnCertification.isEnabled=true
+            binding.btnCertification.isEnabled=true
         }else{
-            binding.BtnCertification.isEnabled=false
+            binding.btnCertification.isEnabled=false
         }
     }
 
 
     fun nextbtn(){
         if(checkemail()&&checkid()&&checkpw()&&checkrepw()){
-            binding.BtnSignUpNext.isEnabled=true
+            binding.btnSignUpNext.isEnabled=true
         }else{
-            binding.BtnSignUpNext.isEnabled=false
+            binding.btnSignUpNext.isEnabled=false
         }
     }
 }
