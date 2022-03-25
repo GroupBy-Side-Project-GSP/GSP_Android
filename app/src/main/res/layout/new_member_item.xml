@@ -14,6 +14,7 @@
 
     <!--좋아요 버튼-->
     <ImageView
+        android:id="@+id/ivHeart"
         android:layout_width="15dp"
         android:layout_height="16dp"
         android:layout_margin="5dp"
