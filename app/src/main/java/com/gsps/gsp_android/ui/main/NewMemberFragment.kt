@@ -57,4 +57,5 @@ class NewMemberFragment : Fragment() {
                 }
             }
     }
+
 }

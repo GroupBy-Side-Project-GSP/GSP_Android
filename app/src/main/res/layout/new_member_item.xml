@@ -2,27 +2,37 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="155dp"
-    android:layout_height="156dp">
+    android:layout_height="wrap_content">
 
     <!--회사 메인 사진-->
     <ImageView
-        android:id="@+id/image_main"
+        android:id="@+id/iv_main"
         android:layout_width="match_parent"
         android:layout_height="88dp"
         android:src="@drawable/rounded_corner_main_lignten"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!--좋아요 버튼-->
+    <ImageView
+        android:layout_width="15dp"
+        android:layout_height="16dp"
+        android:layout_margin="5dp"
+        android:src="@color/system_red"
+        app:layout_constraintBottom_toBottomOf="@id/iv_main"
+        app:layout_constraintEnd_toEndOf="@id/iv_main" />
+
     <!--회사 로고-->
     <ImageView
-        android:id="@+id/image_logo"
+        android:id="@+id/ivLogo"
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_marginTop="4dp"
         android:src="@drawable/rounded_corner_4dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/image_main" />
+        app:layout_constraintTop_toBottomOf="@id/iv_main" />
 
     <TextView
+        android:id="@+id/tvName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
@@ -31,17 +41,24 @@
         android:text="회사 이름"
         android:textColor="@color/black"
         android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="@id/image_logo"
-        app:layout_constraintStart_toEndOf="@id/image_logo"
-        app:layout_constraintTop_toTopOf="@id/image_logo" />
+        app:layout_constraintBottom_toBottomOf="@id/ivLogo"
+        app:layout_constraintStart_toEndOf="@id/ivLogo"
+        app:layout_constraintTop_toTopOf="@id/ivLogo" />
 
     <TextView
+        android:id="@+id/tvExplain"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
+        android:ellipsize="end"
+        android:fontFamily="@font/noto_sans_kr_medium"
+        android:includeFontPadding="false"
+        android:lineSpacingExtra="2dp"
+        android:maxLines="2"
+        android:text="디자인 저희 회사는 최강입니다 프젝하고 잇어요. 가나다라"
+        android:textColor="@color/black"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/image_logo"
-        android:text="회사 설명"
-        />
+        app:layout_constraintTop_toBottomOf="@id/ivLogo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

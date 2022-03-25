@@ -6,6 +6,7 @@
     tools:context=".ui.main.NewMemberFragment">
 
     <TextView
+        android:id="@+id/tvNewMember"
         android:layout_width="wrap_content"
         android:layout_height="24dp"
         android:fontFamily="@font/noto_sans_kr_bold"
@@ -14,5 +15,12 @@
         android:text="신규가입회사"
         android:textColor="@color/black"
         android:textSize="16sp" />
+
+    <GridView
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:numColumns="2" />
 
 </FrameLayout>
