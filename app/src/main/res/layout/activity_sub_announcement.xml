@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.main.SubAnnouncementActivity">
+
+    <data>
+
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/conSubAnnouncementTop"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:background="@color/main"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/conSubAnnouncementBottom"
+            >
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnSubAnnouncementBack"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:background="@drawable/ic_announcement_back"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+
+                />
+            <TextView
+                android:id="@+id/tvSubAnnouncementTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:text="공지사항"
+                android:textColor="@color/white"
+                android:includeFontPadding="false"
+                android:fontFamily="@font/noto_sans_kr_bold"
+                android:textSize="14sp"
+                android:gravity="center"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/conSubAnnouncementBottom"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/conSubAnnouncementTop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            >
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/subAnnouncementGuide"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.12"/>
+            <TextView
+                android:id="@+id/tvSubAnnouncementItemTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:text="테스트 제목"
+                android:textColor="@color/black"
+                android:fontFamily="@font/noto_sans_kr_bold"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+            <TextView
+                android:id="@+id/tvSubAnnouncementItemDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:text="테스트 날짜"
+                android:textColor="@color/dark_gray"
+                android:fontFamily="@font/noto_sans_kr_regular"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvSubAnnouncementItemTitle"
+                app:layout_constraintBottom_toBottomOf="@id/subAnnouncementGuide"/>
+            <View
+                android:id="@+id/vAnnouncementLine"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:orientation="horizontal"
+                android:background="@color/medium_gray"
+                app:layout_constraintTop_toTopOf="@id/subAnnouncementGuide"
+                />
+            <EditText
+                android:id="@+id/etAnnouncementContents"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:text="테스트 내용"
+                android:textSize="14sp"
+                android:textColor="@color/black"
+                android:gravity="start"
+                android:fontFamily="@font/noto_sans_kr_regular"
+                android:layout_marginTop="24dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                app:layout_constraintTop_toTopOf="@id/subAnnouncementGuide"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>
