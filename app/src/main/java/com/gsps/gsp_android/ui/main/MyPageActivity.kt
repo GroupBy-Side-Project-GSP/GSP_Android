@@ -14,24 +14,24 @@ class MyPageActivity : BaseActivity<ActivityMyPageBinding>(
 
     override fun initView() {
 
-        binding.ConMyProEdite.setOnClickListener{
+        binding.conMyProEdite.setOnClickListener{
             val intent = Intent(this,MainActivity::class.java)
             startActivity(intent)
         }
 
-        binding.ConMyOffice.setOnClickListener {
+        binding.conMyOffice.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
-        binding.ConMyInterest.setOnClickListener {
+        binding.conMyInterest.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
-        binding.ConMyNotion.setOnClickListener {
+        binding.conMyNotion.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
-        binding.ConMyAppSetting.setOnClickListener {
+        binding.conMyAppSetting.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }

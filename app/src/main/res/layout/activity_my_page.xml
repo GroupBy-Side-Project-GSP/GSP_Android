@@ -9,11 +9,25 @@
         android:layout_height="match_parent"
         tools:context=".ui.main.MyPageActivity">
 
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/myPageVerticalGuideLine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintGuide_percent="0.05"
+            android:orientation="vertical"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/myPageHorizontalGuideLine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintGuide_percent="0.175"
+            android:orientation="horizontal"/>
+
+
         <TextView
-            android:id="@+id/TvTittleMyPage"
+            android:id="@+id/tvTittleMyPage"
             android:layout_width="84dp"
             android:layout_height="27dp"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="8dp"
             android:fontFamily="@font/noto_sans_kr_bold"
             android:gravity="center"
@@ -21,35 +35,30 @@
             android:text="마이페이지"
             android:textColor="@color/black"
             android:textSize="18sp"
-            app:layout_constraintEnd_toStartOf="@id/BtnMySetting"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@id/myPageVerticalGuideLine"
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/BtnMySetting"
+            android:id="@+id/btnMySetting"
             android:layout_width="16dp"
             android:layout_height="16dp"
-            android:layout_marginStart="221dp"
             android:layout_marginTop="14dp"
             android:layout_marginEnd="16dp"
             android:background="@drawable/ic_mypage_settings"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/TvTittleMyPage"
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/IvProFilePhoto"
+            android:id="@+id/cardProFilePhoto"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="21dp"
             app:cardCornerRadius="8dp"
-            app:layout_constraintEnd_toStartOf="@id/TvName"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/TvTittleMyPage">
+            app:layout_constraintStart_toStartOf="@id/myPageVerticalGuideLine"
+            app:layout_constraintTop_toBottomOf="@id/tvTittleMyPage">
 
             <ImageView
-                android:id="@+id/IvMyPageLog"
+                android:id="@+id/ivMyPageLog"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@color/main" />
@@ -57,7 +66,7 @@
         </androidx.cardview.widget.CardView>
 
         <TextView
-            android:id="@+id/TvName"
+            android:id="@+id/tvName"
             android:layout_width="50dp"
             android:layout_height="24dp"
             android:layout_marginStart="16dp"
@@ -68,17 +77,15 @@
             android:text="testname"
             android:textColor="@color/black"
             android:textSize="16sp"
-            app:layout_constraintEnd_toStartOf="@id/TvInterestExplan"
-            app:layout_constraintStart_toEndOf="@id/IvProFilePhoto"
-            app:layout_constraintTop_toBottomOf="@id/TvTittleMyPage" />
+            app:layout_constraintStart_toEndOf="@id/cardProFilePhoto"
+            app:layout_constraintTop_toBottomOf="@id/tvTittleMyPage" />
 
         <TextView
-            android:id="@+id/TvInterestExplan"
+            android:id="@+id/tvInterestExplan"
             android:layout_width="33dp"
             android:layout_height="20dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="31dp"
-            android:layout_marginEnd="188dp"
             android:background="@drawable/my_page_interest"
             android:includeFontPadding="false"
             android:textColor="@color/white"
@@ -86,227 +93,213 @@
             android:textSize="8sp"
             android:gravity="center"
             android:text="디자인"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/TvName"
-            app:layout_constraintTop_toBottomOf="@id/TvTittleMyPage" />
+            app:layout_constraintStart_toEndOf="@id/tvName"
+            app:layout_constraintTop_toBottomOf="@id/tvTittleMyPage"
+            />
 
         <View
-            android:id="@+id/Vline"
+            android:id="@+id/vline"
             android:layout_width="match_parent"
             android:layout_height="4dp"
-            android:layout_marginTop="16dp"
             android:background="@color/light_gray"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/IvProFilePhoto" />
+            app:layout_constraintTop_toTopOf="@id/myPageHorizontalGuideLine"
+            android:orientation="horizontal"
+            />
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/ConMyProEdite"
+            android:id="@+id/conMyProEdite"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/Vline">
+            app:layout_constraintTop_toBottomOf="@id/vline">
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/BtnMyProfileEdide"
+                android:id="@+id/btnMyProfileEdide"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"
                 android:background="@drawable/ic_mypage_edit"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/TvMyProfileEdide"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/TvMyProfileEdide"
+                android:id="@+id/tvMyProfileEdide"
                 android:layout_width="69dp"
                 android:layout_height="20dp"
-                android:layout_marginStart="8dp"
+                android:layout_marginStart="12dp"
                 android:layout_marginTop="9dp"
-                android:layout_marginEnd="244dp"
                 android:layout_marginBottom="11dp"
                 android:fontFamily="@font/noto_sans_kr_regular"
-                android:gravity="start"
+                android:gravity="center"
                 android:includeFontPadding="false"
                 android:text="프로필 수정"
                 android:textColor="@color/black"
                 android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/BtnMyProfileEdide"
+                app:layout_constraintStart_toEndOf="@id/btnMyProfileEdide"
                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/ConMyOffice"
+            android:id="@+id/conMyOffice"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/ConMyProEdite">
+            app:layout_constraintTop_toBottomOf="@id/conMyProEdite">
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/BtnMyOffice"
+                android:id="@+id/btnMyOffice"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"
                 android:background="@drawable/ic_mypage_star"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/TvMyOffice"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/TvMyOffice"
+                android:id="@+id/tvMyOffice"
                 android:layout_width="96dp"
                 android:layout_height="20dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="9dp"
-                android:layout_marginEnd="219dp"
-                android:layout_marginBottom="11dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
                 android:fontFamily="@font/noto_sans_kr_regular"
-                android:gravity="start"
+                android:gravity="center"
                 android:includeFontPadding="false"
                 android:text="즐겨찾기한 회사"
                 android:textColor="@color/black"
                 android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/BtnMyOffice"
+                app:layout_constraintStart_toEndOf="@id/btnMyOffice"
                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/ConMyInterest"
+            android:id="@+id/conMyInterest"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/ConMyOffice">
+            app:layout_constraintTop_toBottomOf="@id/conMyOffice">
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/BtnMyInterest"
+                android:id="@+id/btnMyInterest"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"
                 android:background="@drawable/ic_mypasge_tune"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/TvMyInterest"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/TvMyInterest"
+                android:id="@+id/tvMyInterest"
                 android:layout_width="82dp"
                 android:layout_height="20dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="9dp"
-                android:layout_marginEnd="232dp"
-                android:layout_marginBottom="11dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
                 android:fontFamily="@font/noto_sans_kr_regular"
-                android:gravity="start"
+                android:gravity="center"
                 android:includeFontPadding="false"
                 android:text="관심분야 설정"
                 android:textColor="@color/black"
                 android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/BtnMyInterest"
+                app:layout_constraintStart_toEndOf="@id/btnMyInterest"
                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/ConMyNotion"
+            android:id="@+id/conMyNotion"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/ConMyInterest">
+            app:layout_constraintTop_toBottomOf="@id/conMyInterest">
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/BtnMyNotion"
+                android:id="@+id/btnMyNotion"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"
                 android:background="@drawable/ic_mypage_mic"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/TvMyNotion"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/TvMyNotion"
+                android:id="@+id/tvMyNotion"
                 android:layout_width="53dp"
                 android:layout_height="20dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="9dp"
-                android:layout_marginEnd="260dp"
-                android:layout_marginBottom="11dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
                 android:fontFamily="@font/noto_sans_kr_regular"
-                android:gravity="start"
+                android:gravity="center"
                 android:includeFontPadding="false"
                 android:text="공지사항"
                 android:textColor="@color/black"
                 android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/BtnMyNotion"
+                app:layout_constraintStart_toEndOf="@id/btnMyNotion"
                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/ConMyAppSetting"
+            android:id="@+id/conMyAppSetting"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/ConMyNotion">
+            app:layout_constraintTop_toBottomOf="@id/conMyNotion">
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/BtnMyAppSetting"
+                android:id="@+id/btnMyAppSetting"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"
                 android:background="@drawable/ic_mypage_settings2"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/TvMyAppSetting"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/TvMyAppSetting"
+                android:id="@+id/tvMyAppSetting"
                 android:layout_width="43dp"
                 android:layout_height="20dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="9dp"
-                android:layout_marginEnd="270dp"
-                android:layout_marginBottom="11dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
                 android:fontFamily="@font/noto_sans_kr_regular"
-                android:gravity="start"
+                android:gravity="center"
                 android:includeFontPadding="false"
                 android:text="앱 설정"
                 android:textColor="@color/black"
                 android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/BtnMyAppSetting"
+                app:layout_constraintStart_toEndOf="@id/btnMyAppSetting"
                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
