@@ -1,27 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.main.NewMemberFragment">
+<layout>
 
-    <TextView
-        android:id="@+id/tvNewMember"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/noto_sans_kr_bold"
-        android:gravity="center"
-        android:includeFontPadding="false"
-        android:text="신규가입회사"
-        android:textColor="@color/black"
-        android:textSize="16sp" />
-
-    <!--항목마다 marginTop(12dp)-->
-    <GridView
-        android:id="@+id/container"
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:numColumns="2" />
+        android:layout_height="match_parent"
+        tools:context=".ui.main.NewMemberFragment">
 
-</FrameLayout>
+        <TextView
+            android:id="@+id/tvNewMember"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/noto_sans_kr_bold"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="신규가입회사"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <!--항목마다 marginTop(12dp)-->
+        <GridView
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:numColumns="2" />
+    </FrameLayout>
+</layout>

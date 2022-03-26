@@ -51,7 +51,7 @@
                 app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
                 app:layout_constraintTop_toTopOf="@id/ivLogo" />
 
-            <FrameLayout
+            <Fragment
                 android:id="@+id/frameNewMember"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
