@@ -100,7 +100,7 @@ class SignUpActivity : BaseActivity<ActivitySignUpBinding>(
 
     fun checkid():Boolean{
         val id = binding.tietSignUpId.text.toString().trim()
-        val patternid = """^[0-9a-zA-Z!@#$%^+_\-=]*$"""
+        val patternid = "^[a-zA-Z]{1}[a-zA-Z0-9]{4,11}$"
         val match = Pattern.matches(patternid, id)
 
         if (match) {
