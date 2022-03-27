@@ -13,19 +13,19 @@ class AnnouncementAdapter : RecyclerView.Adapter<AnnouncementAdapter.Announcemen
 
     private var items = mutableListOf<AnnouncementModel>()
 
-//    interface ItemClickListener{
-//        fun onItemClick(v: View, position: Int,model: AnnouncementModel)
-//    }
-//
-//    private var listener: ItemClickListener?=null
-//
-//    fun setOnItemClickListener(listener: ItemClickListener){
-//        this.listener=listener
-//    }
+    interface ItemClickListener{
+        fun onItemClick(v: View, position: Int,model: AnnouncementModel)
+    }
+
+    private var listener: ItemClickListener?=null
+
+    fun setOnItemClickListener(listener: ItemClickListener){
+        this.listener=listener
+    }
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AnnouncementAdapter.AnnouncementHolder {
-        val inflater= LayoutInflater.from(parent.context).inflate(R.layout.activity_announcement,parent,false)
+        val inflater= LayoutInflater.from(parent.context).inflate(R.layout.item_announcement,parent,false)
         return AnnouncementHolder(inflater)
     }
 
@@ -34,9 +34,9 @@ class AnnouncementAdapter : RecyclerView.Adapter<AnnouncementAdapter.Announcemen
 
 
 
-//        holder.itemView.setOnClickListener{
-//            listener?.onItemClick(it,position,items[position])
-//        }
+        holder.itemView.setOnClickListener{
+            listener?.onItemClick(it,position,items[position])
+        }
 
     }
 
@@ -51,13 +51,13 @@ class AnnouncementAdapter : RecyclerView.Adapter<AnnouncementAdapter.Announcemen
         return items.size
     }
 
-    class AnnouncementHolder(v: View) : RecyclerView.ViewHolder(v) {
-        val itemtitle = v.findViewById<TextView>(R.id.tvAnnouncementTitle)
-        val itemdate = v.findViewById<TextView>(R.id.tvAnnouncementDate)
+    inner class AnnouncementHolder(v: View) : RecyclerView.ViewHolder(v) {
+        var itemtitle = v.findViewById<TextView>(R.id.tvAnnouncementItemTitle)
+        var itemdate = v.findViewById<TextView>(R.id.tvAnnouncementItemDate)
 
         fun bind(model: AnnouncementModel){
-            itemtitle.text=model.title
-            itemdate.text=model.date
+            itemtitle.text = model.title
+            itemdate.text = model.date
         }
     }
 }

@@ -19,7 +19,7 @@ class AnnouncementActivity : BaseActivity<ActivityAnnouncementBinding>(
 
     override fun initView() {
 
-        val testList = listOf<AnnouncementModel>(
+        val testList = listOf(
             AnnouncementModel("testTitle1","testDate1"),
             AnnouncementModel("testTitle2","testDate2"),
             AnnouncementModel("testTitle3","testDate3")
@@ -36,13 +36,13 @@ class AnnouncementActivity : BaseActivity<ActivityAnnouncementBinding>(
         adapter.addItems(testList)
 
 
-//        adapter.setOnItemClickListener(object :AnnouncementAdapter.ItemClickListener{
-//            override fun onItemClick(v: View, position: Int, model: AnnouncementModel) {
-//                val intent = Intent(this@AnnouncementActivity,SubAnnouncementActivity::class.java)
-//                intent.putExtra("title",model.title)
-//                intent.putExtra("date",model.date)
-//                startActivity(intent)
-//            }
-//        })
+        adapter.setOnItemClickListener(object :AnnouncementAdapter.ItemClickListener{
+            override fun onItemClick(v: View, position: Int, model: AnnouncementModel) {
+                val intent = Intent(this@AnnouncementActivity,SubAnnouncementActivity::class.java)
+                intent.putExtra("title",model.title)
+                intent.putExtra("date",model.date)
+                startActivity(intent)
+            }
+        })
     }
 }
