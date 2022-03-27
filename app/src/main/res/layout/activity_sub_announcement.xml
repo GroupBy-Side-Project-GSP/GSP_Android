@@ -105,7 +105,7 @@
                 />
             <EditText
                 android:id="@+id/etAnnouncementContents"
-                android:layout_width="320dp"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="테스트 내용"
                 android:textSize="14sp"
