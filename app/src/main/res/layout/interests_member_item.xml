@@ -60,7 +60,7 @@
     </RelativeLayout>
 
     <ImageView
-        android:id="@+id/iv_main"
+        android:id="@+id/ivMain"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginVertical="8dp"
@@ -77,7 +77,7 @@
         android:layout_height="16dp"
         android:layout_margin="5dp"
         android:src="@color/system_red"
-        app:layout_constraintBottom_toBottomOf="@id/iv_main"
-        app:layout_constraintEnd_toEndOf="@id/iv_main" />
+        app:layout_constraintBottom_toBottomOf="@id/ivMain"
+        app:layout_constraintEnd_toEndOf="@id/ivMain" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
