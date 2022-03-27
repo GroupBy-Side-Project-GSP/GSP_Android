@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GSP_Android">
         <activity
+            android:name=".ui.main.SearchActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.main.SignInActivity"
             android:exported="false"
             android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar" />
