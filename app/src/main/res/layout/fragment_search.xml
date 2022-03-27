@@ -41,6 +41,61 @@
             android:layout_marginTop="10dp"
             android:layout_marginEnd="16dp"
             android:layout_marginStart="24dp"/>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/conRecentRecord"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:visibility="invisible"
+            app:layout_constraintTop_toBottomOf="@id/etSearch"
+            app:layout_constraintBottom_toBottomOf="parent"
+            >
+            <TextView
+                android:id="@+id/tvRecentRecord"
+                android:layout_width="58dp"
+                android:layout_height="18dp"
+                android:text="최근 검색어"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:includeFontPadding="false"
+                app:layout_constraintTop_toTopOf="@id/conRecentRecord"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="28dp"
+                android:layout_marginStart="20dp"/>
+            <TextView
+                android:id="@+id/tvNoRecentRecord"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="최근 검색어가 없습니다."
+                android:textColor="@color/dark_gray"
+                android:textSize="14sp"
+                android:includeFontPadding="false"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/conSearchText"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:visibility="invisible"
+            app:layout_constraintTop_toBottomOf="@id/etSearch"
+            app:layout_constraintBottom_toBottomOf="parent"
+            >
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvSearchText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="28dp"
+                />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
 
         <TextView
             android:id="@+id/tvSearchSubTitle"
@@ -59,6 +114,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginEnd="204dp"
             />
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/conSearchCheck"
             android:layout_width="match_parent"
@@ -68,8 +124,6 @@
             app:layout_constraintTop_toBottomOf="@id/tvSearchSubTitle"
             android:layout_marginTop="12dp"
             >
-
-
             <CheckBox
                 android:id="@+id/searchDesignCheckBox"
                 android:layout_width="79dp"
@@ -312,6 +366,21 @@
                 />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnSelectSearch"
+            android:layout_width="320dp"
+            android:layout_height="36dp"
+            android:text="선택한 직무로 검색하기"
+            android:background="@drawable/item_search_interest_checkbox_background"
+            android:textColor="@drawable/item_search_interest_textcolor"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="12dp"/>
+
+
+
+
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
