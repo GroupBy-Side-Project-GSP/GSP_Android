@@ -45,6 +45,7 @@ class MyOfficeAdapter : RecyclerView.Adapter<MyOfficeAdapter.MyOfficeViewHolder>
     }
 
     inner class MyOfficeViewHolder(v: View) : RecyclerView.ViewHolder(v) {
+
         var itemname = v.findViewById<TextView>(R.id.tvRvItemMyOfficeName)
         var itemcategory = v.findViewById<TextView>(R.id.tvRvItemMyOfficeCate)
         var itemheart = v.findViewById<Button>(R.id.btnMyOfficeFavorite)
