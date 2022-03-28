@@ -1,83 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="320dp"
-    android:layout_height="74dp">
+<layout>
 
-    <!--가이드라인 기준 양쪽 마진 5dp-->
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.6719" />
+    <data>
 
-    <RelativeLayout
-        android:id="@+id/rlInfo"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="5dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@id/guideline"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        <variable
+            name="model"
+            type="com.gsps.gsp_android.ui.main.InterestsMemberModel" />
+    </data>
 
-        <TextView
-            android:id="@+id/tvExplain9"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:ellipsize="end"
-            android:fontFamily="@font/noto_sans_kr_regular"
-            android:includeFontPadding="false"
-            android:maxLines="2"
-            android:text="환경을 연구하고 더 나은 생태를 위해 나아가는 회사입니다"
-            android:textColor="@color/black"
-            android:textSize="12sp" />
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="320dp"
+        android:layout_height="74dp">
 
-        <ImageView
-            android:id="@+id/ivLogo"
-            android:layout_width="16dp"
-            android:layout_height="16dp"
-            android:layout_below="@id/tvExplain9"
-            android:layout_alignParentStart="true"
-            android:src="@drawable/rounded_corner_4dp" />
-
-        <TextView
+        <!--가이드라인 기준 양쪽 마진 5dp-->
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/tvExplain9"
-            android:layout_alignBottom="@id/ivLogo"
-            android:layout_marginStart="4dp"
-            android:layout_toEndOf="@id/ivLogo"
-            android:fontFamily="@font/noto_sans_kr_regular"
-            android:gravity="center_vertical"
-            android:includeFontPadding="false"
-            android:text="한국환경생태연구소"
-            android:textColor="@color/black"
-            android:textSize="10sp" />
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.6719" />
 
-    </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/rlInfo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/guideline"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-    <ImageView
-        android:id="@+id/ivMain0"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginVertical="8dp"
-        android:layout_marginStart="5dp"
-        android:src="@color/main_lighten"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@id/guideline"
-        app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:id="@+id/tvExplain"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:ellipsize="end"
+                android:fontFamily="@font/noto_sans_kr_regular"
+                android:includeFontPadding="false"
+                android:maxLines="2"
+                android:text="@{model.explain}"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
 
-    <ImageView
-        android:id="@+id/ivHeart0"
-        android:layout_width="15dp"
-        android:layout_height="16dp"
-        android:layout_margin="5dp"
-        android:src="@color/system_red"
-        app:layout_constraintBottom_toBottomOf="@id/ivMain0"
-        app:layout_constraintEnd_toEndOf="@id/ivMain0" />
+            <ImageView
+                android:id="@+id/ivLogo"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_below="@id/tvExplain"
+                android:layout_alignParentStart="true"
+                android:src="@drawable/rounded_corner_4dp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvExplain"
+                android:layout_alignBottom="@id/ivLogo"
+                android:layout_marginStart="4dp"
+                android:layout_toEndOf="@id/ivLogo"
+                android:fontFamily="@font/noto_sans_kr_regular"
+                android:gravity="center_vertical"
+                android:includeFontPadding="false"
+                android:text="@{model.name}"
+                android:textColor="@color/black"
+                android:textSize="10sp" />
+
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/ivMain"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginVertical="8dp"
+            android:layout_marginStart="5dp"
+            android:src="@color/main_lighten"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/guideline"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/ivHeart"
+            android:layout_width="15dp"
+            android:layout_height="16dp"
+            android:layout_margin="5dp"
+            android:src="@color/system_red"
+            app:layout_constraintBottom_toBottomOf="@id/ivMain"
+            app:layout_constraintEnd_toEndOf="@id/ivMain" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

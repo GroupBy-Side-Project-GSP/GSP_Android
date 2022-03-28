@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout>
 
-    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
@@ -49,7 +49,7 @@
                 app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
                 app:layout_constraintTop_toTopOf="@id/ivLogo" />
 
-            <fragment
+            <androidx.fragment.app.FragmentContainerView
                 android:id="@+id/frameNewMember"
                 android:name="com.gsps.gsp_android.ui.main.NewMemberFragment"
                 android:layout_width="0dp"
@@ -60,14 +60,15 @@
                 app:layout_constraintTop_toBottomOf="@id/ivLogo" />
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/interestsContainer"
+                android:id="@+id/interestsListContainer"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
+                android:nestedScrollingEnabled="false"
                 app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
                 app:layout_constraintStart_toStartOf="@id/guidelineStart"
                 app:layout_constraintTop_toBottomOf="@id/frameNewMember" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
 </layout>
