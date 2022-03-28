@@ -20,26 +20,17 @@ class InterestActivity : BaseActivity<ActivityInterestBinding>(
 ) {
     private val buttonSignIn: AppCompatButton by lazy { findViewById(R.id.btnInterestComplete) }
 
-
-
-
     companion object{
         var count:Int =0
     }
+    
     override fun initView() {
         check()
-
-
         binding.ibInterestBack.setOnClickListener{
             val intent = Intent(this, ProfileActivity::class.java)
             startActivity(intent)
         }
-
-
     }
-
-
-
 
     fun check(){
         val listener =CompoundButton.OnCheckedChangeListener { buttonView, isChecked ->
@@ -85,7 +76,6 @@ class InterestActivity : BaseActivity<ActivityInterestBinding>(
                         binding.clothCheckBox -> {binding.clothCheckBox.isChecked=false}
                     }
                 }
-
             }else{
                 when(buttonView){
                     binding.designCheckBox -> {binding.tvInterestCount.text="(${--count}/5)"}

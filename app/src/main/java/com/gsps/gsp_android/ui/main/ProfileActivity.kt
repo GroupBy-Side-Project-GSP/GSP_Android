@@ -21,13 +21,8 @@ R.layout.activity_profile
     val REQ_GALLERL = 1
 
     override fun initView() {
-
-
-
-
         binding.btnPen.setOnClickListener{
             openGallary()
-
         }
         binding.edProfileName.addTextChangedListener(object :TextWatcher{
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
@@ -39,25 +34,19 @@ R.layout.activity_profile
                     binding.btnProfileComplete.isEnabled=true
                 }
             }
+
             override fun afterTextChanged(p0: Editable?) {}
         })
-
         binding.btnProfileComplete.setOnClickListener{
             next()
         }
-
-
     }
-
-
 
     fun openGallary(){
         val intent=Intent(Intent.ACTION_PICK)
         intent.type=MediaStore.Images.Media.CONTENT_TYPE
         startActivityForResult(intent, REQ_GALLERL)
-
     }
-
 
     @Override
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -74,7 +63,6 @@ R.layout.activity_profile
             }
         }
     }
-
 
     fun next(){
             val intent = Intent(this,InterestActivity::class.java)
