@@ -8,7 +8,10 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.gsps.gsp_android.databinding.InterestsListItemBinding
 
-class InterestsListAdapter(val context: Context, val itemList: MutableList<InterestsListModel>) :
+class InterestsListAdapter(
+    val context: Context,
+    private val itemList: MutableList<InterestsListModel>
+) :
     RecyclerView.Adapter<InterestsListAdapter.InterestsListHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): InterestsListHolder {
         Log.d("dmstjsList", "onCreateViewHolder")
