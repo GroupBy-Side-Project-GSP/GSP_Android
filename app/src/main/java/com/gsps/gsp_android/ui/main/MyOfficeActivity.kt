@@ -17,7 +17,6 @@ class MyOfficeActivity : BaseActivity<ActivityMyOfficeBinding>(
     override fun initView() {
         adapter()
         next()
-
     }
 
     fun next(){
@@ -27,14 +26,13 @@ class MyOfficeActivity : BaseActivity<ActivityMyOfficeBinding>(
         }
     }
 
-
     fun adapter(){
+
         val testList = listOf<MyOfficeModel>(
             MyOfficeModel("name1","cate1"),
             MyOfficeModel("name2","cate2"),
             MyOfficeModel("name3","cate3"),
             MyOfficeModel("name4","cate4"),
-
             )
 
         val gridLayoutManager = GridLayoutManager(applicationContext,2)
@@ -42,6 +40,4 @@ class MyOfficeActivity : BaseActivity<ActivityMyOfficeBinding>(
         binding.rvOffice.layoutManager=gridLayoutManager
         binding.rvOffice.adapter=adapter
     }
-
-
 }

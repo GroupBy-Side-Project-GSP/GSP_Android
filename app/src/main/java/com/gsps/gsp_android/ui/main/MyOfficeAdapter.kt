@@ -14,16 +14,14 @@ class MyOfficeAdapter : RecyclerView.Adapter<MyOfficeAdapter.MyOfficeViewHolder>
 
     private var items = mutableListOf<MyOfficeModel>()
 
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyOfficeAdapter.MyOfficeViewHolder {
         val inflater= LayoutInflater.from(parent.context).inflate(R.layout.my_office_item,parent,false)
         return MyOfficeViewHolder(inflater)
-
     }
 
     override fun onBindViewHolder(holder: MyOfficeAdapter.MyOfficeViewHolder, position: Int) {
-        holder.bind(items[position])
 
+        holder.bind(items[position])
 
         holder.itemheart.setOnClickListener(object :View.OnClickListener{
             override fun onClick(v: View?) {
@@ -32,9 +30,9 @@ class MyOfficeAdapter : RecyclerView.Adapter<MyOfficeAdapter.MyOfficeViewHolder>
                     notifyDataSetChanged()
                 }
             }
-
         })
     }
+
     override fun getItemCount(): Int {
         return items.size
     }
@@ -47,20 +45,13 @@ class MyOfficeAdapter : RecyclerView.Adapter<MyOfficeAdapter.MyOfficeViewHolder>
     }
 
     inner class MyOfficeViewHolder(v: View) : RecyclerView.ViewHolder(v) {
-//        var itemphoto = v.findViewById<ImageView>(R.id.IvRvItemMyOfficePhoto)
-//        var itemlog = v.findViewById<ImageView>(R.id.IvRvItemMyOfficeLog)
         var itemname = v.findViewById<TextView>(R.id.tvRvItemMyOfficeName)
         var itemcategory = v.findViewById<TextView>(R.id.tvRvItemMyOfficeCate)
         var itemheart = v.findViewById<Button>(R.id.btnMyOfficeFavorite)
 
-
         fun bind(model: MyOfficeModel){
-//            itemphoto.setImageResource(model.photo)
-//            itemlog.setImageResource(model.Log)
             itemname.text=model.officename
             itemcategory.text=model.category
-
         }
-
     }
 }
