@@ -13,28 +13,24 @@ class InterestSettingActivity : BaseActivity<ActivityInterestSettingBinding>(
     R.layout.activity_interest_setting
 ) {
 
-
     companion object{
         var count:Int =0
     }
-    override fun initView() {
-        check()
 
+    override fun initView() {
+
+        check()
 
         binding.btnMyPageBack.setOnClickListener{
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
+
         binding.btnMyPageInterestComplete.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
-
-
     }
-
-
-
 
     fun check(){
         val listener = CompoundButton.OnCheckedChangeListener { buttonView, isChecked ->
@@ -80,7 +76,6 @@ class InterestSettingActivity : BaseActivity<ActivityInterestSettingBinding>(
                         binding.myPageClothCheckBox -> {binding.myPageClothCheckBox.isChecked=false}
                     }
                 }
-
             }else{
                 when(buttonView){
                     binding.myPageDesignCheckBox -> {binding.tvMyPageInterestSettingCount.text="(${--count}/5)"}
