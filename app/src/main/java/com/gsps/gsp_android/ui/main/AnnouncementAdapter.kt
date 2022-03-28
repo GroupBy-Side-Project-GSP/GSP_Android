@@ -23,7 +23,6 @@ class AnnouncementAdapter : RecyclerView.Adapter<AnnouncementAdapter.Announcemen
         this.listener=listener
     }
 
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AnnouncementAdapter.AnnouncementHolder {
         val inflater= LayoutInflater.from(parent.context).inflate(R.layout.item_announcement,parent,false)
         return AnnouncementHolder(inflater)
@@ -31,9 +30,6 @@ class AnnouncementAdapter : RecyclerView.Adapter<AnnouncementAdapter.Announcemen
 
     override fun onBindViewHolder(holder: AnnouncementAdapter.AnnouncementHolder, position: Int) {
         holder.bind(items[position])
-
-
-
         holder.itemView.setOnClickListener{
             listener?.onItemClick(it,position,items[position])
         }

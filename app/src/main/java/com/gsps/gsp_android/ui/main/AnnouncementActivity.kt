@@ -15,26 +15,17 @@ class AnnouncementActivity : BaseActivity<ActivityAnnouncementBinding>(
 
     val adapter by lazy { AnnouncementAdapter() }
 
-
-
     override fun initView() {
-
         val testList = listOf(
             AnnouncementModel("testTitle1","testDate1"),
             AnnouncementModel("testTitle2","testDate2"),
             AnnouncementModel("testTitle3","testDate3")
         )
 
-
         val linearLayoutManager = LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false)
-
-
         binding.RvAnnouncement.layoutManager=linearLayoutManager
-
         binding.RvAnnouncement.adapter=adapter
-
         adapter.addItems(testList)
-
 
         adapter.setOnItemClickListener(object :AnnouncementAdapter.ItemClickListener{
             override fun onItemClick(v: View, position: Int, model: AnnouncementModel) {
