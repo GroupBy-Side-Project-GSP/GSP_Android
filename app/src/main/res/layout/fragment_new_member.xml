@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout>
 
-    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         tools:context=".ui.main.NewMemberFragment">
 
         <TextView
@@ -16,14 +17,262 @@
             android:includeFontPadding="false"
             android:text="신규가입회사"
             android:textColor="@color/black"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <!--항목마다 marginTop(12dp)-->
-        <GridLayout
-            android:id="@+id/container"
-            android:layout_width="match_parent"
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:columnCount="2" />
-    </FrameLayout>
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <ImageView
+            android:id="@+id/ivMain0"
+            android:layout_width="0dp"
+            android:layout_height="88dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="5dp"
+            android:src="@drawable/rounded_corner_main_lignten"
+            app:layout_constraintEnd_toEndOf="@id/guideline"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvNewMember" />
+
+        <ImageView
+            android:id="@+id/ivHeart0"
+            android:layout_width="15dp"
+            android:layout_height="16dp"
+            android:layout_margin="5dp"
+            android:src="@color/system_red"
+            app:layout_constraintBottom_toBottomOf="@id/ivMain0"
+            app:layout_constraintEnd_toEndOf="@id/ivMain0" />
+
+        <ImageView
+            android:id="@+id/ivLogo0"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="4dp"
+            android:src="@drawable/rounded_corner_4dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivMain0" />
+
+        <TextView
+            android:id="@+id/tvName0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:fontFamily="@font/noto_sans_kr_regular"
+            android:includeFontPadding="false"
+            android:text="회사 이름"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@id/ivLogo0"
+            app:layout_constraintStart_toEndOf="@id/ivLogo0"
+            app:layout_constraintTop_toTopOf="@id/ivLogo0" />
+
+        <TextView
+            android:id="@+id/tvExplain0"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="5dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/noto_sans_kr_medium"
+            android:includeFontPadding="false"
+            android:lineSpacingExtra="2dp"
+            android:maxLines="2"
+            android:text="디자인 저희 회사는 최강입니다 프젝하고 잇어요. 가나다라"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@id/guideline"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivLogo0" />
+
+        <ImageView
+            android:id="@+id/ivMain1"
+            android:layout_width="0dp"
+            android:layout_height="88dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/rounded_corner_main_lignten"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/guideline"
+            app:layout_constraintTop_toBottomOf="@id/tvNewMember" />
+
+        <ImageView
+            android:id="@+id/ivHeart1"
+            android:layout_width="15dp"
+            android:layout_height="16dp"
+            android:layout_margin="5dp"
+            android:src="@color/system_red"
+            app:layout_constraintBottom_toBottomOf="@id/ivMain1"
+            app:layout_constraintEnd_toEndOf="@id/ivMain1" />
+
+        <ImageView
+            android:id="@+id/ivLogo1"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="4dp"
+            android:src="@drawable/rounded_corner_4dp"
+            app:layout_constraintStart_toStartOf="@id/guideline"
+            app:layout_constraintTop_toBottomOf="@id/ivMain1" />
+
+        <TextView
+            android:id="@+id/tvName1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:fontFamily="@font/noto_sans_kr_regular"
+            android:includeFontPadding="false"
+            android:text="회사 이름"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@id/ivLogo1"
+            app:layout_constraintStart_toEndOf="@id/ivLogo1"
+            app:layout_constraintTop_toTopOf="@id/ivLogo1" />
+
+        <TextView
+            android:id="@+id/tvExplain1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="4dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/noto_sans_kr_medium"
+            android:includeFontPadding="false"
+            android:lineSpacingExtra="2dp"
+            android:maxLines="2"
+            android:text="디자인 저희 회사는 최강입니다 프젝하고 잇어요. 가나다라"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/guideline"
+            app:layout_constraintTop_toBottomOf="@id/ivLogo1" />
+
+        <ImageView
+            android:id="@+id/ivMain2"
+            android:layout_width="0dp"
+            android:layout_height="88dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="5dp"
+            android:src="@drawable/rounded_corner_main_lignten"
+            app:layout_constraintEnd_toEndOf="@id/guideline"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvExplain0" />
+
+        <ImageView
+            android:id="@+id/ivHeart2"
+            android:layout_width="15dp"
+            android:layout_height="16dp"
+            android:layout_margin="5dp"
+            android:src="@color/system_red"
+            app:layout_constraintBottom_toBottomOf="@id/ivMain2"
+            app:layout_constraintEnd_toEndOf="@id/ivMain2" />
+
+        <ImageView
+            android:id="@+id/ivLogo2"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="4dp"
+            android:src="@drawable/rounded_corner_4dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivMain2" />
+
+        <TextView
+            android:id="@+id/tvName2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:fontFamily="@font/noto_sans_kr_regular"
+            android:includeFontPadding="false"
+            android:text="회사 이름"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@id/ivLogo2"
+            app:layout_constraintStart_toEndOf="@id/ivLogo2"
+            app:layout_constraintTop_toTopOf="@id/ivLogo2" />
+
+        <TextView
+            android:id="@+id/tvExplain2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="5dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/noto_sans_kr_medium"
+            android:includeFontPadding="false"
+            android:lineSpacingExtra="2dp"
+            android:maxLines="2"
+            android:text="디자인 저희 회사는 최강입니다 프젝하고 잇어요. 가나다라"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@id/guideline"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivLogo2" />
+
+        <ImageView
+            android:id="@+id/ivMain3"
+            android:layout_width="0dp"
+            android:layout_height="88dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="12dp"
+            android:src="@drawable/rounded_corner_main_lignten"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/guideline"
+            app:layout_constraintTop_toBottomOf="@id/tvExplain1" />
+
+        <ImageView
+            android:id="@+id/ivHeart3"
+            android:layout_width="15dp"
+            android:layout_height="16dp"
+            android:layout_margin="5dp"
+            android:src="@color/system_red"
+            app:layout_constraintBottom_toBottomOf="@id/ivMain3"
+            app:layout_constraintEnd_toEndOf="@id/ivMain3" />
+
+        <ImageView
+            android:id="@+id/ivLogo3"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="4dp"
+            android:src="@drawable/rounded_corner_4dp"
+            app:layout_constraintStart_toStartOf="@id/guideline"
+            app:layout_constraintTop_toBottomOf="@id/ivMain3" />
+
+        <TextView
+            android:id="@+id/tvName3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:fontFamily="@font/noto_sans_kr_regular"
+            android:includeFontPadding="false"
+            android:text="회사 이름"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@id/ivLogo3"
+            app:layout_constraintStart_toEndOf="@id/ivLogo3"
+            app:layout_constraintTop_toTopOf="@id/ivLogo3" />
+
+        <TextView
+            android:id="@+id/tvExplain3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="4dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/noto_sans_kr_medium"
+            android:includeFontPadding="false"
+            android:lineSpacingExtra="2dp"
+            android:maxLines="2"
+            android:text="디자인 저희 회사는 최강입니다 프젝하고 잇어요. 가나다라"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/guideline"
+            app:layout_constraintTop_toBottomOf="@id/ivLogo3" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
