@@ -9,8 +9,6 @@ import com.gsps.gsp_android.ui.base.BaseActivity
 class SubAnnouncementActivity : BaseActivity<ActivityAnnouncementBinding>(
     R.layout.activity_sub_announcement
 ) {
-
     override fun initView() {
-
     }
 }

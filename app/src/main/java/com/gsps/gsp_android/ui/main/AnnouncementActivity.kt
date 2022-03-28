@@ -11,6 +11,6 @@ class AnnouncementActivity : BaseActivity<ActivityAnnouncementBinding>(
 ) {
 
     override fun initView() {
-
     }
+
 }
