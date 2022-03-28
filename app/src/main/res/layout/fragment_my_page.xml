@@ -5,27 +5,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.main.MyPageFragment">
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".ui.main.MyPageActivity">
-
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/myPageVerticalGuideLine"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintGuide_percent="0.05"
             android:orientation="vertical"/>
-
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/myPageHorizontalGuideLine"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintGuide_percent="0.175"
             android:orientation="horizontal"/>
-
-
         <TextView
             android:id="@+id/tvTittleMyPage"
             android:layout_width="84dp"
@@ -39,7 +34,6 @@
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="@id/myPageVerticalGuideLine"
             app:layout_constraintTop_toTopOf="parent" />
-
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnMySetting"
             android:layout_width="16dp"
@@ -49,7 +43,6 @@
             android:background="@drawable/ic_mypage_settings"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
         <androidx.cardview.widget.CardView
             android:id="@+id/cardProFilePhoto"
             android:layout_width="40dp"
@@ -58,15 +51,12 @@
             app:cardCornerRadius="8dp"
             app:layout_constraintStart_toStartOf="@id/myPageVerticalGuideLine"
             app:layout_constraintTop_toBottomOf="@id/tvTittleMyPage">
-
             <ImageView
                 android:id="@+id/ivMyPageLog"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@color/main" />
-
         </androidx.cardview.widget.CardView>
-
         <TextView
             android:id="@+id/tvName"
             android:layout_width="50dp"
@@ -81,7 +71,6 @@
             android:textSize="16sp"
             app:layout_constraintStart_toEndOf="@id/cardProFilePhoto"
             app:layout_constraintTop_toBottomOf="@id/tvTittleMyPage" />
-
         <TextView
             android:id="@+id/tvInterestExplan"
             android:layout_width="33dp"
@@ -98,7 +87,6 @@
             app:layout_constraintStart_toEndOf="@id/tvName"
             app:layout_constraintTop_toBottomOf="@id/tvTittleMyPage"
             />
-
         <View
             android:id="@+id/vline"
             android:layout_width="match_parent"
@@ -109,8 +97,6 @@
             app:layout_constraintTop_toTopOf="@id/myPageHorizontalGuideLine"
             android:orientation="horizontal"
             />
-
-
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/conMyProEdite"
             android:layout_width="match_parent"
@@ -118,7 +104,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/vline">
-
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnMyProfileEdide"
                 android:layout_width="24dp"
@@ -130,7 +115,6 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
             <TextView
                 android:id="@+id/tvMyProfileEdide"
                 android:layout_width="69dp"
@@ -148,8 +132,6 @@
                 app:layout_constraintStart_toEndOf="@id/btnMyProfileEdide"
                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
-
-
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/conMyOffice"
             android:layout_width="match_parent"
@@ -157,7 +139,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/conMyProEdite">
-
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnMyOffice"
                 android:layout_width="24dp"
@@ -169,7 +150,6 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
             <TextView
                 android:id="@+id/tvMyOffice"
                 android:layout_width="96dp"
@@ -187,8 +167,6 @@
                 app:layout_constraintStart_toEndOf="@id/btnMyOffice"
                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
-
-
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/conMyInterest"
             android:layout_width="match_parent"
@@ -196,7 +174,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/conMyOffice">
-
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnMyInterest"
                 android:layout_width="24dp"
@@ -208,7 +185,6 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
             <TextView
                 android:id="@+id/tvMyInterest"
                 android:layout_width="82dp"
@@ -226,8 +202,6 @@
                 app:layout_constraintStart_toEndOf="@id/btnMyInterest"
                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
-
-
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/conMyNotion"
             android:layout_width="match_parent"
@@ -235,7 +209,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/conMyInterest">
-
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnMyNotion"
                 android:layout_width="24dp"
@@ -247,7 +220,6 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
             <TextView
                 android:id="@+id/tvMyNotion"
                 android:layout_width="53dp"
@@ -265,8 +237,6 @@
                 app:layout_constraintStart_toEndOf="@id/btnMyNotion"
                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
-
-
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/conMyAppSetting"
             android:layout_width="match_parent"
@@ -274,7 +244,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/conMyNotion">
-
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnMyAppSetting"
                 android:layout_width="24dp"
@@ -286,7 +255,6 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
             <TextView
                 android:id="@+id/tvMyAppSetting"
                 android:layout_width="43dp"
@@ -305,6 +273,4 @@
                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
 </layout>
