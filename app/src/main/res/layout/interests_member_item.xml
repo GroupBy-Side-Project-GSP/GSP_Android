@@ -23,7 +23,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/tvExplain"
+            android:id="@+id/tvExplain9"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
@@ -39,14 +39,14 @@
             android:id="@+id/ivLogo"
             android:layout_width="16dp"
             android:layout_height="16dp"
-            android:layout_below="@id/tvExplain"
+            android:layout_below="@id/tvExplain9"
             android:layout_alignParentStart="true"
             android:src="@drawable/rounded_corner_4dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/tvExplain"
+            android:layout_below="@id/tvExplain9"
             android:layout_alignBottom="@id/ivLogo"
             android:layout_marginStart="4dp"
             android:layout_toEndOf="@id/ivLogo"
@@ -60,7 +60,7 @@
     </RelativeLayout>
 
     <ImageView
-        android:id="@+id/iv_main"
+        android:id="@+id/ivMain0"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginVertical="8dp"
@@ -72,12 +72,12 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/ivHeart"
+        android:id="@+id/ivHeart0"
         android:layout_width="15dp"
         android:layout_height="16dp"
         android:layout_margin="5dp"
         android:src="@color/system_red"
-        app:layout_constraintBottom_toBottomOf="@id/iv_main"
-        app:layout_constraintEnd_toEndOf="@id/iv_main" />
+        app:layout_constraintBottom_toBottomOf="@id/ivMain0"
+        app:layout_constraintEnd_toEndOf="@id/ivMain0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
