@@ -5,11 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.main.SearchFragment">
+
     <data>
-
-
     </data>
-
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -41,9 +39,6 @@
             android:layout_marginTop="10dp"
             android:layout_marginEnd="16dp"
             android:layout_marginStart="24dp"/>
-
-
-
         <TextView
             android:id="@+id/tvSearchSubTitle"
             android:layout_width="137dp"
@@ -311,7 +306,6 @@
                 android:layout_marginStart="12dp"
                 android:layout_marginTop="16dp"
                 />
-
         </androidx.constraintlayout.widget.ConstraintLayout>
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnSelectSearch"
@@ -324,12 +318,5 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginBottom="12dp"/>
-
-
-
-
-
-
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 </layout>
