@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.gsps.gsp_android.ui.main.InterestsMemberModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="320dp"
+        android:layout_height="74dp">
+
+        <!--가이드라인 기준 양쪽 마진 5dp-->
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.6719" />
+
+        <RelativeLayout
+            android:id="@+id/rlInfo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/guideline"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tvExplain"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:ellipsize="end"
+                android:fontFamily="@font/noto_sans_kr_regular"
+                android:includeFontPadding="false"
+                android:maxLines="2"
+                android:text="@{model.explain}"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+
+            <ImageView
+                android:id="@+id/ivLogo"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_below="@id/tvExplain"
+                android:layout_alignParentStart="true"
+                android:src="@drawable/rounded_corner_4dp" />
+
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvExplain"
+                android:layout_alignBottom="@id/ivLogo"
+                android:layout_marginStart="4dp"
+                android:layout_toEndOf="@id/ivLogo"
+                android:fontFamily="@font/noto_sans_kr_regular"
+                android:gravity="center_vertical"
+                android:includeFontPadding="false"
+                android:text="@{model.name}"
+                android:textColor="@color/black"
+                android:textSize="10sp" />
+
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/ivMain"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginVertical="8dp"
+            android:layout_marginStart="5dp"
+            android:src="@color/main_lighten"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/guideline"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
