@@ -14,54 +14,57 @@ class SignUpActivity : BaseActivity<ActivitySignUpBinding>(
     R.layout.activity_sign_up
 ) {
 
-
     override fun initView() {
 
-
-
-
         binding.tietSignUpEmail.addTextChangedListener(object :TextWatcher{
+
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                 checkemail()
                 certificationbtn()
                 nextbtn()
             }
+
             override fun afterTextChanged(p0: Editable?) {}
         })
 
         binding.tietSignUpId.addTextChangedListener(object :TextWatcher{
+
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                 checkid()
                 nextbtn()
-
             }
-            override fun afterTextChanged(p0: Editable?) {}
 
+            override fun afterTextChanged(p0: Editable?) {}
         })
 
         binding.tietSignUpPw.addTextChangedListener(object :TextWatcher{
+
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                 checkpw()
                 nextbtn()
 
             }
+
             override fun afterTextChanged(p0: Editable?) {}
         })
 
         binding.tietSignUpRePw.addTextChangedListener(object :TextWatcher{
+
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                 checkrepw()
                 nextbtn()
             }
+
             override fun afterTextChanged(p0: Editable?) {checkrepw()}
-
         })
-
-
 
         binding.btnCertification.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
@@ -77,12 +80,10 @@ class SignUpActivity : BaseActivity<ActivitySignUpBinding>(
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
-
     }
 
-
-
     fun checkemail():Boolean{
+
         val email = binding.tietSignUpEmail.text.toString().trim()
         val patternemail = "^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$"
         val match = Pattern.matches(patternemail, email)
@@ -99,6 +100,7 @@ class SignUpActivity : BaseActivity<ActivitySignUpBinding>(
     }
 
     fun checkid():Boolean{
+
         val id = binding.tietSignUpId.text.toString().trim()
         val patternid = "^[a-zA-Z]{1}[a-zA-Z0-9]{4,11}$"
         val match = Pattern.matches(patternid, id)
@@ -130,7 +132,9 @@ class SignUpActivity : BaseActivity<ActivitySignUpBinding>(
             return false
         }
     }
+
     fun checkrepw():Boolean{
+
         if(binding.tietSignUpRePw.text.toString().equals(binding.tietSignUpPw.text.toString())) {
             binding.tietSignUpRePw.setTextColor(getColor(R.color.black))
             binding.tilSignUpRePw.error= null
@@ -143,7 +147,6 @@ class SignUpActivity : BaseActivity<ActivitySignUpBinding>(
         }
     }
 
-
     fun certificationbtn(){
         if(checkemail()){
             binding.btnCertification.isEnabled=true
@@ -151,7 +154,6 @@ class SignUpActivity : BaseActivity<ActivitySignUpBinding>(
             binding.btnCertification.isEnabled=false
         }
     }
-
 
     fun nextbtn(){
         if(checkemail()&&checkid()&&checkpw()&&checkrepw()){
