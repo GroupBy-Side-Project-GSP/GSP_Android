@@ -13,4 +13,13 @@
     <string name="mypage_interest_setting">관심분야 설정</string>
     <string name="mypage_notion">공지사항</string>
     <string name="mypage_app_setting">앱 설정</string>
+    <string name="sign_up_title">회원가입</string>
+    <string name="sign_up_certification">인증</string>
+    <string name="sign_up_hint_email">이메일 입력</string>
+    <string name="sign_up_hint_pw">비밀번호 입력</string>
+    <string name="sign_up_hint_repw">비밀번호 재입력</string>
+    <string name="sign_up_text_next">다음</string>
+    <string name="sign_up_hint_id">아이디 입력</string>
+    <string name="show_all">모두보기</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
