@@ -7,4 +7,5 @@
     <string name="find_pw">비밀번호 찾기</string>
     <string name="sign_up_with_email">이메일로 가입하기</string>
     <string name="error_wrong_id">아이디 형식이 잘못되었습니다</string>
+    <string name="calendar">일정</string>
 </resources>
