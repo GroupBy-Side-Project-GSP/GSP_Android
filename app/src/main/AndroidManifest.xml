@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GSP_Android">
         <activity
+            android:name=".ui.main.InterestSettingActivity"
+            android:exported="false" >
+        <activity
             android:name=".ui.main.MyOfficeActivity"
             android:exported="false" >
         </activity>
