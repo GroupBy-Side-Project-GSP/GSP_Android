@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
     <TextView
         android:id="@+id/tvAnnouncementItemTitle"
         android:layout_width="wrap_content"
@@ -18,7 +19,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
     <TextView
-        android:id="@+id/tvAnnouncementDate"
+        android:id="@+id/tvAnnouncementItemDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="12sp"
