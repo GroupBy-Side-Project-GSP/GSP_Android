@@ -14,21 +14,38 @@
             android:exported="false" >
         </activity>
         <activity
+            android:name=".ui.main.SubAnnouncementActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.main.AnnouncementActivity"
+            android:name=".ui.main.MemberInfoActivity"
+            android:exported="false" >
+                  
+        <activity
+            android:name=".ui.main.InterestSettingActivity"
+            android:exported="false" >
+        <activity
+            android:name=".ui.main.MyOfficeActivity"
+            android:exported="false" >
+        </activity>
+            android:name=".ui.main.MemberInformationActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.main.SignInActivity"
             android:exported="false"
             android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar" />
         <activity
             android:name=".ui.splash.SplashActivity"
             android:exported="true" >
+        <activity
+            android:name=".ui.main.MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".ui.main.MainActivity"
-            android:exported="false" />
     </application>
 
 </manifest>
