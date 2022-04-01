@@ -44,7 +44,8 @@
                 android:layout_height="15dp"
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
-                android:background="@color/medium_gray"
+                android:background="@drawable/ic_search_btn"
+                android:backgroundTint="@color/black"
                 app:layout_constraintBottom_toBottomOf="@id/ivLogo"
                 app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
                 app:layout_constraintTop_toTopOf="@id/ivLogo" />

@@ -18,7 +18,6 @@ class InterestsListAdapter(
         val binding =
             InterestsListItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return InterestsListHolder(binding)
-
     }
 
     override fun onBindViewHolder(holder: InterestsListHolder, position: Int) {
@@ -39,6 +38,5 @@ class InterestsListAdapter(
             binding.container.adapter = InterestsMemberAdapter(context, item.innerList)
             binding.container.layoutManager = LinearLayoutManager(context)
         }
-
     }
 }

@@ -89,6 +89,5 @@
             android:src="@color/system_red"
             app:layout_constraintBottom_toBottomOf="@id/ivMain"
             app:layout_constraintEnd_toEndOf="@id/ivMain" />
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

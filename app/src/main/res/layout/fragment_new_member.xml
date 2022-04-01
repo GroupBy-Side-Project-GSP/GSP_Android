@@ -22,7 +22,7 @@
             android:fontFamily="@font/noto_sans_kr_bold"
             android:gravity="center"
             android:includeFontPadding="false"
-            android:text="신규가입회사"
+            android:text="@string/new_member"
             android:textColor="@color/black"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"

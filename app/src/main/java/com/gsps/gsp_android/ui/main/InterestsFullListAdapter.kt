@@ -1,7 +1,6 @@
 package com.gsps.gsp_android.ui.main
 
 import android.content.Context
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -15,7 +14,6 @@ class InterestsFullListAdapter(
         parent: ViewGroup,
         viewType: Int
     ): InterestsFullListAdapter.InterestsFullListHolder {
-        Log.d("dmstjsFullList", "onCreateViewHolder")
         val binding =
             InterestsFullListItemBinding.inflate(
                 LayoutInflater.from(parent.context),
@@ -29,12 +27,10 @@ class InterestsFullListAdapter(
         holder: InterestsFullListAdapter.InterestsFullListHolder,
         position: Int
     ) {
-        Log.d("dmstjsFullList", "onBindViewHolder")
         holder.bind(itemList[position])
     }
 
     override fun getItemCount(): Int {
-        Log.d("dmstjsFullList", itemList.size.toString())
         return itemList.size
     }
 
