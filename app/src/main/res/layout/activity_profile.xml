@@ -7,6 +7,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".ui.main.ProfileActivity">
+
         <ImageButton
             android:id="@+id/ibProfileBack"
             android:layout_width="24dp"
@@ -19,10 +20,11 @@
             android:layout_marginTop="19dp"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="100dp" />
+
         <TextView
             android:id="@+id/tvProfileTitle"
-            android:layout_width="88dp"
-            android:layout_height="27dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="프로필 설정"
             android:textSize="18sp"
             android:includeFontPadding="false"
@@ -33,10 +35,11 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="19dp" />
+
         <TextView
             android:id="@+id/tvProfileExplan"
-            android:layout_width="174dp"
-            android:layout_height="18dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:fontFamily="@font/noto_sans_kr_regular"
             android:includeFontPadding="false"
             android:textColor="@color/dark_gray"
@@ -46,6 +49,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvProfileTitle"
             android:layout_marginTop="17dp" />
+
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView"
             android:layout_width="110dp"
@@ -54,14 +58,15 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="54dp"
-            app:cardCornerRadius="100dp"
-            >
+            app:cardCornerRadius="100dp">
+
             <ImageView
                 android:id="@+id/ibProfileImage"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@drawable/button_style3"/>
         </androidx.cardview.widget.CardView>
+
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnPen"
             android:layout_width="40dp"
@@ -70,8 +75,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@id/cardView"
             app:layout_constraintBottom_toBottomOf="@id/cardView"
-            android:background="@drawable/ic_baseline_edit_24"
-            />
+            android:background="@drawable/ic_baseline_edit_24" />
+
         <EditText
             android:id="@+id/edProfileName"
             android:layout_width="120dp"
@@ -98,7 +103,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/edProfileName"
-            android:layout_marginTop="48dp"
-            />
+            android:layout_marginTop="48dp" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

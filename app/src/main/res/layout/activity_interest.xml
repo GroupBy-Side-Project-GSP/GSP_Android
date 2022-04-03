@@ -68,7 +68,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvInterestExplan" />
-
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/conCheckBox"
             android:layout_width="match_parent"
@@ -76,8 +75,22 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvInterestCount"
-            android:layout_marginTop="40dp"
-            >
+            android:layout_marginTop="40dp">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/conInterestSettingInsideGuide"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintGuide_percent="0.05"
+                android:orientation="vertical"/>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/conInterestSettingInsideGuide2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintGuide_percent="0.6"
+                android:orientation="vertical"/>
+
             <CheckBox
                 android:id="@+id/designCheckBox"
                 android:layout_width="79dp"
@@ -89,11 +102,9 @@
                 android:background="@drawable/item_checkbox_background"
                 android:text="디자인"
                 android:fontFamily="@font/noto_sans_kr_medium"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/managementCheckBox"
-                android:layout_marginStart="20dp"
-                />
+                app:layout_constraintStart_toStartOf="@id/conInterestSettingInsideGuide"
+                app:layout_constraintTop_toTopOf="parent" />
+
             <CheckBox
                 android:id="@+id/managementCheckBox"
                 android:layout_width="101dp"
@@ -106,10 +117,9 @@
                 android:text="경영\u0026회계"
                 android:fontFamily="@font/noto_sans_kr_medium"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toEndOf="@id/designCheckBox"
-                app:layout_constraintEnd_toStartOf="@id/healthCheckBox"
-                android:layout_marginStart="12dp"
-                />
+                app:layout_constraintEnd_toStartOf="@id/conInterestSettingInsideGuide2"
+                android:layout_marginEnd="20dp"/>
+
             <CheckBox
                 android:id="@+id/healthCheckBox"
                 android:layout_width="101dp"
@@ -122,11 +132,8 @@
                 android:text="보건\u0026의료"
                 android:fontFamily="@font/noto_sans_kr_medium"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toEndOf="@id/managementCheckBox"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginStart="12dp"
-                android:layout_marginEnd="35dp"
-                />
+                app:layout_constraintStart_toStartOf="@id/conInterestSettingInsideGuide2" />
+
             <CheckBox
                 android:id="@+id/environmentCheckBox"
                 android:layout_width="101dp"
@@ -139,11 +146,9 @@
                 android:text="환경\u0026에너지"
                 android:fontFamily="@font/noto_sans_kr_medium"
                 app:layout_constraintTop_toBottomOf="@id/designCheckBox"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/materialCheckBox"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="16dp"
-                />
+                app:layout_constraintStart_toStartOf="@id/conInterestSettingInsideGuide"
+                android:layout_marginTop="16dp" />
+
             <CheckBox
                 android:id="@+id/materialCheckBox"
                 android:layout_width="66dp"
@@ -156,11 +161,10 @@
                 android:text="재료"
                 android:fontFamily="@font/noto_sans_kr_medium"
                 app:layout_constraintTop_toBottomOf="@id/managementCheckBox"
-                app:layout_constraintStart_toEndOf="@id/environmentCheckBox"
-                app:layout_constraintEnd_toStartOf="@id/electronicCheckBox"
-                android:layout_marginStart="12dp"
-                android:layout_marginTop="16dp"
-                />
+                app:layout_constraintEnd_toEndOf="@id/conInterestSettingInsideGuide2"
+                android:layout_marginEnd="30dp"
+                android:layout_marginTop="16dp" />
+
             <CheckBox
                 android:id="@+id/electronicCheckBox"
                 android:layout_width="101dp"
@@ -173,12 +177,9 @@
                 android:text="전기\u0026전자"
                 android:fontFamily="@font/noto_sans_kr_medium"
                 app:layout_constraintTop_toBottomOf="@id/healthCheckBox"
-                app:layout_constraintStart_toEndOf="@id/materialCheckBox"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginStart="12dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="35dp"
-                />
+                app:layout_constraintStart_toStartOf="@id/conInterestSettingInsideGuide2"
+                android:layout_marginTop="16dp"/>
+
             <CheckBox
                 android:id="@+id/erectionCheckBox"
                 android:layout_width="66dp"
@@ -191,11 +192,9 @@
                 android:text="건설"
                 android:fontFamily="@font/noto_sans_kr_medium"
                 app:layout_constraintTop_toBottomOf="@id/environmentCheckBox"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/chemistryCheckBox"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="16dp"
-                />
+                app:layout_constraintStart_toStartOf="@id/conInterestSettingInsideGuide"
+                android:layout_marginTop="16dp" />
+
             <CheckBox
                 android:id="@+id/chemistryCheckBox"
                 android:layout_width="114dp"
@@ -208,11 +207,10 @@
                 android:text="화학\u0026바이오"
                 android:fontFamily="@font/noto_sans_kr_medium"
                 app:layout_constraintTop_toBottomOf="@id/materialCheckBox"
-                app:layout_constraintStart_toEndOf="@id/erectionCheckBox"
-                app:layout_constraintEnd_toStartOf="@id/planCheckBox"
-                android:layout_marginStart="12dp"
+                app:layout_constraintEnd_toEndOf="@id/conInterestSettingInsideGuide2"
                 android:layout_marginTop="16dp"
-                />
+                android:layout_marginEnd="20dp"/>
+
             <CheckBox
                 android:id="@+id/planCheckBox"
                 android:layout_width="114dp"
@@ -225,12 +223,10 @@
                 android:text="기획\u0026마케팅"
                 android:fontFamily="@font/noto_sans_kr_medium"
                 app:layout_constraintTop_toBottomOf="@id/electronicCheckBox"
-                app:layout_constraintStart_toEndOf="@id/chemistryCheckBox"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginStart="12dp"
+                app:layout_constraintStart_toStartOf="@id/conInterestSettingInsideGuide2"
                 android:layout_marginTop="16dp"
-                android:layout_marginEnd="22dp"
-                />
+                android:layout_marginEnd="22dp" />
+
             <CheckBox
                 android:id="@+id/printCheckBox"
                 android:layout_width="101dp"
@@ -243,11 +239,9 @@
                 android:text="인쇄\u0026공예"
                 android:fontFamily="@font/noto_sans_kr_medium"
                 app:layout_constraintTop_toBottomOf="@id/erectionCheckBox"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/salesCheckBox"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="16dp"
-                />
+                app:layout_constraintStart_toStartOf="@id/conInterestSettingInsideGuide"
+                android:layout_marginTop="16dp" />
+
             <CheckBox
                 android:id="@+id/salesCheckBox"
                 android:layout_width="92dp"
@@ -260,11 +254,9 @@
                 android:text="영업판매"
                 android:fontFamily="@font/noto_sans_kr_medium"
                 app:layout_constraintTop_toBottomOf="@id/chemistryCheckBox"
-                app:layout_constraintStart_toEndOf="@id/printCheckBox"
-                app:layout_constraintEnd_toStartOf="@id/welfareCheckBox"
-                android:layout_marginStart="12dp"
-                android:layout_marginTop="16dp"
-                />
+                app:layout_constraintEnd_toEndOf="@id/conInterestSettingInsideGuide2"
+                android:layout_marginTop="16dp" />
+
             <CheckBox
                 android:id="@+id/welfareCheckBox"
                 android:layout_width="92dp"
@@ -278,11 +270,9 @@
                 android:fontFamily="@font/noto_sans_kr_medium"
                 app:layout_constraintTop_toBottomOf="@id/planCheckBox"
                 app:layout_constraintStart_toEndOf="@id/salesCheckBox"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginStart="12dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="31dp"
-                />
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="16dp"/>
+
             <CheckBox
                 android:id="@+id/affairsCheckBox"
                 android:layout_width="66dp"
@@ -295,11 +285,9 @@
                 android:text="사무"
                 android:fontFamily="@font/noto_sans_kr_medium"
                 app:layout_constraintTop_toBottomOf="@id/printCheckBox"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/clothCheckBox"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="16dp"
-                />
+                app:layout_constraintStart_toStartOf="@id/conInterestSettingInsideGuide"
+                android:layout_marginTop="16dp" />
+
             <CheckBox
                 android:id="@+id/clothCheckBox"
                 android:layout_width="101dp"
@@ -312,22 +300,18 @@
                 android:text="섬유\u0026의복"
                 android:fontFamily="@font/noto_sans_kr_medium"
                 app:layout_constraintTop_toBottomOf="@id/salesCheckBox"
-                app:layout_constraintStart_toEndOf="@id/affairsCheckBox"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginEnd="161dp"
+                app:layout_constraintEnd_toEndOf="@id/conInterestSettingInsideGuide2"
+                android:layout_marginEnd="40dp"
                 android:layout_marginStart="12dp"
-                android:layout_marginTop="16dp"
-                />
-
+                android:layout_marginTop="16dp" />
         </androidx.constraintlayout.widget.ConstraintLayout>
-
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnInterestComplete"
             android:layout_width="320dp"
             android:layout_height="36dp"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="112dp"
+            android:layout_marginBottom="12dp"
             android:layout_marginEnd="20dp"
             android:background="@drawable/button_style"
             android:fontFamily="@font/noto_sans_kr_medium"
@@ -336,22 +320,21 @@
             android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/conCheckBox" />
+            app:layout_constraintBottom_toTopOf="@id/btnInterestSigin"/>
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnInterestSigin"
             android:layout_width="320dp"
             android:layout_height="36dp"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="12dp"
             android:layout_marginEnd="20dp"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="24dp"
             android:background="@drawable/button_style2"
             android:fontFamily="@font/noto_sans_kr_regular"
             android:text="건너뛰기"
             android:textColor="@color/dark_gray"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/btnInterestComplete" />
+            app:layout_constraintBottom_toBottomOf="parent"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -5,6 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_marginStart="20dp"
     android:layout_marginTop="16dp">
+
     <TextView
         android:id="@+id/tvSearchedItemText"
         android:layout_width="wrap_content"
@@ -16,6 +17,5 @@
         android:text="테스트 검색 텍스트"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        />
+        app:layout_constraintBottom_toBottomOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

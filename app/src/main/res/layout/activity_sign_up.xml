@@ -11,6 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".ui.main.SignUpActivity">
+
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnBack"
             android:layout_width="24dp"
@@ -20,10 +21,11 @@
             android:layout_marginStart="12.5dp"
             android:layout_marginTop="15dp"
             android:background="@drawable/ic_sign_up_back"/>
+
         <TextView
             android:id="@+id/tvSignUpTitle"
             android:layout_width="wrap_content"
-            android:layout_height="27dp"
+            android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -32,8 +34,8 @@
             android:textSize="18sp"
             android:fontFamily="@font/noto_sans_kr_bold"
             android:includeFontPadding="false"
-            android:gravity="center"
-            />
+            android:gravity="center" />
+
         <LinearLayout
             android:id="@+id/linearEmailAndBtn"
             android:layout_width="wrap_content"
@@ -41,8 +43,8 @@
             app:layout_constraintTop_toBottomOf="@id/tvSignUpTitle"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="51dp"
-            >
+            android:layout_marginTop="51dp">
+
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/tilSignUpEmail"
                 android:layout_width="215dp"
@@ -53,6 +55,7 @@
                 app:errorEnabled="true"
                 app:hintEnabled="false"
                 app:errorTextAppearance="@font/noto_sans_kr_regular">
+
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/tietSignUpEmail"
                     android:layout_width="match_parent"
@@ -65,6 +68,7 @@
                     android:textColorHint="@color/dark_gray"
                     android:textSize="14sp" />
             </com.google.android.material.textfield.TextInputLayout>
+
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnCertification"
                 android:layout_width="70dp"
@@ -76,9 +80,9 @@
                 android:fontFamily="@font/noto_sans_kr_medium"
                 android:background="@drawable/sign_up_certification_btn"
                 android:enabled="false"
-                android:layout_marginStart="35dp"
-                />
+                android:layout_marginStart="35dp" />
         </LinearLayout>
+
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/tilSignUpId"
             android:layout_width="320dp"
@@ -93,6 +97,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/linearEmailAndBtn">
+
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/tietSignUpId"
                 android:layout_width="match_parent"
@@ -105,6 +110,7 @@
                 android:textColorHint="@color/dark_gray"
                 android:textSize="14sp" />
         </com.google.android.material.textfield.TextInputLayout>
+
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/tilSignUpPw"
             android:layout_width="320dp"
@@ -121,6 +127,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tilSignUpId">
+
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/tietSignUpPw"
                 android:layout_width="match_parent"
@@ -133,6 +140,7 @@
                 android:textColorHint="@color/dark_gray"
                 android:textSize="14sp" />
         </com.google.android.material.textfield.TextInputLayout>
+
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/tilSignUpRePw"
             android:layout_width="320dp"
@@ -149,6 +157,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tilSignUpPw">
+
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/tietSignUpRePw"
                 android:layout_width="match_parent"
@@ -161,6 +170,7 @@
                 android:textColorHint="@color/dark_gray"
                 android:textSize="14sp" />
         </com.google.android.material.textfield.TextInputLayout>
+
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnSignUpNext"
             android:layout_width="320dp"
@@ -174,8 +184,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tilSignUpRePw"
-            android:layout_marginTop="21dp"
-            />
+            android:layout_marginTop="21dp" />
+
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnSignUpLogin"
             android:layout_width="320dp"

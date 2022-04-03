@@ -23,8 +23,8 @@ class AnnouncementActivity : BaseActivity<ActivityAnnouncementBinding>(
         )
 
         val linearLayoutManager = LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false)
-        binding.RvAnnouncement.layoutManager=linearLayoutManager
-        binding.RvAnnouncement.adapter=adapter
+        binding.rvAnnouncement.layoutManager=linearLayoutManager
+        binding.rvAnnouncement.adapter=adapter
         adapter.addItems(testList)
 
         adapter.setOnItemClickListener(object :AnnouncementAdapter.ItemClickListener{

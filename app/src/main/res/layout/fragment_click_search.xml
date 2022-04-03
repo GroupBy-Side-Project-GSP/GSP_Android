@@ -9,8 +9,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
+        android:layout_height="match_parent">
+
         <EditText
             android:id="@+id/etClickSearch"
             android:layout_width="276dp"
@@ -24,8 +24,8 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="8dp"
-            />
+            android:layout_marginTop="8dp" />
+
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnClickSearchDelete"
             android:layout_width="16dp"
@@ -35,6 +35,7 @@
             app:layout_constraintEnd_toEndOf="@id/etClickSearch"
             app:layout_constraintBottom_toBottomOf="@id/etClickSearch"
             android:layout_marginEnd="12dp"/>
+
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnClickSearchBack"
             android:layout_width="24dp"
@@ -43,8 +44,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:layout_marginStart="12dp"
-            android:layout_marginTop="10dp"
-            />
+            android:layout_marginTop="10dp" />
+
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnClickSearch"
             android:layout_width="24dp"
@@ -56,13 +57,14 @@
             android:layout_marginTop="10dp"
             android:layout_marginEnd="16dp"
             android:layout_marginStart="24dp"/>
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/conClickRecentRecord"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             app:layout_constraintTop_toBottomOf="@id/etClickSearch"
-            app:layout_constraintBottom_toBottomOf="parent"
-            >
+            app:layout_constraintBottom_toBottomOf="parent">
+
             <TextView
                 android:id="@+id/tvClickRecentRecord"
                 android:layout_width="58dp"
@@ -75,13 +77,14 @@
                 app:layout_constraintStart_toStartOf="parent"
                 android:layout_marginTop="28dp"
                 android:layout_marginStart="20dp"/>
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvRecentRecord"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:layout_constraintTop_toBottomOf="@id/tvClickRecentRecord"
-                android:layout_marginTop="4dp"
-                />
+                android:layout_marginTop="4dp" />
+
             <TextView
                 android:id="@+id/tvClickNoRecentRecord"
                 android:layout_width="wrap_content"
@@ -93,17 +96,17 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                />
+                app:layout_constraintBottom_toBottomOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/conClickSearchText"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:visibility="invisible"
             app:layout_constraintTop_toBottomOf="@id/etClickSearch"
-            app:layout_constraintBottom_toBottomOf="parent"
-            >
+            app:layout_constraintBottom_toBottomOf="parent">
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvClickSearchText"
                 android:layout_width="match_parent"
@@ -111,8 +114,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginTop="28dp"
-                />
+                android:layout_marginTop="28dp" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

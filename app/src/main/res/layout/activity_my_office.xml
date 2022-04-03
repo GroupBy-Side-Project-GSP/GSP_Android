@@ -6,8 +6,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
+        android:layout_height="match_parent">
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/conOfficeTop"
             android:layout_width="match_parent"
@@ -16,8 +16,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/conOfficeBottom"
-            >
+            app:layout_constraintBottom_toTopOf="@id/conOfficeBottom">
+
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnOfficeBack"
                 android:layout_width="24dp"
@@ -28,8 +28,8 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 android:layout_marginStart="12dp"
                 android:layout_marginTop="15dp"
-                android:layout_marginBottom="15dp"
-                />
+                android:layout_marginBottom="15dp" />
+
             <TextView
                 android:id="@+id/tvOfficeTitle"
                 android:layout_width="wrap_content"
@@ -45,9 +45,9 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 android:layout_marginTop="12dp"
-                android:layout_marginBottom="12dp"
-                />
+                android:layout_marginBottom="12dp" />
         </androidx.constraintlayout.widget.ConstraintLayout>
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/conOfficeBottom"
             android:layout_width="match_parent"
@@ -64,8 +64,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginStart="15dp"
-                android:layout_marginEnd="15dp"
-                />
+                android:layout_marginEnd="15dp" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
