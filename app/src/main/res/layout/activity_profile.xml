@@ -13,7 +13,8 @@
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:background="@color/white"
-            android:src="@drawable/ic_baseline_arrow_back_ios_24"
+            android:src="@drawable/ic_go_back"
+            app:tint = "@color/black"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toStartOf="@id/tvProfileTitle"
@@ -75,7 +76,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@id/cardView"
             app:layout_constraintBottom_toBottomOf="@id/cardView"
-            android:background="@drawable/ic_baseline_edit_24" />
+            android:background="@drawable/ic_edit" />
 
         <EditText
             android:id="@+id/edProfileName"

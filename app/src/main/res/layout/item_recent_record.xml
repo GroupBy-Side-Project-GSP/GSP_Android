@@ -25,7 +25,8 @@
         android:id="@+id/btnClickRecentRecordDeleteItem"
         android:layout_width="11.31dp"
         android:layout_height="11.31dp"
-        android:background="@drawable/ic_click_search_recent_record_close"
+        android:background="@drawable/ic_close"
+        android:backgroundTint="@color/medium_gray"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent" />

@@ -21,7 +21,7 @@
                 android:id="@+id/btnAnnouncementBack"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:background="@drawable/ic_announcement_back"
+                android:background="@drawable/ic_go_back"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
