@@ -3,8 +3,6 @@ package com.gsps.gsp_android.ui.main
 import android.content.Context
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.gsps.gsp_android.databinding.ItemDayBinding
-import com.gsps.gsp_android.databinding.ItemDayEmptyBinding
 
 class CalendarAdapter(context: Context, private val itemList: MutableList<CalendarDayModel>): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     override fun onCreateViewHolder(
@@ -22,11 +20,4 @@ class CalendarAdapter(context: Context, private val itemList: MutableList<Calend
         return itemList.size
     }
 
-    class DayViewHolder(var binding: ItemDayBinding) {
-
-    }
-
-    class EmptyViewHolder(var binding: ItemDayEmptyBinding){
-
-    }
 }

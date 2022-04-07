@@ -6,8 +6,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintTop_toTopOf="parent">
+        android:orientation="vertical">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -18,27 +17,20 @@
 
             <TextView
                 android:id="@+id/tvDate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="33dp"
+                android:layout_height="33dp"
+                android:background="@drawable/circle"
+                android:backgroundTint="@color/main"
                 android:fontFamily="@font/noto_sans_kr_medium"
+                android:gravity="center"
                 android:includeFontPadding="false"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:text="1" />
-
-            <ImageView
-                android:id="@+id/ivPlan"
-                android:layout_width="4dp"
-                android:layout_height="4dp"
-                android:layout_marginTop="4dp"
-                android:src="@drawable/circle"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvDate" />
+                tools:text="14" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
