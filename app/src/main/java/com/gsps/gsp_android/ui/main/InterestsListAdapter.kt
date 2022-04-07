@@ -35,8 +35,8 @@ class InterestsListAdapter(
         fun bind(item: InterestsListModel) {
             Log.d("dmstjsList", "bind")
             binding.model = item
-            binding.container.adapter = InterestsMemberAdapter(context, item.innerList)
-            binding.container.layoutManager = LinearLayoutManager(context)
+            binding.rlParent.adapter = InterestsMemberAdapter(context, item.innerList)
+            binding.rlParent.layoutManager = LinearLayoutManager(context)
         }
     }
 }

@@ -48,7 +48,7 @@ class InterestsFullListFragment :
                 )
             )
 
-        binding.container.adapter = InterestsFullListAdapter(requireContext(), itemList)
-        binding.container.layoutManager = LinearLayoutManager(requireContext())
+        binding.rlParent.adapter = InterestsFullListAdapter(requireContext(), itemList)
+        binding.rlParent.layoutManager = LinearLayoutManager(requireContext())
     }
 }
