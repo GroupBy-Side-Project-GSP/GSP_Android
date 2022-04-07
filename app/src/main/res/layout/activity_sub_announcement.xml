@@ -35,7 +35,7 @@
                 android:id="@+id/tvSubAnnouncementTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="공지사항"
+                android:text="@string/mypage_notion"
                 android:textColor="@color/white"
                 android:includeFontPadding="false"
                 android:fontFamily="@font/noto_sans_kr_bold"
