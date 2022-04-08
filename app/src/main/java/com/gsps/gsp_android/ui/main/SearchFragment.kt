@@ -16,77 +16,133 @@ import com.gsps.gsp_android.ui.base.BaseFragment
 
 class SearchFragment : BaseFragment<FragmentSearchBinding>(
     R.layout.fragment_search
-){
+) {
 
-    companion object{
-        var count:Int =0
+    companion object {
+        var count: Int = 0
     }
 
     override fun initView() {
         check()
     }
 
-    fun check(){
+    fun check() {
         val listener = CompoundButton.OnCheckedChangeListener { buttonView, isChecked ->
-            if(isChecked){
-                when(buttonView){
-                    binding.searchDesignCheckBox -> {}
-                    binding.searchManagementCheckBox -> {}
-                    binding.searchHealthCheckBox -> {}
-                    binding.searchEnvironmentCheckBox -> {}
-                    binding.searchMaterialCheckBox -> {}
-                    binding.searchElectronicCheckBox -> {}
-                    binding.searchErectionCheckBox -> {}
-                    binding.searchChemistryCheckBox -> {}
-                    binding.searchPlanCheckBox -> {}
-                    binding.searchPrintCheckBox -> {}
-                    binding.searchSalesCheckBox -> {}
-                    binding.searchWelfareCheckBox -> {}
-                    binding.searchAffairsCheckBox -> {}
-                    binding.searchClothCheckBox -> {}
+            if (isChecked) {
+                when (buttonView) {
+                    binding.searchDesignCheckBox -> {
+                    }
+                    binding.searchManagementCheckBox -> {
+                    }
+                    binding.searchHealthCheckBox -> {
+                    }
+                    binding.searchEnvironmentCheckBox -> {
+                    }
+                    binding.searchMaterialCheckBox -> {
+                    }
+                    binding.searchElectronicCheckBox -> {
+                    }
+                    binding.searchErectionCheckBox -> {
+                    }
+                    binding.searchChemistryCheckBox -> {
+                    }
+                    binding.searchPlanCheckBox -> {
+                    }
+                    binding.searchPrintCheckBox -> {
+                    }
+                    binding.searchSalesCheckBox -> {
+                    }
+                    binding.searchWelfareCheckBox -> {
+                    }
+                    binding.searchAffairsCheckBox -> {
+                    }
+                    binding.searchClothCheckBox -> {
+                    }
                 }
-                if(count==0){
-                    binding.btnSelectSearch.isEnabled=false
-                }else{
-                    binding.btnSelectSearch.isEnabled=true
+                if (count == 0) {
+                    binding.btnSelectSearch.isEnabled = false
+                } else {
+                    binding.btnSelectSearch.isEnabled = true
                 }
-                when(buttonView){
-                    binding.searchDesignCheckBox -> {binding.searchDesignCheckBox.isChecked=false}
-                    binding.searchManagementCheckBox -> {binding.searchManagementCheckBox.isChecked=false}
-                    binding.searchHealthCheckBox -> {binding.searchHealthCheckBox.isChecked=false}
-                    binding.searchEnvironmentCheckBox -> {binding.searchEnvironmentCheckBox.isChecked=false}
-                    binding.searchMaterialCheckBox -> {binding.searchMaterialCheckBox.isChecked=false}
-                    binding.searchElectronicCheckBox -> {binding.searchElectronicCheckBox.isChecked=false}
-                    binding.searchErectionCheckBox -> {binding.searchErectionCheckBox.isChecked=false}
-                    binding.searchChemistryCheckBox -> {binding.searchChemistryCheckBox.isChecked=false}
-                    binding.searchPlanCheckBox -> {binding.searchPlanCheckBox.isChecked=false}
-                    binding.searchPrintCheckBox -> {binding.searchPrintCheckBox.isChecked=false}
-                    binding.searchSalesCheckBox -> {binding.searchSalesCheckBox.isChecked=false}
-                    binding.searchWelfareCheckBox -> {binding.searchWelfareCheckBox.isChecked=false}
-                    binding.searchAffairsCheckBox -> {binding.searchAffairsCheckBox.isChecked=false}
-                    binding.searchClothCheckBox -> {binding.searchClothCheckBox.isChecked=false}
+                when (buttonView) {
+                    binding.searchDesignCheckBox -> {
+                        binding.searchDesignCheckBox.isChecked = false
+                    }
+                    binding.searchManagementCheckBox -> {
+                        binding.searchManagementCheckBox.isChecked = false
+                    }
+                    binding.searchHealthCheckBox -> {
+                        binding.searchHealthCheckBox.isChecked = false
+                    }
+                    binding.searchEnvironmentCheckBox -> {
+                        binding.searchEnvironmentCheckBox.isChecked = false
+                    }
+                    binding.searchMaterialCheckBox -> {
+                        binding.searchMaterialCheckBox.isChecked = false
+                    }
+                    binding.searchElectronicCheckBox -> {
+                        binding.searchElectronicCheckBox.isChecked = false
+                    }
+                    binding.searchErectionCheckBox -> {
+                        binding.searchErectionCheckBox.isChecked = false
+                    }
+                    binding.searchChemistryCheckBox -> {
+                        binding.searchChemistryCheckBox.isChecked = false
+                    }
+                    binding.searchPlanCheckBox -> {
+                        binding.searchPlanCheckBox.isChecked = false
+                    }
+                    binding.searchPrintCheckBox -> {
+                        binding.searchPrintCheckBox.isChecked = false
+                    }
+                    binding.searchSalesCheckBox -> {
+                        binding.searchSalesCheckBox.isChecked = false
+                    }
+                    binding.searchWelfareCheckBox -> {
+                        binding.searchWelfareCheckBox.isChecked = false
+                    }
+                    binding.searchAffairsCheckBox -> {
+                        binding.searchAffairsCheckBox.isChecked = false
+                    }
+                    binding.searchClothCheckBox -> {
+                        binding.searchClothCheckBox.isChecked = false
+                    }
                 }
-            }else{
-                when(buttonView){
-                    binding.searchDesignCheckBox -> {}
-                    binding.searchManagementCheckBox -> {}
-                    binding.searchHealthCheckBox -> {}
-                    binding.searchEnvironmentCheckBox -> {}
-                    binding.searchMaterialCheckBox -> {}
-                    binding.searchElectronicCheckBox -> {}
-                    binding.searchErectionCheckBox -> {}
-                    binding.searchChemistryCheckBox -> {}
-                    binding.searchPlanCheckBox -> {}
-                    binding.searchPrintCheckBox -> {}
-                    binding.searchSalesCheckBox -> {}
-                    binding.searchWelfareCheckBox -> {}
-                    binding.searchAffairsCheckBox -> {}
-                    binding.searchClothCheckBox -> {}
+            } else {
+                when (buttonView) {
+                    binding.searchDesignCheckBox -> {
+                    }
+                    binding.searchManagementCheckBox -> {
+                    }
+                    binding.searchHealthCheckBox -> {
+                    }
+                    binding.searchEnvironmentCheckBox -> {
+                    }
+                    binding.searchMaterialCheckBox -> {
+                    }
+                    binding.searchElectronicCheckBox -> {
+                    }
+                    binding.searchErectionCheckBox -> {
+                    }
+                    binding.searchChemistryCheckBox -> {
+                    }
+                    binding.searchPlanCheckBox -> {
+                    }
+                    binding.searchPrintCheckBox -> {
+                    }
+                    binding.searchSalesCheckBox -> {
+                    }
+                    binding.searchWelfareCheckBox -> {
+                    }
+                    binding.searchAffairsCheckBox -> {
+                    }
+                    binding.searchClothCheckBox -> {
+                    }
                 }
-                if(count==0){
-                    binding.btnSelectSearch.isEnabled=false
-                }else{
-                    binding.btnSelectSearch.isEnabled=true
+                if (count == 0) {
+                    binding.btnSelectSearch.isEnabled = false
+                } else {
+                    binding.btnSelectSearch.isEnabled = true
                 }
             }
         }

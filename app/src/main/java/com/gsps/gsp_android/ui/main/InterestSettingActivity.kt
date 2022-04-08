@@ -13,15 +13,15 @@ class InterestSettingActivity : BaseActivity<ActivityInterestSettingBinding>(
     R.layout.activity_interest_setting
 ) {
 
-    companion object{
-        var count:Int =0
+    companion object {
+        var count: Int = 0
     }
 
     override fun initView() {
 
         check()
 
-        binding.btnMyPageBack.setOnClickListener{
+        binding.btnMyPageBack.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
@@ -32,71 +32,155 @@ class InterestSettingActivity : BaseActivity<ActivityInterestSettingBinding>(
         }
     }
 
-    fun check(){
+    fun check() {
         val listener = CompoundButton.OnCheckedChangeListener { buttonView, isChecked ->
-            if(isChecked){
-                if(count<=4){
-                    when(buttonView){
-                        binding.myPageDesignCheckBox -> {binding.tvMyPageInterestSettingCount.text="(${++count}/5)"}
-                        binding.myPageManagementCheckBox -> {binding.tvMyPageInterestSettingCount.text="(${++count}/5)"}
-                        binding.myPageHealthCheckBox -> {binding.tvMyPageInterestSettingCount.text="(${++count}/5)"}
-                        binding.myPageEnvironmentCheckBox -> {binding.tvMyPageInterestSettingCount.text="(${++count}/5)"}
-                        binding.myPageMaterialCheckBox -> {binding.tvMyPageInterestSettingCount.text="(${++count}/5)"}
-                        binding.myPageElectronicCheckBox -> {binding.tvMyPageInterestSettingCount.text="(${++count}/5)"}
-                        binding.myPageErectionCheckBox -> {binding.tvMyPageInterestSettingCount.text="(${++count}/5)"}
-                        binding.myPageChemistryCheckBox -> {binding.tvMyPageInterestSettingCount.text="(${++count}/5)"}
-                        binding.myPagePlanCheckBox -> {binding.tvMyPageInterestSettingCount.text="(${++count}/5)"}
-                        binding.myPagePrintCheckBox -> {binding.tvMyPageInterestSettingCount.text="(${++count}/5)"}
-                        binding.myPageSalesCheckBox -> {binding.tvMyPageInterestSettingCount.text="(${++count}/5)"}
-                        binding.myPageWelfareCheckBox -> {binding.tvMyPageInterestSettingCount.text="(${++count}/5)"}
-                        binding.myPageAffairsCheckBox -> {binding.tvMyPageInterestSettingCount.text="(${++count}/5)"}
-                        binding.myPageClothCheckBox -> {binding.tvMyPageInterestSettingCount.text="(${++count}/5)"}
+            if (isChecked) {
+                if (count <= 4) {
+                    when (buttonView) {
+                        binding.myPageDesignCheckBox -> {
+                            binding.tvMyPageInterestSettingCount.text = "(${++count}/5)"
+                        }
+                        binding.myPageManagementCheckBox -> {
+                            binding.tvMyPageInterestSettingCount.text = "(${++count}/5)"
+                        }
+                        binding.myPageHealthCheckBox -> {
+                            binding.tvMyPageInterestSettingCount.text = "(${++count}/5)"
+                        }
+                        binding.myPageEnvironmentCheckBox -> {
+                            binding.tvMyPageInterestSettingCount.text = "(${++count}/5)"
+                        }
+                        binding.myPageMaterialCheckBox -> {
+                            binding.tvMyPageInterestSettingCount.text = "(${++count}/5)"
+                        }
+                        binding.myPageElectronicCheckBox -> {
+                            binding.tvMyPageInterestSettingCount.text = "(${++count}/5)"
+                        }
+                        binding.myPageErectionCheckBox -> {
+                            binding.tvMyPageInterestSettingCount.text = "(${++count}/5)"
+                        }
+                        binding.myPageChemistryCheckBox -> {
+                            binding.tvMyPageInterestSettingCount.text = "(${++count}/5)"
+                        }
+                        binding.myPagePlanCheckBox -> {
+                            binding.tvMyPageInterestSettingCount.text = "(${++count}/5)"
+                        }
+                        binding.myPagePrintCheckBox -> {
+                            binding.tvMyPageInterestSettingCount.text = "(${++count}/5)"
+                        }
+                        binding.myPageSalesCheckBox -> {
+                            binding.tvMyPageInterestSettingCount.text = "(${++count}/5)"
+                        }
+                        binding.myPageWelfareCheckBox -> {
+                            binding.tvMyPageInterestSettingCount.text = "(${++count}/5)"
+                        }
+                        binding.myPageAffairsCheckBox -> {
+                            binding.tvMyPageInterestSettingCount.text = "(${++count}/5)"
+                        }
+                        binding.myPageClothCheckBox -> {
+                            binding.tvMyPageInterestSettingCount.text = "(${++count}/5)"
+                        }
                     }
-                    if(count==0){
-                        binding.btnMyPageInterestComplete.isEnabled=false
-                    }else{
-                        binding.btnMyPageInterestComplete.isEnabled=true
+                    if (count == 0) {
+                        binding.btnMyPageInterestComplete.isEnabled = false
+                    } else {
+                        binding.btnMyPageInterestComplete.isEnabled = true
                     }
-                }else{
+                } else {
                     Toast.makeText(this, "선택 갯수 초과입니다.", Toast.LENGTH_SHORT).show()
-                    when(buttonView){
-                        binding.myPageDesignCheckBox -> {binding.myPageDesignCheckBox.isChecked=false}
-                        binding.myPageManagementCheckBox -> {binding.myPageManagementCheckBox.isChecked=false}
-                        binding.myPageHealthCheckBox -> {binding.myPageHealthCheckBox.isChecked=false}
-                        binding.myPageEnvironmentCheckBox -> {binding.myPageEnvironmentCheckBox.isChecked=false}
-                        binding.myPageMaterialCheckBox -> {binding.myPageMaterialCheckBox.isChecked=false}
-                        binding.myPageElectronicCheckBox -> {binding.myPageElectronicCheckBox.isChecked=false}
-                        binding.myPageErectionCheckBox -> {binding.myPageErectionCheckBox.isChecked=false}
-                        binding.myPageChemistryCheckBox -> {binding.myPageChemistryCheckBox.isChecked=false}
-                        binding.myPagePlanCheckBox -> {binding.myPagePlanCheckBox.isChecked=false}
-                        binding.myPagePrintCheckBox -> {binding.myPagePrintCheckBox.isChecked=false}
-                        binding.myPageSalesCheckBox -> {binding.myPageSalesCheckBox.isChecked=false}
-                        binding.myPageWelfareCheckBox -> {binding.myPageWelfareCheckBox.isChecked=false}
-                        binding.myPageAffairsCheckBox -> {binding.myPageAffairsCheckBox.isChecked=false}
-                        binding.myPageClothCheckBox -> {binding.myPageClothCheckBox.isChecked=false}
+                    when (buttonView) {
+                        binding.myPageDesignCheckBox -> {
+                            binding.myPageDesignCheckBox.isChecked = false
+                        }
+                        binding.myPageManagementCheckBox -> {
+                            binding.myPageManagementCheckBox.isChecked = false
+                        }
+                        binding.myPageHealthCheckBox -> {
+                            binding.myPageHealthCheckBox.isChecked = false
+                        }
+                        binding.myPageEnvironmentCheckBox -> {
+                            binding.myPageEnvironmentCheckBox.isChecked = false
+                        }
+                        binding.myPageMaterialCheckBox -> {
+                            binding.myPageMaterialCheckBox.isChecked = false
+                        }
+                        binding.myPageElectronicCheckBox -> {
+                            binding.myPageElectronicCheckBox.isChecked = false
+                        }
+                        binding.myPageErectionCheckBox -> {
+                            binding.myPageErectionCheckBox.isChecked = false
+                        }
+                        binding.myPageChemistryCheckBox -> {
+                            binding.myPageChemistryCheckBox.isChecked = false
+                        }
+                        binding.myPagePlanCheckBox -> {
+                            binding.myPagePlanCheckBox.isChecked = false
+                        }
+                        binding.myPagePrintCheckBox -> {
+                            binding.myPagePrintCheckBox.isChecked = false
+                        }
+                        binding.myPageSalesCheckBox -> {
+                            binding.myPageSalesCheckBox.isChecked = false
+                        }
+                        binding.myPageWelfareCheckBox -> {
+                            binding.myPageWelfareCheckBox.isChecked = false
+                        }
+                        binding.myPageAffairsCheckBox -> {
+                            binding.myPageAffairsCheckBox.isChecked = false
+                        }
+                        binding.myPageClothCheckBox -> {
+                            binding.myPageClothCheckBox.isChecked = false
+                        }
                     }
                 }
-            }else{
-                when(buttonView){
-                    binding.myPageDesignCheckBox -> {binding.tvMyPageInterestSettingCount.text="(${--count}/5)"}
-                    binding.myPageManagementCheckBox -> {binding.tvMyPageInterestSettingCount.text="(${--count}/5)"}
-                    binding.myPageHealthCheckBox -> {binding.tvMyPageInterestSettingCount.text="(${--count}/5)"}
-                    binding.myPageEnvironmentCheckBox -> {binding.tvMyPageInterestSettingCount.text="(${--count}/5)"}
-                    binding.myPageMaterialCheckBox -> {binding.tvMyPageInterestSettingCount.text="(${--count}/5)"}
-                    binding.myPageElectronicCheckBox -> {binding.tvMyPageInterestSettingCount.text="(${--count}/5)"}
-                    binding.myPageErectionCheckBox -> {binding.tvMyPageInterestSettingCount.text="(${--count}/5)"}
-                    binding.myPageChemistryCheckBox -> {binding.tvMyPageInterestSettingCount.text="(${--count}/5)"}
-                    binding.myPagePlanCheckBox -> {binding.tvMyPageInterestSettingCount.text="(${--count}/5)"}
-                    binding.myPagePrintCheckBox -> {binding.tvMyPageInterestSettingCount.text="(${--count}/5)"}
-                    binding.myPageSalesCheckBox -> {binding.tvMyPageInterestSettingCount.text="(${--count}/5)"}
-                    binding.myPageWelfareCheckBox -> {binding.tvMyPageInterestSettingCount.text="(${--count}/5)"}
-                    binding.myPageAffairsCheckBox -> {binding.tvMyPageInterestSettingCount.text="(${--count}/5)"}
-                    binding.myPageClothCheckBox -> {binding.tvMyPageInterestSettingCount.text="(${--count}/5)"}
+            } else {
+                when (buttonView) {
+                    binding.myPageDesignCheckBox -> {
+                        binding.tvMyPageInterestSettingCount.text = "(${--count}/5)"
+                    }
+                    binding.myPageManagementCheckBox -> {
+                        binding.tvMyPageInterestSettingCount.text = "(${--count}/5)"
+                    }
+                    binding.myPageHealthCheckBox -> {
+                        binding.tvMyPageInterestSettingCount.text = "(${--count}/5)"
+                    }
+                    binding.myPageEnvironmentCheckBox -> {
+                        binding.tvMyPageInterestSettingCount.text = "(${--count}/5)"
+                    }
+                    binding.myPageMaterialCheckBox -> {
+                        binding.tvMyPageInterestSettingCount.text = "(${--count}/5)"
+                    }
+                    binding.myPageElectronicCheckBox -> {
+                        binding.tvMyPageInterestSettingCount.text = "(${--count}/5)"
+                    }
+                    binding.myPageErectionCheckBox -> {
+                        binding.tvMyPageInterestSettingCount.text = "(${--count}/5)"
+                    }
+                    binding.myPageChemistryCheckBox -> {
+                        binding.tvMyPageInterestSettingCount.text = "(${--count}/5)"
+                    }
+                    binding.myPagePlanCheckBox -> {
+                        binding.tvMyPageInterestSettingCount.text = "(${--count}/5)"
+                    }
+                    binding.myPagePrintCheckBox -> {
+                        binding.tvMyPageInterestSettingCount.text = "(${--count}/5)"
+                    }
+                    binding.myPageSalesCheckBox -> {
+                        binding.tvMyPageInterestSettingCount.text = "(${--count}/5)"
+                    }
+                    binding.myPageWelfareCheckBox -> {
+                        binding.tvMyPageInterestSettingCount.text = "(${--count}/5)"
+                    }
+                    binding.myPageAffairsCheckBox -> {
+                        binding.tvMyPageInterestSettingCount.text = "(${--count}/5)"
+                    }
+                    binding.myPageClothCheckBox -> {
+                        binding.tvMyPageInterestSettingCount.text = "(${--count}/5)"
+                    }
                 }
-                if(count==0){
-                    binding.btnMyPageInterestComplete.isEnabled=false
-                }else{
-                    binding.btnMyPageInterestComplete.isEnabled=true
+                if (count == 0) {
+                    binding.btnMyPageInterestComplete.isEnabled = false
+                } else {
+                    binding.btnMyPageInterestComplete.isEnabled = true
                 }
             }
         }

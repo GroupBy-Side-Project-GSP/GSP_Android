@@ -11,9 +11,9 @@ class SubAnnouncementActivity : BaseActivity<ActivitySubAnnouncementBinding>(
     R.layout.activity_sub_announcement
 ) {
     override fun initView() {
-        if(intent.hasExtra("title")||intent.hasExtra("date")){
-            binding.tvSubAnnouncementItemTitle.text=intent.getStringExtra("title")
-            binding.tvSubAnnouncementItemDate.text=intent.getStringExtra("date")
+        if (intent.hasExtra("title") || intent.hasExtra("date")) {
+            binding.tvSubAnnouncementItemTitle.text = intent.getStringExtra("title")
+            binding.tvSubAnnouncementItemDate.text = intent.getStringExtra("date")
         }
     }
 }

@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <data>
-    </data>
+    <data></data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -16,35 +14,35 @@
             android:id="@+id/btnBack"
             android:layout_width="24dp"
             android:layout_height="24dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
             android:layout_marginStart="12.5dp"
             android:layout_marginTop="15dp"
             android:background="@drawable/ic_go_back"
-            android:backgroundTint="@color/black"/>
+            android:backgroundTint="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tvSignUpTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
             android:layout_marginTop="14dp"
+            android:fontFamily="@font/noto_sans_kr_bold"
+            android:gravity="center"
+            android:includeFontPadding="false"
             android:text="@string/sign_up_title"
             android:textSize="18sp"
-            android:fontFamily="@font/noto_sans_kr_bold"
-            android:includeFontPadding="false"
-            android:gravity="center" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <LinearLayout
             android:id="@+id/linearEmailAndBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/tvSignUpTitle"
-            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="51dp"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="51dp">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvSignUpTitle">
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/tilSignUpEmail"
@@ -54,8 +52,8 @@
                 app:boxStrokeColor="@color/dark_gray"
                 app:boxStrokeWidthFocused="1dp"
                 app:errorEnabled="true"
-                app:hintEnabled="false"
-                app:errorTextAppearance="@font/noto_sans_kr_regular">
+                app:errorTextAppearance="@font/noto_sans_kr_regular"
+                app:hintEnabled="false">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/tietSignUpEmail"
@@ -74,29 +72,29 @@
                 android:id="@+id/btnCertification"
                 android:layout_width="70dp"
                 android:layout_height="50dp"
-                android:includeFontPadding="false"
-                android:textSize="14sp"
-                android:text="@string/sign_up_certification"
-                android:textColor="@color/white"
-                android:fontFamily="@font/noto_sans_kr_medium"
+                android:layout_marginStart="35dp"
                 android:background="@drawable/sign_up_certification_btn"
                 android:enabled="false"
-                android:layout_marginStart="35dp" />
+                android:fontFamily="@font/noto_sans_kr_medium"
+                android:includeFontPadding="false"
+                android:text="@string/sign_up_certification"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
         </LinearLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/tilSignUpId"
             android:layout_width="320dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             app:boxBackgroundColor="@color/white"
             app:boxStrokeColor="@color/dark_gray"
             app:boxStrokeWidthFocused="1dp"
             app:errorEnabled="true"
-            app:hintEnabled="false"
-            android:layout_marginTop="16dp"
             app:errorTextAppearance="@font/noto_sans_kr_regular"
-            app:layout_constraintStart_toStartOf="parent"
+            app:hintEnabled="false"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/linearEmailAndBtn">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -116,15 +114,15 @@
             android:id="@+id/tilSignUpPw"
             android:layout_width="320dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             app:boxBackgroundColor="@color/white"
             app:boxStrokeColor="@color/dark_gray"
             app:boxStrokeWidthFocused="1dp"
             app:endIconMode="password_toggle"
             app:endIconTint="@color/dark_gray"
-            app:hintEnabled="false"
             app:errorEnabled="true"
-            android:layout_marginTop="16dp"
             app:errorTextAppearance="@font/noto_sans_kr_regular"
+            app:hintEnabled="false"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tilSignUpId">
@@ -146,15 +144,15 @@
             android:id="@+id/tilSignUpRePw"
             android:layout_width="320dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             app:boxBackgroundColor="@color/white"
             app:boxStrokeColor="@color/dark_gray"
             app:boxStrokeWidthFocused="1dp"
             app:endIconMode="password_toggle"
             app:endIconTint="@color/dark_gray"
             app:errorEnabled="true"
-            app:hintEnabled="false"
-            android:layout_marginTop="16dp"
             app:errorTextAppearance="@font/noto_sans_kr_regular"
+            app:hintEnabled="false"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tilSignUpPw">
@@ -176,77 +174,77 @@
             android:id="@+id/btnSignUpNext"
             android:layout_width="320dp"
             android:layout_height="36dp"
-            android:text="@string/sign_up_text_next"
-            android:textSize="14sp"
-            android:fontFamily="@font/noto_sans_kr_medium"
-            android:textColor="@color/white"
+            android:layout_marginTop="21dp"
             android:background="@drawable/sign_up_next_btn"
             android:enabled="false"
-            app:layout_constraintStart_toStartOf="parent"
+            android:fontFamily="@font/noto_sans_kr_medium"
+            android:text="@string/sign_up_text_next"
+            android:textColor="@color/white"
+            android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tilSignUpRePw"
-            android:layout_marginTop="21dp" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tilSignUpRePw" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnSignUpLogin"
             android:layout_width="320dp"
             android:layout_height="36dp"
-            android:text="로그인하기"
-            android:textSize="14sp"
-            android:fontFamily="@font/noto_sans_kr_regular"
-            android:textColor="@color/dark_gray"
+            android:layout_marginBottom="24dp"
             android:background="@drawable/sign_up_login_go_btn"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:fontFamily="@font/noto_sans_kr_regular"
+            android:text="로그인하기"
+            android:textColor="@color/dark_gray"
+            android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginBottom="24dp"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-  </layout>
+</layout>
 
 
-<!--<com.google.android.material.textfield.TextInputLayout-->
-<!--android:id="@+id/TilSignUpEmail"-->
-<!--android:layout_width="215dp"-->
-<!--android:layout_height="wrap_content"-->
-<!--app:boxBackgroundColor="@color/white"-->
-<!--app:boxStrokeColor="@color/dark_gray"-->
-<!--app:boxStrokeWidthFocused="1dp"-->
-<!--app:errorEnabled="true"-->
-<!--app:hintEnabled="false"-->
-<!--android:layout_marginTop="50dp"-->
-<!--android:layout_marginStart="20dp"-->
-<!--app:errorTextAppearance="@font/noto_sans_kr_regular"-->
-<!--app:layout_constraintStart_toStartOf="parent"-->
-<!--app:layout_constraintEnd_toStartOf="@id/BtnCertification"-->
-<!--app:layout_constraintTop_toBottomOf="@id/TvSignUpTitle">-->
+    <!--<com.google.android.material.textfield.TextInputLayout-->
+    <!--android:id="@+id/TilSignUpEmail"-->
+    <!--android:layout_width="215dp"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--app:boxBackgroundColor="@color/white"-->
+    <!--app:boxStrokeColor="@color/dark_gray"-->
+    <!--app:boxStrokeWidthFocused="1dp"-->
+    <!--app:errorEnabled="true"-->
+    <!--app:hintEnabled="false"-->
+    <!--android:layout_marginTop="50dp"-->
+    <!--android:layout_marginStart="20dp"-->
+    <!--app:errorTextAppearance="@font/noto_sans_kr_regular"-->
+    <!--app:layout_constraintStart_toStartOf="parent"-->
+    <!--app:layout_constraintEnd_toStartOf="@id/BtnCertification"-->
+    <!--app:layout_constraintTop_toBottomOf="@id/TvSignUpTitle">-->
 
-<!--<com.google.android.material.textfield.TextInputEditText-->
-<!--    android:id="@+id/TietSignUpEmail"-->
-<!--    android:layout_width="match_parent"-->
-<!--    android:layout_height="wrap_content"-->
-<!--    android:fontFamily="@font/noto_sans_kr_regular"-->
-<!--    android:hint="@string/sign_up_hint_email"-->
-<!--    android:includeFontPadding="false"-->
-<!--    android:inputType="text"-->
-<!--    android:textColor="@color/black"-->
-<!--    android:textColorHint="@color/dark_gray"-->
-<!--    android:textSize="14sp" />-->
-<!--</com.google.android.material.textfield.TextInputLayout>-->
+    <!--<com.google.android.material.textfield.TextInputEditText-->
+    <!--    android:id="@+id/TietSignUpEmail"-->
+    <!--    android:layout_width="match_parent"-->
+    <!--    android:layout_height="wrap_content"-->
+    <!--    android:fontFamily="@font/noto_sans_kr_regular"-->
+    <!--    android:hint="@string/sign_up_hint_email"-->
+    <!--    android:includeFontPadding="false"-->
+    <!--    android:inputType="text"-->
+    <!--    android:textColor="@color/black"-->
+    <!--    android:textColorHint="@color/dark_gray"-->
+    <!--    android:textSize="14sp" />-->
+    <!--</com.google.android.material.textfield.TextInputLayout>-->
 
-<!--<androidx.appcompat.widget.AppCompatButton-->
-<!--android:id="@+id/BtnCertification"-->
-<!--android:layout_width="70dp"-->
-<!--android:layout_height="50dp"-->
-<!--android:includeFontPadding="false"-->
-<!--android:textSize="14sp"-->
-<!--android:text="@string/sign_up_certification"-->
-<!--android:textColor="@color/white"-->
-<!--android:fontFamily="@font/noto_sans_kr_medium"-->
-<!--android:background="@drawable/sign_up_certification_btn"-->
-<!--android:enabled="false"-->
-<!--android:layout_marginTop="51dp"-->
-<!--android:layout_marginEnd="20dp"-->
-<!--android:layout_marginStart="20dp"-->
-<!--app:layout_constraintStart_toEndOf="@id/TilSignUpEmail"-->
-<!--app:layout_constraintTop_toBottomOf="@id/TvSignUpTitle"-->
-<!--app:layout_constraintEnd_toEndOf="parent"/>-->
+    <!--<androidx.appcompat.widget.AppCompatButton-->
+    <!--android:id="@+id/BtnCertification"-->
+    <!--android:layout_width="70dp"-->
+    <!--android:layout_height="50dp"-->
+    <!--android:includeFontPadding="false"-->
+    <!--android:textSize="14sp"-->
+    <!--android:text="@string/sign_up_certification"-->
+    <!--android:textColor="@color/white"-->
+    <!--android:fontFamily="@font/noto_sans_kr_medium"-->
+    <!--android:background="@drawable/sign_up_certification_btn"-->
+    <!--android:enabled="false"-->
+    <!--android:layout_marginTop="51dp"-->
+    <!--android:layout_marginEnd="20dp"-->
+    <!--android:layout_marginStart="20dp"-->
+    <!--app:layout_constraintStart_toEndOf="@id/TilSignUpEmail"-->
+    <!--app:layout_constraintTop_toBottomOf="@id/TvSignUpTitle"-->
+    <!--app:layout_constraintEnd_toEndOf="parent"/>-->

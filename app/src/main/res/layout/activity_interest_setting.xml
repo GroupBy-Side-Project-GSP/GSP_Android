@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".ui.main.InterestSettingActivity">
 
-    <data>
-    </data>
+    <data></data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/conMyPageInterestSetting"
@@ -17,82 +16,82 @@
             android:layout_width="match_parent"
             android:layout_height="44dp"
             android:background="@color/main"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
+            app:layout_constraintTop_toTopOf="parent">
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnMyPageBack"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:background="@drawable/ic_go_back"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
                 android:layout_marginStart="12dp"
                 android:layout_marginTop="15dp"
-                android:layout_marginBottom="15dp" />
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/ic_go_back"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/tvMyPageTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"
+                android:fontFamily="@font/noto_sans_kr_bold"
+                android:gravity="center"
+                android:includeFontPadding="false"
                 android:text="@string/mypage_interest_setting"
                 android:textColor="@color/white"
-                android:includeFontPadding="false"
-                android:fontFamily="@font/noto_sans_kr_bold"
                 android:textSize="14sp"
-                android:gravity="center"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                android:layout_marginTop="12dp"
-                android:layout_marginBottom="12dp" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/conMyPageInterestSettingBottom"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            app:layout_constraintTop_toBottomOf="@id/conMyPageInterestSettingTop"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/conMyPageInterestSettingTop">
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/conMyPageInterestSettingGuide"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintGuide_percent="0.05"
-                android:orientation="vertical"/>
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.05" />
 
             <TextView
                 android:id="@+id/tvMyPageInterestSettingTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/noto_sans_kr_bold"
+                android:gravity="center"
+                android:includeFontPadding="false"
                 android:text="관심있는 분야를 선택해주세요"
                 android:textColor="@color/black"
-                android:fontFamily="@font/noto_sans_kr_bold"
                 android:textSize="16sp"
-                android:includeFontPadding="false"
-                android:gravity="center"
-                android:layout_marginTop="20dp"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="@id/conMyPageInterestSettingGuide"/>
+                app:layout_constraintStart_toStartOf="@id/conMyPageInterestSettingGuide"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/tvMyPageInterestSettingCount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:includeFontPadding="false"
+                android:layout_marginTop="4dp"
                 android:fontFamily="@font/noto_sans_kr_regular"
                 android:hint="(0/5)"
+                android:includeFontPadding="false"
                 android:text=""
+                android:textColor="@color/main_darken"
                 android:textColorHint="@color/main_darken"
                 android:textSize="14sp"
-                android:textColor="@color/main_darken"
-                android:layout_marginTop="4dp"
                 app:layout_constraintStart_toStartOf="@id/conMyPageInterestSettingGuide"
                 app:layout_constraintTop_toBottomOf="@id/tvMyPageInterestSettingTitle" />
 
@@ -100,252 +99,252 @@
                 android:id="@+id/conMyPageInterestSettingCheck"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvMyPageInterestSettingCount"
-                android:layout_marginTop="20dp">
+                app:layout_constraintTop_toBottomOf="@id/tvMyPageInterestSettingCount">
 
                 <androidx.constraintlayout.widget.Guideline
                     android:id="@+id/conMyPageInterestSettingInsideGuide"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:layout_constraintGuide_percent="0.05"
-                    android:orientation="vertical"/>
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.05" />
 
                 <androidx.constraintlayout.widget.Guideline
                     android:id="@+id/conMyPageInterestSettingInsideGuide2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:layout_constraintGuide_percent="0.6"
-                    android:orientation="vertical"/>
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.6" />
 
                 <CheckBox
                     android:id="@+id/myPageDesignCheckBox"
                     android:layout_width="79dp"
                     android:layout_height="32dp"
-                    android:textSize="14sp"
-                    android:button="@null"
-                    android:gravity="center"
-                    android:textColor="@drawable/item_interest_setting_textcolor"
                     android:background="@drawable/item_interest_setting_checkbox_background"
-                    android:text="@string/design_category"
+                    android:button="@null"
                     android:fontFamily="@font/noto_sans_kr_medium"
+                    android:gravity="center"
+                    android:text="@string/design_category"
+                    android:textColor="@drawable/item_interest_setting_textcolor"
+                    android:textSize="14sp"
                     app:layout_constraintStart_toStartOf="@id/conMyPageInterestSettingInsideGuide"
-                    app:layout_constraintTop_toTopOf="parent"/>
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <CheckBox
                     android:id="@+id/myPageManagementCheckBox"
                     android:layout_width="101dp"
                     android:layout_height="32dp"
-                    android:textSize="14sp"
-                    android:button="@null"
-                    android:gravity="center"
-                    android:textColor="@drawable/item_interest_setting_textcolor"
+                    android:layout_marginEnd="20dp"
                     android:background="@drawable/item_interest_setting_checkbox_background"
-                    android:text="@string/management_category"
+                    android:button="@null"
                     android:fontFamily="@font/noto_sans_kr_medium"
-                    app:layout_constraintTop_toTopOf="parent"
+                    android:gravity="center"
+                    android:text="@string/management_category"
+                    android:textColor="@drawable/item_interest_setting_textcolor"
+                    android:textSize="14sp"
                     app:layout_constraintEnd_toEndOf="@id/conMyPageInterestSettingInsideGuide2"
-                    android:layout_marginEnd="20dp"/>
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <CheckBox
                     android:id="@+id/myPageHealthCheckBox"
                     android:layout_width="101dp"
                     android:layout_height="32dp"
-                    android:textSize="14sp"
-                    android:button="@null"
-                    android:gravity="center"
-                    android:textColor="@drawable/item_interest_setting_textcolor"
                     android:background="@drawable/item_interest_setting_checkbox_background"
-                    android:text="@string/health_category"
+                    android:button="@null"
                     android:fontFamily="@font/noto_sans_kr_medium"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintStart_toStartOf="@id/conMyPageInterestSettingInsideGuide2" />
+                    android:gravity="center"
+                    android:text="@string/health_category"
+                    android:textColor="@drawable/item_interest_setting_textcolor"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="@id/conMyPageInterestSettingInsideGuide2"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <CheckBox
                     android:id="@+id/myPageEnvironmentCheckBox"
                     android:layout_width="101dp"
                     android:layout_height="32dp"
-                    android:textSize="14sp"
-                    android:button="@null"
-                    android:gravity="center"
-                    android:textColor="@drawable/item_interest_setting_textcolor"
+                    android:layout_marginTop="16dp"
                     android:background="@drawable/item_interest_setting_checkbox_background"
-                    android:text="@string/environment_category"
+                    android:button="@null"
                     android:fontFamily="@font/noto_sans_kr_medium"
-                    app:layout_constraintTop_toBottomOf="@id/myPageDesignCheckBox"
+                    android:gravity="center"
+                    android:text="@string/environment_category"
+                    android:textColor="@drawable/item_interest_setting_textcolor"
+                    android:textSize="14sp"
                     app:layout_constraintStart_toStartOf="@id/conMyPageInterestSettingInsideGuide"
-                    android:layout_marginTop="16dp" />
+                    app:layout_constraintTop_toBottomOf="@id/myPageDesignCheckBox" />
 
                 <CheckBox
                     android:id="@+id/myPageMaterialCheckBox"
                     android:layout_width="66dp"
                     android:layout_height="32dp"
-                    android:textSize="14sp"
-                    android:button="@null"
-                    android:gravity="center"
-                    android:textColor="@drawable/item_interest_setting_textcolor"
-                    android:background="@drawable/item_interest_setting_checkbox_background"
-                    android:text="@string/material_category"
-                    android:fontFamily="@font/noto_sans_kr_medium"
-                    app:layout_constraintTop_toBottomOf="@id/myPageManagementCheckBox"
-                    app:layout_constraintEnd_toEndOf="@id/conMyPageInterestSettingInsideGuide2"
+                    android:layout_marginTop="16dp"
                     android:layout_marginEnd="30dp"
-                    android:layout_marginTop="16dp" />
+                    android:background="@drawable/item_interest_setting_checkbox_background"
+                    android:button="@null"
+                    android:fontFamily="@font/noto_sans_kr_medium"
+                    android:gravity="center"
+                    android:text="@string/material_category"
+                    android:textColor="@drawable/item_interest_setting_textcolor"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="@id/conMyPageInterestSettingInsideGuide2"
+                    app:layout_constraintTop_toBottomOf="@id/myPageManagementCheckBox" />
 
                 <CheckBox
                     android:id="@+id/myPageElectronicCheckBox"
                     android:layout_width="101dp"
                     android:layout_height="32dp"
-                    android:textSize="14sp"
-                    android:button="@null"
-                    android:gravity="center"
-                    android:textColor="@drawable/item_interest_setting_textcolor"
-                    android:background="@drawable/item_interest_setting_checkbox_background"
-                    android:text="@string/electronic_category"
-                    android:fontFamily="@font/noto_sans_kr_medium"
-                    app:layout_constraintTop_toBottomOf="@id/myPageHealthCheckBox"
-                    app:layout_constraintStart_toStartOf="@id/conMyPageInterestSettingInsideGuide2"
                     android:layout_marginTop="16dp"
-                    android:layout_marginEnd="35dp" />
+                    android:layout_marginEnd="35dp"
+                    android:background="@drawable/item_interest_setting_checkbox_background"
+                    android:button="@null"
+                    android:fontFamily="@font/noto_sans_kr_medium"
+                    android:gravity="center"
+                    android:text="@string/electronic_category"
+                    android:textColor="@drawable/item_interest_setting_textcolor"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="@id/conMyPageInterestSettingInsideGuide2"
+                    app:layout_constraintTop_toBottomOf="@id/myPageHealthCheckBox" />
 
                 <CheckBox
                     android:id="@+id/myPageErectionCheckBox"
                     android:layout_width="66dp"
                     android:layout_height="32dp"
-                    android:textSize="14sp"
-                    android:button="@null"
-                    android:gravity="center"
-                    android:textColor="@drawable/item_interest_setting_textcolor"
+                    android:layout_marginTop="16dp"
                     android:background="@drawable/item_interest_setting_checkbox_background"
-                    android:text="@string/erection_category"
+                    android:button="@null"
                     android:fontFamily="@font/noto_sans_kr_medium"
-                    app:layout_constraintTop_toBottomOf="@id/myPageEnvironmentCheckBox"
+                    android:gravity="center"
+                    android:text="@string/erection_category"
+                    android:textColor="@drawable/item_interest_setting_textcolor"
+                    android:textSize="14sp"
                     app:layout_constraintStart_toStartOf="@id/conMyPageInterestSettingInsideGuide"
-                    android:layout_marginTop="16dp" />
+                    app:layout_constraintTop_toBottomOf="@id/myPageEnvironmentCheckBox" />
 
                 <CheckBox
                     android:id="@+id/myPageChemistryCheckBox"
                     android:layout_width="114dp"
                     android:layout_height="32dp"
-                    android:textSize="14sp"
-                    android:button="@null"
-                    android:gravity="center"
-                    android:textColor="@drawable/item_interest_setting_textcolor"
-                    android:background="@drawable/item_interest_setting_checkbox_background"
-                    android:text="@string/chemistry_category"
-                    android:fontFamily="@font/noto_sans_kr_medium"
-                    app:layout_constraintTop_toBottomOf="@id/myPageMaterialCheckBox"
-                    app:layout_constraintEnd_toEndOf="@id/conMyPageInterestSettingInsideGuide2"
+                    android:layout_marginTop="16dp"
                     android:layout_marginEnd="23dp"
-                    android:layout_marginTop="16dp" />
+                    android:background="@drawable/item_interest_setting_checkbox_background"
+                    android:button="@null"
+                    android:fontFamily="@font/noto_sans_kr_medium"
+                    android:gravity="center"
+                    android:text="@string/chemistry_category"
+                    android:textColor="@drawable/item_interest_setting_textcolor"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="@id/conMyPageInterestSettingInsideGuide2"
+                    app:layout_constraintTop_toBottomOf="@id/myPageMaterialCheckBox" />
 
                 <CheckBox
                     android:id="@+id/myPagePlanCheckBox"
                     android:layout_width="114dp"
                     android:layout_height="32dp"
-                    android:textSize="14sp"
-                    android:button="@null"
-                    android:gravity="center"
-                    android:textColor="@drawable/item_interest_setting_textcolor"
+                    android:layout_marginTop="16dp"
                     android:background="@drawable/item_interest_setting_checkbox_background"
-                    android:text="@string/plan_category"
+                    android:button="@null"
                     android:fontFamily="@font/noto_sans_kr_medium"
-                    app:layout_constraintTop_toBottomOf="@id/myPageElectronicCheckBox"
+                    android:gravity="center"
+                    android:text="@string/plan_category"
+                    android:textColor="@drawable/item_interest_setting_textcolor"
+                    android:textSize="14sp"
                     app:layout_constraintStart_toStartOf="@id/conMyPageInterestSettingInsideGuide2"
-                    android:layout_marginTop="16dp" />
+                    app:layout_constraintTop_toBottomOf="@id/myPageElectronicCheckBox" />
 
                 <CheckBox
                     android:id="@+id/myPagePrintCheckBox"
                     android:layout_width="101dp"
                     android:layout_height="32dp"
-                    android:textSize="14sp"
-                    android:button="@null"
-                    android:gravity="center"
-                    android:textColor="@drawable/item_interest_setting_textcolor"
+                    android:layout_marginTop="16dp"
                     android:background="@drawable/item_interest_setting_checkbox_background"
-                    android:text="@string/print_category"
+                    android:button="@null"
                     android:fontFamily="@font/noto_sans_kr_medium"
-                    app:layout_constraintTop_toBottomOf="@id/myPageErectionCheckBox"
+                    android:gravity="center"
+                    android:text="@string/print_category"
+                    android:textColor="@drawable/item_interest_setting_textcolor"
+                    android:textSize="14sp"
                     app:layout_constraintStart_toStartOf="@id/conMyPageInterestSettingInsideGuide"
-                    android:layout_marginTop="16dp" />
+                    app:layout_constraintTop_toBottomOf="@id/myPageErectionCheckBox" />
 
                 <CheckBox
                     android:id="@+id/myPageSalesCheckBox"
                     android:layout_width="92dp"
                     android:layout_height="32dp"
-                    android:textSize="14sp"
-                    android:button="@null"
-                    android:gravity="center"
-                    android:textColor="@drawable/item_interest_setting_textcolor"
+                    android:layout_marginTop="16dp"
                     android:background="@drawable/item_interest_setting_checkbox_background"
-                    android:text="@string/sales_category"
+                    android:button="@null"
                     android:fontFamily="@font/noto_sans_kr_medium"
-                    app:layout_constraintTop_toBottomOf="@id/myPageChemistryCheckBox"
+                    android:gravity="center"
+                    android:text="@string/sales_category"
+                    android:textColor="@drawable/item_interest_setting_textcolor"
+                    android:textSize="14sp"
                     app:layout_constraintEnd_toStartOf="@id/conMyPageInterestSettingInsideGuide2"
-                    android:layout_marginTop="16dp" />
+                    app:layout_constraintTop_toBottomOf="@id/myPageChemistryCheckBox" />
 
                 <CheckBox
                     android:id="@+id/myPageWelfareCheckBox"
                     android:layout_width="92dp"
                     android:layout_height="32dp"
-                    android:textSize="14sp"
-                    android:button="@null"
-                    android:gravity="center"
-                    android:textColor="@drawable/item_interest_setting_textcolor"
-                    android:background="@drawable/item_interest_setting_checkbox_background"
-                    android:text="@string/welfare_category"
-                    android:fontFamily="@font/noto_sans_kr_medium"
-                    app:layout_constraintTop_toBottomOf="@id/myPagePlanCheckBox"
-                    app:layout_constraintStart_toEndOf="@id/conMyPageInterestSettingInsideGuide2"
                     android:layout_marginStart="25dp"
-                    android:layout_marginTop="16dp" />
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/item_interest_setting_checkbox_background"
+                    android:button="@null"
+                    android:fontFamily="@font/noto_sans_kr_medium"
+                    android:gravity="center"
+                    android:text="@string/welfare_category"
+                    android:textColor="@drawable/item_interest_setting_textcolor"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toEndOf="@id/conMyPageInterestSettingInsideGuide2"
+                    app:layout_constraintTop_toBottomOf="@id/myPagePlanCheckBox" />
 
                 <CheckBox
                     android:id="@+id/myPageAffairsCheckBox"
                     android:layout_width="66dp"
                     android:layout_height="32dp"
-                    android:textSize="14sp"
-                    android:button="@null"
-                    android:gravity="center"
-                    android:textColor="@drawable/item_interest_setting_textcolor"
+                    android:layout_marginTop="16dp"
                     android:background="@drawable/item_interest_setting_checkbox_background"
-                    android:text="@string/affairs_category"
+                    android:button="@null"
                     android:fontFamily="@font/noto_sans_kr_medium"
-                    app:layout_constraintTop_toBottomOf="@id/myPagePrintCheckBox"
+                    android:gravity="center"
+                    android:text="@string/affairs_category"
+                    android:textColor="@drawable/item_interest_setting_textcolor"
+                    android:textSize="14sp"
                     app:layout_constraintStart_toStartOf="@id/conMyPageInterestSettingInsideGuide"
-                    android:layout_marginTop="16dp" />
+                    app:layout_constraintTop_toBottomOf="@id/myPagePrintCheckBox" />
 
                 <CheckBox
                     android:id="@+id/myPageClothCheckBox"
                     android:layout_width="101dp"
                     android:layout_height="32dp"
-                    android:textSize="14sp"
-                    android:button="@null"
-                    android:gravity="center"
-                    android:textColor="@drawable/item_interest_setting_textcolor"
-                    android:background="@drawable/item_interest_setting_checkbox_background"
-                    android:text="@string/cloth_category"
-                    android:fontFamily="@font/noto_sans_kr_medium"
-                    app:layout_constraintTop_toBottomOf="@id/myPageSalesCheckBox"
-                    app:layout_constraintEnd_toEndOf="@id/conMyPageInterestSettingInsideGuide2"
+                    android:layout_marginTop="16dp"
                     android:layout_marginEnd="40dp"
-                    android:layout_marginTop="16dp" />
+                    android:background="@drawable/item_interest_setting_checkbox_background"
+                    android:button="@null"
+                    android:fontFamily="@font/noto_sans_kr_medium"
+                    android:gravity="center"
+                    android:text="@string/cloth_category"
+                    android:textColor="@drawable/item_interest_setting_textcolor"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="@id/conMyPageInterestSettingInsideGuide2"
+                    app:layout_constraintTop_toBottomOf="@id/myPageSalesCheckBox" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnMyPageInterestComplete"
                 android:layout_width="320dp"
                 android:layout_height="36dp"
+                android:layout_marginBottom="24dp"
                 android:background="@drawable/rounded_8dp_enable_main_lighten"
+                android:enabled="false"
                 android:fontFamily="@font/noto_sans_kr_medium"
                 android:text="완료"
-                android:enabled="false"
                 android:textColor="@color/white"
-                android:layout_marginBottom="24dp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
