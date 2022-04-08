@@ -12,7 +12,7 @@ class InterestsFullListFragment :
     }
 
     private fun setUpRecyclerView() {
-        binding.fullListContainer.adapter = InterestsFullListAdapter(requireContext(), binding.model.innerList)
+        binding.fullListContainer.adapter = InterestsFullListAdapter(requireContext(), binding.model!!.innerList)
         binding.fullListContainer.layoutManager = LinearLayoutManager(requireContext())
     }
 }
