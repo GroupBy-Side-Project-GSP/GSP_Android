@@ -4,8 +4,8 @@
     <data>
 
         <variable
-            name="model"
-            type="com.gsps.gsp_android.ui.main.InterestsMemberModel" />
+            name="memberModel"
+            type="com.gsps.gsp_android.ui.main.MemberModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -40,7 +40,7 @@
                 android:fontFamily="@font/noto_sans_kr_regular"
                 android:includeFontPadding="false"
                 android:maxLines="2"
-                android:text="@{model.explain}"
+                android:text="@{memberModel.explain}"
                 android:textColor="@color/black"
                 android:textSize="12sp" />
 
@@ -63,7 +63,7 @@
                 android:fontFamily="@font/noto_sans_kr_regular"
                 android:gravity="center_vertical"
                 android:includeFontPadding="false"
-                android:text="@{model.name}"
+                android:text="@{memberModel.name}"
                 android:textColor="@color/black"
                 android:textSize="10sp" />
 
@@ -89,5 +89,6 @@
             android:src="@color/system_red"
             app:layout_constraintBottom_toBottomOf="@id/ivMain"
             app:layout_constraintEnd_toEndOf="@id/ivMain" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

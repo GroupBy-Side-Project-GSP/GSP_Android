@@ -4,8 +4,8 @@
     <data>
 
         <variable
-            name="model"
-            type="com.gsps.gsp_android.ui.main.InterestsListModel" />
+            name="outerModel"
+            type="com.gsps.gsp_android.ui.main.InterestsOuterListModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -20,14 +20,14 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/noto_sans_kr_bold"
             android:includeFontPadding="false"
-            android:text="@{model.category}"
+            android:text="@{outerModel.category}"
             android:textColor="@color/black"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rlParent"
+            android:id="@+id/innerContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
@@ -48,6 +48,6 @@
             android:textColor="@color/white"
             android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/rlParent" />
+            app:layout_constraintTop_toBottomOf="@id/innerContainer" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

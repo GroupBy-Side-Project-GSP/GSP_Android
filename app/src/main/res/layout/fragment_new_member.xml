@@ -1,13 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout>
 
-    <data>
-
-        <variable
-            name="model"
-            type="com.gsps.gsp_android.ui.main.NewMemberModel" />
-    </data>
-
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
@@ -22,7 +15,7 @@
             android:fontFamily="@font/noto_sans_kr_bold"
             android:gravity="center"
             android:includeFontPadding="false"
-            android:text="@string/new_member"
+            android:text="신규가입회사"
             android:textColor="@color/black"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"

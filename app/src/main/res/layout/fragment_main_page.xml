@@ -44,14 +44,13 @@
                 android:layout_height="15dp"
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
-                android:background="@drawable/ic_search_btn"
-                android:backgroundTint="@color/black"
+                android:background="@color/medium_gray"
                 app:layout_constraintBottom_toBottomOf="@id/ivLogo"
                 app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
                 app:layout_constraintTop_toTopOf="@id/ivLogo" />
 
             <androidx.fragment.app.FragmentContainerView
-                android:id="@+id/frameNewMember"
+                android:id="@+id/newMemberContainer"
                 android:name="com.gsps.gsp_android.ui.main.NewMemberFragment"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -61,14 +60,14 @@
                 app:layout_constraintTop_toBottomOf="@id/ivLogo" />
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/interestsListContainer"
+                android:id="@+id/outerContainer"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
                 android:nestedScrollingEnabled="false"
                 app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
                 app:layout_constraintStart_toStartOf="@id/guidelineStart"
-                app:layout_constraintTop_toBottomOf="@id/frameNewMember" />
+                app:layout_constraintTop_toBottomOf="@id/newMemberContainer" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
 </layout>

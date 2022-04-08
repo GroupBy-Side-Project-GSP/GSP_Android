@@ -4,12 +4,8 @@
     <data>
 
         <variable
-            name="modelMember"
-            type="com.gsps.gsp_android.ui.main.InterestsMemberModel" />
-
-        <variable
-            name="listModel"
-            type="com.gsps.gsp_android.ui.main.InterestsListModel" />
+            name="model"
+            type="com.gsps.gsp_android.ui.main.InterestsOuterListModel" />
     </data>
 
     <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
@@ -55,8 +51,7 @@
                 android:layout_height="15dp"
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
-                android:background="@drawable/ic_search_btn"
-                android:backgroundTint="@color/black"
+                android:background="@color/medium_gray"
                 app:layout_constraintBottom_toBottomOf="@id/ivLogo"
                 app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
                 app:layout_constraintTop_toTopOf="@id/ivLogo" />
@@ -68,14 +63,14 @@
                 android:layout_marginTop="32dp"
                 android:fontFamily="@font/noto_sans_kr_bold"
                 android:includeFontPadding="false"
-                android:text="@{listModel.category}"
+                android:text="#환경&amp;에너지"
                 android:textColor="@color/black"
                 android:textSize="16sp"
                 app:layout_constraintStart_toStartOf="@id/guidelineStart"
                 app:layout_constraintTop_toBottomOf="@id/ivLogo" />
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rlParent"
+                android:id="@+id/fullListContainer"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
