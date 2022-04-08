@@ -7,6 +7,5 @@ import com.gsps.gsp_android.ui.base.BaseActivity
 class MemberInfoActivity :
     BaseActivity<ActivityMemberInfoBinding>(R.layout.activity_member_info) {
     override fun initView() {
-
     }
 }

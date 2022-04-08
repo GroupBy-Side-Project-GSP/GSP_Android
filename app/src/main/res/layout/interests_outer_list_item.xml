@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
         <variable
-            name="model"
-            type="com.gsps.gsp_android.ui.main.InterestsListModel" />
+            name="outerModel"
+            type="com.gsps.gsp_android.ui.main.InterestsOuterListModel" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
         <!--글씨 일부 속성 변경 -> SpannableString-->
         <TextView
             android:id="@+id/tvCategory"
@@ -20,14 +19,14 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/noto_sans_kr_bold"
             android:includeFontPadding="false"
-            android:text="@{model.category}"
+            android:text="@{outerModel.category}"
             android:textColor="@color/black"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/container"
+            android:id="@+id/innerContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
@@ -48,6 +47,6 @@
             android:textColor="@color/white"
             android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/container" />
+            app:layout_constraintTop_toBottomOf="@id/innerContainer" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
