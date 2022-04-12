@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context=".ui.main.MemberInfoWritingActivity">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clTopBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:background="@color/main"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/tvIntroduceCompany"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/noto_sans_kr_bold"
+                        android:includeFontPadding="false"
+                        android:text="@string/introduce_company"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/btnGoBack"
+                        android:layout_width="14dp"
+                        android:layout_height="14dp"
+                        android:layout_marginStart="12dp"
+                        android:background="@drawable/ic_go_back"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/tvCategory"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:fontFamily="@font/noto_sans_kr_regular"
+                    android:gravity="center_vertical"
+                    android:hint="카테고리를 선택해주세요."
+                    android:includeFontPadding="false"
+                    android:paddingHorizontal="17dp"
+                    android:textColor="@color/main"
+                    android:textColorHint="@color/dark_gray"
+                    android:textSize="14sp"
+                    app:layout_constraintTop_toBottomOf="@id/clTopBar" />
+
+                <View
+                    android:id="@+id/dividerCategory"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/semi_light_gray"
+                    app:layout_constraintTop_toBottomOf="@id/tvCategory" />
+
+                <TextView
+                    android:id="@+id/tvTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:fontFamily="@font/noto_sans_kr_medium"
+                    android:gravity="center_vertical"
+                    android:hint="제목"
+                    android:includeFontPadding="false"
+                    android:paddingHorizontal="17dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/dark_gray"
+                    android:textSize="14sp"
+                    app:layout_constraintTop_toBottomOf="@id/dividerCategory" />
+
+                <View
+                    android:id="@+id/dividerTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/semi_light_gray"
+                    app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+
+                <ImageView
+                    android:id="@+id/icPictures"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="17dp"
+                    app:layout_constraintBottom_toBottomOf="@id/tvPictures"
+                    app:layout_constraintStart_toStartOf="@id/tvPictures"
+                    app:layout_constraintTop_toTopOf="@id/tvPictures" />
+
+                <TextView
+                    android:id="@+id/tvPictures"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:fontFamily="@font/noto_sans_kr_medium"
+                    android:gravity="center_vertical"
+                    android:hint="사진은 1장부터 5장까지 삽입 가능합니다."
+                    android:includeFontPadding="false"
+                    android:paddingHorizontal="47dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/dark_gray"
+                    android:textSize="12sp"
+                    app:layout_constraintTop_toBottomOf="@id/dividerTitle" />
+
+                <View
+                    android:id="@+id/dividerPictures"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/semi_light_gray"
+                    app:layout_constraintTop_toBottomOf="@id/tvPictures" />
+
+                <TextView
+                    android:id="@+id/tvMain"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:hint="기업 / 프로젝트 설명을 입력하세요"
+                    android:paddingHorizontal="17dp"
+                    android:paddingBottom="80dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/dark_gray"
+                    android:textSize="14sp"
+                    app:layout_constraintTop_toBottomOf="@id/dividerPictures" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnFinish"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/rounded_corner_main_lignten"
+            android:fontFamily="@font/noto_sans_kr_regular"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="완료"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>
