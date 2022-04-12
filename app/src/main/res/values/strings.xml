@@ -9,4 +9,5 @@
     <string name="error_wrong_id">아이디 형식이 잘못되었습니다</string>
     <string name="calendar">일정</string>
     <string name="set_year">%d년 %d월</string>
+    <string name="show_detail"><u>상세보기</u></string>
 </resources>

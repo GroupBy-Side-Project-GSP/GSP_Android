@@ -84,7 +84,7 @@
                 android:layout_marginTop="28dp"
                 android:layout_marginBottom="14.5dp"
                 android:orientation="horizontal"
-                app:layout_constraintBottom_toTopOf="@id/guideline"
+                app:layout_constraintBottom_toTopOf="@id/guidelineStart"
                 app:layout_constraintTop_toBottomOf="@id/rlMonth">
 
                 <TextView
@@ -173,7 +173,7 @@
             </LinearLayout>
 
             <View
-                android:id="@+id/guideline"
+                android:id="@+id/guidelineStart"
                 android:layout_width="0dp"
                 android:layout_height="0.5dp"
                 android:layout_marginTop="15dp"
@@ -187,7 +187,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-                app:layout_constraintTop_toBottomOf="@id/guideline"
+                app:layout_constraintTop_toBottomOf="@id/guidelineStart"
                 app:spanCount="7" />
 
             <androidx.fragment.app.FragmentContainerView
