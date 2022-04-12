@@ -1,24 +1,19 @@
 package com.gsps.gsp_android.ui.main
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
 import android.widget.CompoundButton
 import android.widget.Toast
 import com.gsps.gsp_android.R
 import com.gsps.gsp_android.databinding.ActivityInterestSettingBinding
 import com.gsps.gsp_android.ui.base.BaseActivity
 
-class InterestSettingActivity : BaseActivity<ActivityInterestSettingBinding>(
-    R.layout.activity_interest_setting
-) {
-
+class InterestSettingActivity :
+    BaseActivity<ActivityInterestSettingBinding>(R.layout.activity_interest_setting) {
     companion object {
         var count: Int = 0
     }
 
     override fun initView() {
-
         check()
 
         binding.btnMyPageBack.setOnClickListener {
@@ -32,7 +27,7 @@ class InterestSettingActivity : BaseActivity<ActivityInterestSettingBinding>(
         }
     }
 
-    fun check() {
+    private fun check() {
         val listener = CompoundButton.OnCheckedChangeListener { buttonView, isChecked ->
             if (isChecked) {
                 if (count <= 4) {
@@ -80,11 +75,7 @@ class InterestSettingActivity : BaseActivity<ActivityInterestSettingBinding>(
                             binding.tvMyPageInterestSettingCount.text = "(${++count}/5)"
                         }
                     }
-                    if (count == 0) {
-                        binding.btnMyPageInterestComplete.isEnabled = false
-                    } else {
-                        binding.btnMyPageInterestComplete.isEnabled = true
-                    }
+                    binding.btnMyPageInterestComplete.isEnabled = count != 0
                 } else {
                     Toast.makeText(this, "선택 갯수 초과입니다.", Toast.LENGTH_SHORT).show()
                     when (buttonView) {
@@ -177,11 +168,7 @@ class InterestSettingActivity : BaseActivity<ActivityInterestSettingBinding>(
                         binding.tvMyPageInterestSettingCount.text = "(${--count}/5)"
                     }
                 }
-                if (count == 0) {
-                    binding.btnMyPageInterestComplete.isEnabled = false
-                } else {
-                    binding.btnMyPageInterestComplete.isEnabled = true
-                }
+                binding.btnMyPageInterestComplete.isEnabled = count != 0
             }
         }
         binding.myPageDesignCheckBox.setOnCheckedChangeListener(listener)

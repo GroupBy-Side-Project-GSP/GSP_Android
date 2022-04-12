@@ -1,11 +1,9 @@
 package com.gsps.gsp_android.ui.main
 
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.gsps.gsp_android.R
 
@@ -37,7 +35,6 @@ class AnnouncementAdapter : RecyclerView.Adapter<AnnouncementAdapter.Announcemen
         holder.itemView.setOnClickListener {
             listener?.onItemClick(it, position, items[position])
         }
-
     }
 
     fun addItems(list: List<AnnouncementModel>) {

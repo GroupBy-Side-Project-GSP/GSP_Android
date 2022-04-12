@@ -1,23 +1,12 @@
 package com.gsps.gsp_android.ui.main
 
-import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.widget.CompoundButton
-import android.widget.Toast
-import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.gsps.gsp_android.R
 import com.gsps.gsp_android.databinding.FragmentSearchBinding
 import com.gsps.gsp_android.ui.base.BaseFragment
 
 
-class SearchFragment : BaseFragment<FragmentSearchBinding>(
-    R.layout.fragment_search
-) {
-
+class SearchFragment : BaseFragment<FragmentSearchBinding>(R.layout.fragment_search) {
     companion object {
         var count: Int = 0
     }
@@ -59,11 +48,7 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>(
                     binding.searchClothCheckBox -> {
                     }
                 }
-                if (count == 0) {
-                    binding.btnSelectSearch.isEnabled = false
-                } else {
-                    binding.btnSelectSearch.isEnabled = true
-                }
+                binding.btnSelectSearch.isEnabled = count != 0
                 when (buttonView) {
                     binding.searchDesignCheckBox -> {
                         binding.searchDesignCheckBox.isChecked = false
@@ -139,11 +124,7 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>(
                     binding.searchClothCheckBox -> {
                     }
                 }
-                if (count == 0) {
-                    binding.btnSelectSearch.isEnabled = false
-                } else {
-                    binding.btnSelectSearch.isEnabled = true
-                }
+                binding.btnSelectSearch.isEnabled = count != 0
             }
         }
         binding.searchDesignCheckBox.setOnCheckedChangeListener(listener)

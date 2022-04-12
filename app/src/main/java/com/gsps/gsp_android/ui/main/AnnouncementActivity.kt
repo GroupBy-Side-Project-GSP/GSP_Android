@@ -1,8 +1,6 @@
 package com.gsps.gsp_android.ui.main
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.gsps.gsp_android.R
@@ -12,7 +10,6 @@ import com.gsps.gsp_android.ui.base.BaseActivity
 class AnnouncementActivity : BaseActivity<ActivityAnnouncementBinding>(
     R.layout.activity_announcement
 ) {
-
     val adapter by lazy { AnnouncementAdapter() }
 
     override fun initView() {
@@ -36,5 +33,4 @@ class AnnouncementActivity : BaseActivity<ActivityAnnouncementBinding>(
             }
         })
     }
-
 }

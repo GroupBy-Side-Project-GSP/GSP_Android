@@ -6,7 +6,5 @@ import com.gsps.gsp_android.ui.base.BaseFragment
 
 class NewMemberFragment : BaseFragment<FragmentNewMemberBinding>(R.layout.fragment_new_member) {
     val newMemBerList: List<MemberModel> = listOf()
-    override fun initView() {
-
-    }
+    override fun initView() {}
 }

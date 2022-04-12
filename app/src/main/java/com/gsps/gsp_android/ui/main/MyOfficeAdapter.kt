@@ -1,17 +1,14 @@
 package com.gsps.gsp_android.ui.main
 
-import android.media.Image
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.gsps.gsp_android.R
 
 class MyOfficeAdapter : RecyclerView.Adapter<MyOfficeAdapter.MyOfficeViewHolder>() {
-
     private var items = mutableListOf<MyOfficeModel>()
 
     override fun onCreateViewHolder(
@@ -24,7 +21,6 @@ class MyOfficeAdapter : RecyclerView.Adapter<MyOfficeAdapter.MyOfficeViewHolder>
     }
 
     override fun onBindViewHolder(holder: MyOfficeAdapter.MyOfficeViewHolder, position: Int) {
-
         holder.bind(items[position])
 
         holder.itemheart.setOnClickListener(object : View.OnClickListener {
@@ -49,7 +45,6 @@ class MyOfficeAdapter : RecyclerView.Adapter<MyOfficeAdapter.MyOfficeViewHolder>
     }
 
     inner class MyOfficeViewHolder(v: View) : RecyclerView.ViewHolder(v) {
-
         var itemname = v.findViewById<TextView>(R.id.tvRvItemMyOfficeName)
         var itemcategory = v.findViewById<TextView>(R.id.tvRvItemMyOfficeCate)
         var itemheart = v.findViewById<Button>(R.id.btnMyOfficeFavorite)

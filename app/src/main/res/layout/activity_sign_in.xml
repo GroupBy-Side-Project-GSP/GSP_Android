@@ -21,7 +21,8 @@
                 android:layout_height="16dp"
                 android:layout_centerVertical="true"
                 android:layout_marginStart="20dp"
-                android:background="@drawable/ic_sign_up_back" />
+                android:background="@drawable/ic_go_back"
+                android:backgroundTint="@color/black" />
 
             <TextView
                 android:id="@+id/tvSignIn"

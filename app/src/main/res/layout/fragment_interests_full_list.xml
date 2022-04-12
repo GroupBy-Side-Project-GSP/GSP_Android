@@ -44,7 +44,6 @@
                 app:layout_constraintStart_toStartOf="@id/guidelineStart"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <!--search button-->
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnSearch"
                 android:layout_width="15dp"

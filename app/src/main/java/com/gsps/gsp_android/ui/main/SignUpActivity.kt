@@ -1,8 +1,6 @@
 package com.gsps.gsp_android.ui.main
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import com.gsps.gsp_android.R
@@ -10,14 +8,9 @@ import com.gsps.gsp_android.databinding.ActivitySignUpBinding
 import com.gsps.gsp_android.ui.base.BaseActivity
 import java.util.regex.Pattern
 
-class SignUpActivity : BaseActivity<ActivitySignUpBinding>(
-    R.layout.activity_sign_up
-) {
-
+class SignUpActivity : BaseActivity<ActivitySignUpBinding>(R.layout.activity_sign_up) {
     override fun initView() {
-
         binding.tietSignUpEmail.addTextChangedListener(object : TextWatcher {
-
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
 
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
@@ -30,7 +23,6 @@ class SignUpActivity : BaseActivity<ActivitySignUpBinding>(
         })
 
         binding.tietSignUpId.addTextChangedListener(object : TextWatcher {
-
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
 
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
@@ -42,7 +34,6 @@ class SignUpActivity : BaseActivity<ActivitySignUpBinding>(
         })
 
         binding.tietSignUpPw.addTextChangedListener(object : TextWatcher {
-
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
 
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
@@ -55,7 +46,6 @@ class SignUpActivity : BaseActivity<ActivitySignUpBinding>(
         })
 
         binding.tietSignUpRePw.addTextChangedListener(object : TextWatcher {
-
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
 
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
@@ -85,20 +75,19 @@ class SignUpActivity : BaseActivity<ActivitySignUpBinding>(
     }
 
     fun checkemail(): Boolean {
-
         val email = binding.tietSignUpEmail.text.toString().trim()
         val patternemail =
             "^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$"
         val match = Pattern.matches(patternemail, email)
 
-        if (match) {
+        return if (match) {
             binding.tietSignUpEmail.setTextColor(getColor(R.color.black))
             binding.tilSignUpEmail.error = null
-            return true
+            true
         } else {
             binding.tietSignUpEmail.setTextColor(getColor(R.color.system_red))
             binding.tilSignUpEmail.error = "이메일 형식이 잘못되었습니다"
-            return false
+            false
         }
     }
 
@@ -108,14 +97,14 @@ class SignUpActivity : BaseActivity<ActivitySignUpBinding>(
         val patternid = "^[a-zA-Z]{1}[a-zA-Z0-9]{4,11}$"
         val match = Pattern.matches(patternid, id)
 
-        if (match) {
+        return if (match) {
             binding.tietSignUpId.setTextColor(getColor(R.color.black))
             binding.tilSignUpId.error = null
-            return true
+            true
         } else {
             binding.tietSignUpId.setTextColor(getColor(R.color.system_red))
             binding.tilSignUpId.error = "아이디 형식이 잘못되었습니다"
-            return false
+            false
         }
     }
 
@@ -125,44 +114,37 @@ class SignUpActivity : BaseActivity<ActivitySignUpBinding>(
         val patternpw = "^.*(?=^.{8,15}$)(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&+=]).*$"
         val match = Pattern.matches(patternpw, pw)
 
-        if (match) {
+        return if (match) {
             binding.tietSignUpPw.setTextColor(getColor(R.color.black))
             binding.tilSignUpPw.error = null
-            return true
+            true
         } else {
             binding.tietSignUpPw.setTextColor(getColor(R.color.system_red))
             binding.tilSignUpPw.error = "비밀번호 형식이 잘못되었습니다"
-            return false
+            false
         }
     }
 
     fun checkrepw(): Boolean {
-
-        if (binding.tietSignUpRePw.text.toString().equals(binding.tietSignUpPw.text.toString())) {
+        return if (binding.tietSignUpRePw.text.toString()
+                .equals(binding.tietSignUpPw.text.toString())
+        ) {
             binding.tietSignUpRePw.setTextColor(getColor(R.color.black))
             binding.tilSignUpRePw.error = null
-            return true
+            true
 
         } else {
             binding.tietSignUpRePw.setTextColor(getColor(R.color.system_red))
             binding.tilSignUpRePw.error = "비밀번호가 다릅니다."
-            return false
+            false
         }
     }
 
     fun certificationbtn() {
-        if (checkemail()) {
-            binding.btnCertification.isEnabled = true
-        } else {
-            binding.btnCertification.isEnabled = false
-        }
+        binding.btnCertification.isEnabled = checkemail()
     }
 
     fun nextbtn() {
-        if (checkemail() && checkid() && checkpw() && checkrepw()) {
-            binding.btnSignUpNext.isEnabled = true
-        } else {
-            binding.btnSignUpNext.isEnabled = false
-        }
+        binding.btnSignUpNext.isEnabled = checkemail() && checkid() && checkpw() && checkrepw()
     }
 }

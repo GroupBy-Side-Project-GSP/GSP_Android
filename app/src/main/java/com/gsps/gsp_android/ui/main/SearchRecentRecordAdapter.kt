@@ -10,25 +10,22 @@ import com.gsps.gsp_android.R
 
 class SearchRecentRecordAdapter :
     RecyclerView.Adapter<SearchRecentRecordAdapter.SearchRecentRecordViewHolder>() {
-
     private var items = mutableListOf<SearchRecentRecordModel>()
-
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): SearchRecentRecordAdapter.SearchRecentRecordViewHolder {
+    ): SearchRecentRecordViewHolder {
         val inflater = LayoutInflater.from(parent.context)
             .inflate(R.layout.fragment_click_search, parent, false)
-        return SearchRecentRecordAdapter.SearchRecentRecordViewHolder(inflater)
+        return SearchRecentRecordViewHolder(inflater)
     }
 
     override fun onBindViewHolder(
-        holder: SearchRecentRecordAdapter.SearchRecentRecordViewHolder,
+        holder: SearchRecentRecordViewHolder,
         position: Int
     ) {
         holder.bind(items[position])
-
     }
 
     override fun getItemCount(): Int {

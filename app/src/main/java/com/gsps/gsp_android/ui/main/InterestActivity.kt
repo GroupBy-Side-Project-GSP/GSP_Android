@@ -2,21 +2,14 @@ package com.gsps.gsp_android.ui.main
 
 
 import android.content.Intent
-import android.graphics.drawable.GradientDrawable
-import android.text.Editable
-import android.text.TextWatcher
-import android.widget.*
+import android.widget.CompoundButton
+import android.widget.Toast
 import androidx.appcompat.widget.AppCompatButton
-import androidx.core.widget.addTextChangedListener
-
 import com.gsps.gsp_android.R
 import com.gsps.gsp_android.databinding.ActivityInterestBinding
 import com.gsps.gsp_android.ui.base.BaseActivity
 
-
-class InterestActivity : BaseActivity<ActivityInterestBinding>(
-    R.layout.activity_interest
-) {
+class InterestActivity : BaseActivity<ActivityInterestBinding>(R.layout.activity_interest) {
     private val buttonSignIn: AppCompatButton by lazy { findViewById(R.id.btnInterestComplete) }
 
     companion object {
@@ -79,11 +72,7 @@ class InterestActivity : BaseActivity<ActivityInterestBinding>(
                             binding.tvInterestCount.text = "(${++count}/5)"
                         }
                     }
-                    if (count == 0) {
-                        binding.btnInterestComplete.isEnabled = false
-                    } else {
-                        binding.btnInterestComplete.isEnabled = true
-                    }
+                    binding.btnInterestComplete.isEnabled = count != 0
                 } else {
                     Toast.makeText(this, "선택 갯수 초과입니다.", Toast.LENGTH_SHORT).show()
                     when (buttonView) {
@@ -176,11 +165,7 @@ class InterestActivity : BaseActivity<ActivityInterestBinding>(
                         binding.tvInterestCount.text = "(${--count}/5)"
                     }
                 }
-                if (count == 0) {
-                    binding.btnInterestComplete.isEnabled = false
-                } else {
-                    binding.btnInterestComplete.isEnabled = true
-                }
+                binding.btnInterestComplete.isEnabled = count != 0
             }
         }
         binding.designCheckBox.setOnCheckedChangeListener(listener)

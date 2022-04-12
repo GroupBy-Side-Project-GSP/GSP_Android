@@ -9,7 +9,6 @@ import com.gsps.gsp_android.ui.base.BaseActivity
 import java.util.regex.Pattern
 
 class SignInActivity : BaseActivity<ActivitySignInBinding>(R.layout.activity_sign_in) {
-
     var booleanId: Boolean = false
     var booleanPw: Boolean = false
     lateinit var backgroundColorButtonSignIn: GradientDrawable

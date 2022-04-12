@@ -9,20 +9,19 @@ import androidx.recyclerview.widget.RecyclerView
 import com.gsps.gsp_android.R
 
 class SearchResultAdapter : RecyclerView.Adapter<SearchResultAdapter.SearchResultViewHolder>() {
-
     private var items = mutableListOf<SearchResultModel>()
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): SearchResultAdapter.SearchResultViewHolder {
+    ): SearchResultViewHolder {
         val inflater = LayoutInflater.from(parent.context)
             .inflate(R.layout.fragment_search_result, parent, false)
         return SearchResultViewHolder(inflater)
     }
 
     override fun onBindViewHolder(
-        holder: SearchResultAdapter.SearchResultViewHolder,
+        holder: SearchResultViewHolder,
         position: Int
     ) {
         holder.bind(items[position])
