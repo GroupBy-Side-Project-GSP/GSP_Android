@@ -14,28 +14,26 @@ class SignInActivity : BaseActivity<ActivitySignInBinding>(R.layout.activity_sig
     var booleanPw: Boolean = false
     lateinit var backgroundColorButtonSignIn: GradientDrawable
 
-
     fun checkId() {
-        val id = binding.signInEtId.text.toString().trim()
+        val id = binding.etId.text.toString().trim()
         val patternId: String = """^[0-9a-zA-Z!@#$%^+_\-=]*$"""
         val match = Pattern.matches(patternId, id)
 
         return if (!match) {
-            binding.signInEtId.setTextColor(getColor(R.color.system_red))
-            binding.signInTilId.error = getString(R.string.error_wrong_id)
+            binding.etId.setTextColor(getColor(R.color.system_red))
+            binding.tilId.error = getString(R.string.error_wrong_id)
             booleanId = false
         } else {
-            binding.signInEtId.setTextColor(getColor(R.color.black))
-            binding.signInTilId.error = null
+            binding.etId.setTextColor(getColor(R.color.black))
+            binding.tilId.error = null
             booleanId = id != ""
         }
     }
 
-
     override fun initView() {
-        backgroundColorButtonSignIn = binding.signInBtnSignIn.background as GradientDrawable
+        backgroundColorButtonSignIn = binding.btnSignIn.background as GradientDrawable
 
-        binding.signInEtId.addTextChangedListener(object : TextWatcher {
+        binding.etId.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
@@ -47,11 +45,11 @@ class SignInActivity : BaseActivity<ActivitySignInBinding>(R.layout.activity_sig
             override fun afterTextChanged(s: Editable?) {}
         })
 
-        binding.signInEtPw.addTextChangedListener(object : TextWatcher {
+        binding.etPw.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                booleanPw = binding.signInEtPw.text.toString().trim() != ""
+                booleanPw = binding.etPw.text.toString().trim() != ""
                 if (booleanId && booleanPw) backgroundColorButtonSignIn.setColor(getColor(R.color.main))
                 else backgroundColorButtonSignIn.setColor(getColor(R.color.main_lighten))
             }

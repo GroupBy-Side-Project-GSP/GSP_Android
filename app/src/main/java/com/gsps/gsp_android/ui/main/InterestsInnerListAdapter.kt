@@ -1,47 +1,44 @@
 package com.gsps.gsp_android.ui.main
 
 import android.content.Context
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.gsps.gsp_android.databinding.InterestsFullListItemBinding
+import com.gsps.gsp_android.databinding.InterestsInnerListItemBinding
 
-class InterestsFullListAdapter(
+class InterestsInnerListAdapter(
     context: Context,
     private val itemList: MutableList<MemberModel>
-) : RecyclerView.Adapter<InterestsFullListAdapter.InterestsFullListHolder>() {
+) :
+    RecyclerView.Adapter<InterestsInnerListAdapter.InterestsMemberHolder>() {
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): InterestsFullListAdapter.InterestsFullListHolder {
-        Log.d("dmstjsFullList", "onCreateViewHolder")
+    ): InterestsMemberHolder {
         val binding =
-            InterestsFullListItemBinding.inflate(
+            InterestsInnerListItemBinding.inflate(
                 LayoutInflater.from(parent.context),
                 parent,
                 false
             )
-        return InterestsFullListHolder(binding)
+        return InterestsMemberHolder(binding)
     }
 
     override fun onBindViewHolder(
-        holder: InterestsFullListAdapter.InterestsFullListHolder,
+        holder: InterestsMemberHolder,
         position: Int
     ) {
-        Log.d("dmstjsFullList", "onBindViewHolder")
         holder.bind(itemList[position])
     }
 
     override fun getItemCount(): Int {
-        Log.d("dmstjsFullList", itemList.size.toString())
         return itemList.size
     }
 
-    inner class InterestsFullListHolder(var binding: InterestsFullListItemBinding) :
+    class InterestsMemberHolder(var binding: InterestsInnerListItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(item: MemberModel) {
-            binding.model = item
+            binding.memberModel = item
         }
     }
 }

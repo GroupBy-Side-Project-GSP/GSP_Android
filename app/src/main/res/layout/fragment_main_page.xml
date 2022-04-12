@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".ui.main.MainPageFragment">
@@ -31,7 +31,6 @@
                 android:id="@+id/ivLogo"
                 android:layout_width="45dp"
                 android:layout_height="20dp"
-                android:layout_centerVertical="true"
                 android:layout_marginTop="20dp"
                 android:src="@color/medium_gray"
                 app:layout_constraintStart_toStartOf="@id/guidelineStart"
@@ -42,15 +41,13 @@
                 android:id="@+id/btnSearch"
                 android:layout_width="15dp"
                 android:layout_height="15dp"
-                android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
                 android:background="@color/medium_gray"
                 app:layout_constraintBottom_toBottomOf="@id/ivLogo"
                 app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
                 app:layout_constraintTop_toTopOf="@id/ivLogo" />
 
             <androidx.fragment.app.FragmentContainerView
-                android:id="@+id/frameNewMember"
+                android:id="@+id/newMemberContainer"
                 android:name="com.gsps.gsp_android.ui.main.NewMemberFragment"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -60,14 +57,14 @@
                 app:layout_constraintTop_toBottomOf="@id/ivLogo" />
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/interestsListContainer"
+                android:id="@+id/outerContainer"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
                 android:nestedScrollingEnabled="false"
                 app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
                 app:layout_constraintStart_toStartOf="@id/guidelineStart"
-                app:layout_constraintTop_toBottomOf="@id/frameNewMember" />
+                app:layout_constraintTop_toBottomOf="@id/newMemberContainer" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
 </layout>

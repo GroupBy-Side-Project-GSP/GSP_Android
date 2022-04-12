@@ -42,4 +42,6 @@
     <string name="affairs_category">사무</string>
     <string name="cloth_category"><![CDATA[섬유&의복]]></string>
     <string name="recent_search">최근 검색어</string>
+    <string name="apply_collaboration">협업 신청하러가기</string>
+    <string name="new_member">신규가입회사</string>
 </resources>

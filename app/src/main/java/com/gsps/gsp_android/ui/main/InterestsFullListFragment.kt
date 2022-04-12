@@ -12,43 +12,7 @@ class InterestsFullListFragment :
     }
 
     private fun setUpRecyclerView() {
-        val itemList =
-            mutableListOf(
-                InterestsMemberModel(
-                    "회사1",
-                    "회사 설명을 어디까지 적어야 두 줄 이상으로 넘어갈까요? 이정도면 되었을까요? 글씨가 작아서 아닐지도 몰라요."
-                ),
-                InterestsMemberModel(
-                    "회사2",
-                    "회사 설명을 어디까지 적어야 두 줄 이상으로 넘어갈까요? 이정도면 되었을까요? 글씨가 작아서 아닐지도 몰라요."
-                ),
-                InterestsMemberModel(
-                    "회사3",
-                    "회사 설명을 어디까지 적어야 두 줄 이상으로 넘어갈까요? 이정도면 되었을까요? 글씨가 작아서 아닐지도 몰라요."
-                ),
-                InterestsMemberModel(
-                    "회사4",
-                    "회사 설명을 어디까지 적어야 두 줄 이상으로 넘어갈까요? 이정도면 되었을까요? 글씨가 작아서 아닐지도 몰라요."
-                ),
-                InterestsMemberModel(
-                    "회사5",
-                    "회사 설명을 어디까지 적어야 두 줄 이상으로 넘어갈까요? 이정도면 되었을까요? 글씨가 작아서 아닐지도 몰라요."
-                ),
-                InterestsMemberModel(
-                    "회사6",
-                    "회사 설명을 어디까지 적어야 두 줄 이상으로 넘어갈까요? 이정도면 되었을까요? 글씨가 작아서 아닐지도 몰라요."
-                ),
-                InterestsMemberModel(
-                    "회사7",
-                    "회사 설명을 어디까지 적어야 두 줄 이상으로 넘어갈까요? 이정도면 되었을까요? 글씨가 작아서 아닐지도 몰라요."
-                ),
-                InterestsMemberModel(
-                    "회사8",
-                    "회사 설명을 어디까지 적어야 두 줄 이상으로 넘어갈까요? 이정도면 되었을까요? 글씨가 작아서 아닐지도 몰라요."
-                )
-            )
-
-        binding.container.adapter = InterestsFullListAdapter(requireContext(), itemList)
-        binding.container.layoutManager = LinearLayoutManager(requireContext())
+        binding.fullListContainer.adapter = InterestsFullListAdapter(requireContext(), binding.model!!.innerList)
+        binding.fullListContainer.layoutManager = LinearLayoutManager(requireContext())
     }
 }

@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
         <variable
             name="model"
-            type="com.gsps.gsp_android.ui.main.InterestsMemberModel" />
+            type="com.gsps.gsp_android.ui.main.MemberModel" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="320dp"
         android:layout_height="74dp">
 
@@ -66,7 +66,6 @@
                 android:text="@{model.name}"
                 android:textColor="@color/black"
                 android:textSize="10sp" />
-
         </RelativeLayout>
 
         <ImageView

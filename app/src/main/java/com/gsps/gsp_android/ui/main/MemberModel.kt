@@ -1,6 +1,6 @@
 package com.gsps.gsp_android.ui.main
 
-data class NewMemberModel(
+data class MemberModel(
     var imageMain: Int,
     var imageLogo: Int,
     var name: String,
