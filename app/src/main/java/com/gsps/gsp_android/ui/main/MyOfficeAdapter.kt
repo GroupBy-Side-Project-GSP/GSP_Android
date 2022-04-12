@@ -10,12 +10,16 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.gsps.gsp_android.R
 
-class MyOfficeAdapter : RecyclerView.Adapter<MyOfficeAdapter.MyOfficeViewHolder>(){
+class MyOfficeAdapter : RecyclerView.Adapter<MyOfficeAdapter.MyOfficeViewHolder>() {
 
     private var items = mutableListOf<MyOfficeModel>()
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyOfficeAdapter.MyOfficeViewHolder {
-        val inflater= LayoutInflater.from(parent.context).inflate(R.layout.my_office_item,parent,false)
+    override fun onCreateViewHolder(
+        parent: ViewGroup,
+        viewType: Int
+    ): MyOfficeAdapter.MyOfficeViewHolder {
+        val inflater =
+            LayoutInflater.from(parent.context).inflate(R.layout.my_office_item, parent, false)
         return MyOfficeViewHolder(inflater)
     }
 
@@ -23,9 +27,9 @@ class MyOfficeAdapter : RecyclerView.Adapter<MyOfficeAdapter.MyOfficeViewHolder>
 
         holder.bind(items[position])
 
-        holder.itemheart.setOnClickListener(object :View.OnClickListener{
+        holder.itemheart.setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View?) {
-                if(items.isNotEmpty()){
+                if (items.isNotEmpty()) {
                     items.removeAt(holder.adapterPosition)
                     notifyDataSetChanged()
                 }
@@ -37,8 +41,8 @@ class MyOfficeAdapter : RecyclerView.Adapter<MyOfficeAdapter.MyOfficeViewHolder>
         return items.size
     }
 
-    fun addItems(list: List<MyOfficeModel>){
-        this.items.run{
+    fun addItems(list: List<MyOfficeModel>) {
+        this.items.run {
             clear()
             addAll(list)
         }
@@ -50,9 +54,9 @@ class MyOfficeAdapter : RecyclerView.Adapter<MyOfficeAdapter.MyOfficeViewHolder>
         var itemcategory = v.findViewById<TextView>(R.id.tvRvItemMyOfficeCate)
         var itemheart = v.findViewById<Button>(R.id.btnMyOfficeFavorite)
 
-        fun bind(model: MyOfficeModel){
-            itemname.text=model.officename
-            itemcategory.text=model.category
+        fun bind(model: MyOfficeModel) {
+            itemname.text = model.officename
+            itemcategory.text = model.category
         }
     }
 }

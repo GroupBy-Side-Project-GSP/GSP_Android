@@ -8,17 +8,25 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.gsps.gsp_android.R
 
-class SearchRecentRecordAdapter : RecyclerView.Adapter<SearchRecentRecordAdapter.SearchRecentRecordViewHolder>(){
+class SearchRecentRecordAdapter :
+    RecyclerView.Adapter<SearchRecentRecordAdapter.SearchRecentRecordViewHolder>() {
 
     private var items = mutableListOf<SearchRecentRecordModel>()
 
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SearchRecentRecordAdapter.SearchRecentRecordViewHolder {
-        val inflater= LayoutInflater.from(parent.context).inflate(R.layout.fragment_click_search,parent,false)
+    override fun onCreateViewHolder(
+        parent: ViewGroup,
+        viewType: Int
+    ): SearchRecentRecordAdapter.SearchRecentRecordViewHolder {
+        val inflater = LayoutInflater.from(parent.context)
+            .inflate(R.layout.fragment_click_search, parent, false)
         return SearchRecentRecordAdapter.SearchRecentRecordViewHolder(inflater)
     }
 
-    override fun onBindViewHolder(holder: SearchRecentRecordAdapter.SearchRecentRecordViewHolder, position: Int) {
+    override fun onBindViewHolder(
+        holder: SearchRecentRecordAdapter.SearchRecentRecordViewHolder,
+        position: Int
+    ) {
         holder.bind(items[position])
 
     }
@@ -26,8 +34,9 @@ class SearchRecentRecordAdapter : RecyclerView.Adapter<SearchRecentRecordAdapter
     override fun getItemCount(): Int {
         return items.size
     }
-    fun addItems(list: List<SearchRecentRecordModel>){
-        this.items.run{
+
+    fun addItems(list: List<SearchRecentRecordModel>) {
+        this.items.run {
             clear()
             addAll(list)
         }
@@ -37,8 +46,8 @@ class SearchRecentRecordAdapter : RecyclerView.Adapter<SearchRecentRecordAdapter
         var itemsearchtext = v.findViewById<TextView>(R.id.tvClickRecentRecordItem)
         var itemrecentdelete = v.findViewById<Button>(R.id.btnClickRecentRecordDeleteItem)
 
-        fun bind(model: SearchRecentRecordModel){
-            itemsearchtext.text=model.recentrecord
+        fun bind(model: SearchRecentRecordModel) {
+            itemsearchtext.text = model.recentrecord
         }
     }
 }

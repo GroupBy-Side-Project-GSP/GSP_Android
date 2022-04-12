@@ -17,21 +17,21 @@ class AnnouncementActivity : BaseActivity<ActivityAnnouncementBinding>(
 
     override fun initView() {
         val testList = listOf(
-            AnnouncementModel("testTitle1","testDate1"),
-            AnnouncementModel("testTitle2","testDate2"),
-            AnnouncementModel("testTitle3","testDate3")
+            AnnouncementModel("testTitle1", "testDate1"),
+            AnnouncementModel("testTitle2", "testDate2"),
+            AnnouncementModel("testTitle3", "testDate3")
         )
 
-        val linearLayoutManager = LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false)
-        binding.RvAnnouncement.layoutManager=linearLayoutManager
-        binding.RvAnnouncement.adapter=adapter
+        val linearLayoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+        binding.rvAnnouncement.layoutManager = linearLayoutManager
+        binding.rvAnnouncement.adapter = adapter
         adapter.addItems(testList)
 
-        adapter.setOnItemClickListener(object :AnnouncementAdapter.ItemClickListener{
+        adapter.setOnItemClickListener(object : AnnouncementAdapter.ItemClickListener {
             override fun onItemClick(v: View, position: Int, model: AnnouncementModel) {
-                val intent = Intent(this@AnnouncementActivity,SubAnnouncementActivity::class.java)
-                intent.putExtra("title",model.title)
-                intent.putExtra("date",model.date)
+                val intent = Intent(this@AnnouncementActivity, SubAnnouncementActivity::class.java)
+                intent.putExtra("title", model.title)
+                intent.putExtra("date", model.date)
                 startActivity(intent)
             }
         })

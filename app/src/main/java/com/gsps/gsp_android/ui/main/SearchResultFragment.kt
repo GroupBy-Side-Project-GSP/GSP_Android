@@ -21,14 +21,14 @@ class SearchResultFragment : BaseFragment<FragmentSearchResultBinding>(
 
     }
 
-    fun adapter(){
+    fun adapter() {
         val testList = listOf<SearchResultModel>(
-            SearchResultModel("회사내용","회사이름")
+            SearchResultModel("회사내용", "회사이름")
         )
 
         val linearLayoutManager = LinearLayoutManager(requireContext())
         adapter.addItems(testList)
-        binding.rvSearchResult.layoutManager=linearLayoutManager
-        binding.rvSearchResult.adapter=adapter
+        binding.rvSearchResult.layoutManager = linearLayoutManager
+        binding.rvSearchResult.adapter = adapter
     }
 }

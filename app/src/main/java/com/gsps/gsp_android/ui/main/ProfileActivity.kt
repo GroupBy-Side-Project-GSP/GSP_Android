@@ -15,44 +15,44 @@ import com.gsps.gsp_android.databinding.ActivityProfileBinding
 import com.gsps.gsp_android.ui.base.BaseActivity
 
 class ProfileActivity : BaseActivity<ActivityProfileBinding>(
-R.layout.activity_profile
+    R.layout.activity_profile
 ) {
 
     val REQ_GALLERL = 1
 
     override fun initView() {
-        binding.btnPen.setOnClickListener{
+        binding.btnPen.setOnClickListener {
             openGallary()
         }
-        binding.edProfileName.addTextChangedListener(object :TextWatcher{
+        binding.edProfileName.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
 
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                if(binding.edProfileName.length()==0){
-                    binding.btnProfileComplete.isEnabled=false
-                }else{
-                    binding.btnProfileComplete.isEnabled=true
+                if (binding.edProfileName.length() == 0) {
+                    binding.btnProfileComplete.isEnabled = false
+                } else {
+                    binding.btnProfileComplete.isEnabled = true
                 }
             }
 
             override fun afterTextChanged(p0: Editable?) {}
         })
-        binding.btnProfileComplete.setOnClickListener{
+        binding.btnProfileComplete.setOnClickListener {
             next()
         }
     }
 
-    fun openGallary(){
-        val intent=Intent(Intent.ACTION_PICK)
-        intent.type=MediaStore.Images.Media.CONTENT_TYPE
+    fun openGallary() {
+        val intent = Intent(Intent.ACTION_PICK)
+        intent.type = MediaStore.Images.Media.CONTENT_TYPE
         startActivityForResult(intent, REQ_GALLERL)
     }
 
     @Override
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if(resultCode == RESULT_OK){
-            when(requestCode){
+        if (resultCode == RESULT_OK) {
+            when (requestCode) {
                 REQ_GALLERL -> {
                     data?.data.let { uri ->
                         binding.ibProfileImage.setScaleType(ImageView.ScaleType.FIT_XY)
@@ -64,8 +64,8 @@ R.layout.activity_profile
         }
     }
 
-    fun next(){
-            val intent = Intent(this,InterestActivity::class.java)
-            startActivity(intent)
+    fun next() {
+        val intent = Intent(this, InterestActivity::class.java)
+        startActivity(intent)
     }
 }

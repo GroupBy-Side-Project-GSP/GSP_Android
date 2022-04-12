@@ -24,25 +24,25 @@ class ClickSearchFragment : BaseFragment<FragmentClickSearchBinding>(
         recentrecordadapter()
     }
 
-    fun adapter(){
+    fun adapter() {
         val testList = listOf<SearchTextModel>(
             SearchTextModel("검색어"),
         )
 
         val linearLayoutManager = LinearLayoutManager(requireContext())
         adapter.addItems(testList)
-        binding.rvClickSearchText.layoutManager=linearLayoutManager
-        binding.rvClickSearchText.adapter=adapter
+        binding.rvClickSearchText.layoutManager = linearLayoutManager
+        binding.rvClickSearchText.adapter = adapter
     }
 
-    fun recentrecordadapter(){
+    fun recentrecordadapter() {
         val testList2 = listOf<SearchRecentRecordModel>(
             SearchRecentRecordModel("최근기록")
         )
 
         val linearLayoutManager = LinearLayoutManager(requireContext())
         recentrecordadapter.addItems(testList2)
-        binding.rvRecentRecord.layoutManager=linearLayoutManager
-        binding.rvRecentRecord.adapter=recentrecordadapter
+        binding.rvRecentRecord.layoutManager = linearLayoutManager
+        binding.rvRecentRecord.adapter = recentrecordadapter
     }
 }

@@ -8,16 +8,23 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.gsps.gsp_android.R
 
-class SearchResultAdapter : RecyclerView.Adapter<SearchResultAdapter.SearchResultViewHolder>(){
+class SearchResultAdapter : RecyclerView.Adapter<SearchResultAdapter.SearchResultViewHolder>() {
 
     private var items = mutableListOf<SearchResultModel>()
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SearchResultAdapter.SearchResultViewHolder {
-        val inflater= LayoutInflater.from(parent.context).inflate(R.layout.fragment_search_result,parent,false)
+    override fun onCreateViewHolder(
+        parent: ViewGroup,
+        viewType: Int
+    ): SearchResultAdapter.SearchResultViewHolder {
+        val inflater = LayoutInflater.from(parent.context)
+            .inflate(R.layout.fragment_search_result, parent, false)
         return SearchResultViewHolder(inflater)
     }
 
-    override fun onBindViewHolder(holder: SearchResultAdapter.SearchResultViewHolder, position: Int) {
+    override fun onBindViewHolder(
+        holder: SearchResultAdapter.SearchResultViewHolder,
+        position: Int
+    ) {
         holder.bind(items[position])
     }
 
@@ -25,8 +32,8 @@ class SearchResultAdapter : RecyclerView.Adapter<SearchResultAdapter.SearchResul
         return items.size
     }
 
-    fun addItems(list: List<SearchResultModel>){
-        this.items.run{
+    fun addItems(list: List<SearchResultModel>) {
+        this.items.run {
             clear()
             addAll(list)
         }
@@ -36,9 +43,9 @@ class SearchResultAdapter : RecyclerView.Adapter<SearchResultAdapter.SearchResul
         var itemsearchresulttext = v.findViewById<TextView>(R.id.tvSearchResultContentItem)
         var itemsearchresultname = v.findViewById<TextView>(R.id.tvSearchResultNameItem)
         var itemsearchresultbtn = v.findViewById<Button>(R.id.btnSearchResultheart)
-        fun bind(model: SearchResultModel){
-            itemsearchresulttext.text=model.content
-            itemsearchresultname.text=model.name
+        fun bind(model: SearchResultModel) {
+            itemsearchresulttext.text = model.content
+            itemsearchresultname.text = model.name
         }
     }
 }

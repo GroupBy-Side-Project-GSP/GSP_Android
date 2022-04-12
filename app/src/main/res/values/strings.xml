@@ -22,6 +22,26 @@
     <string name="sign_up_hint_id">아이디 입력</string>
     <string name="show_all">모두보기</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="search_click_hint">검색어를 입력해주세요</string>
+    <string name="search_no_result">최근 검색어가 없습니다.</string>
+    <string name="select_intersted_field">분야를 선택해주세요</string>
+    <string name="title_select_interested_field">관심 분야 선택</string>
+    <string name="sub_title_interested_field">종아하는 분야를 선택해주세요</string>
+    <string name="design_category">디자인</string>
+    <string name="management_category"><![CDATA[경영&회계]]></string>
+    <string name="health_category"><![CDATA[보건&의료]]></string>
+    <string name="environment_category"><![CDATA[환경&에너지]]></string>
+    <string name="material_category">재료</string>
+    <string name="electronic_category"><![CDATA[전기&전자]]></string>
+    <string name="erection_category">건설</string>
+    <string name="chemistry_category"><![CDATA[화학&바이오]]></string>
+    <string name="plan_category"><![CDATA[기획&마케팅]]></string>
+    <string name="print_category"><![CDATA[인쇄&공예]]></string>
+    <string name="sales_category">영업판매</string>
+    <string name="welfare_category">사회복지</string>
+    <string name="affairs_category">사무</string>
+    <string name="cloth_category"><![CDATA[섬유&의복]]></string>
+    <string name="recent_search">최근 검색어</string>
     <string name="apply_collaboration">협업 신청하러가기</string>
     <string name="new_member">신규가입회사</string>
 </resources>

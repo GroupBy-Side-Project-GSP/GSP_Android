@@ -8,12 +8,16 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.gsps.gsp_android.R
 
-class SearchTextAdapter : RecyclerView.Adapter<SearchTextAdapter.SearchTextViewHolder>(){
+class SearchTextAdapter : RecyclerView.Adapter<SearchTextAdapter.SearchTextViewHolder>() {
 
     private var items = mutableListOf<SearchTextModel>()
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SearchTextAdapter.SearchTextViewHolder {
-        val inflater= LayoutInflater.from(parent.context).inflate(R.layout.fragment_click_search,parent,false)
+    override fun onCreateViewHolder(
+        parent: ViewGroup,
+        viewType: Int
+    ): SearchTextAdapter.SearchTextViewHolder {
+        val inflater = LayoutInflater.from(parent.context)
+            .inflate(R.layout.fragment_click_search, parent, false)
         return SearchTextViewHolder(inflater)
     }
 
@@ -25,8 +29,8 @@ class SearchTextAdapter : RecyclerView.Adapter<SearchTextAdapter.SearchTextViewH
         return items.size
     }
 
-    fun addItems(list: List<SearchTextModel>){
-        this.items.run{
+    fun addItems(list: List<SearchTextModel>) {
+        this.items.run {
             clear()
             addAll(list)
         }
@@ -35,8 +39,8 @@ class SearchTextAdapter : RecyclerView.Adapter<SearchTextAdapter.SearchTextViewH
     class SearchTextViewHolder(v: View) : RecyclerView.ViewHolder(v) {
         var itemsearchtext = v.findViewById<TextView>(R.id.tvSearchedItemText)
 
-        fun bind(model: SearchTextModel){
-            itemsearchtext.text=model.searchtext
+        fun bind(model: SearchTextModel) {
+            itemsearchtext.text = model.searchtext
         }
     }
 }

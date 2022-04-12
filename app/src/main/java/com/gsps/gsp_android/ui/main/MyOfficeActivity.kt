@@ -19,23 +19,23 @@ class MyOfficeActivity : BaseActivity<ActivityMyOfficeBinding>(
         next()
     }
 
-    fun next(){
-        binding.btnOfficeBack.setOnClickListener{
+    fun next() {
+        binding.btnOfficeBack.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
     }
 
-    fun adapter(){
+    fun adapter() {
         val testList = listOf<MyOfficeModel>(
-            MyOfficeModel("name1","cate1"),
-            MyOfficeModel("name2","cate2"),
-            MyOfficeModel("name3","cate3"),
-            MyOfficeModel("name4","cate4"),
-            )
-        val gridLayoutManager = GridLayoutManager(applicationContext,2)
+            MyOfficeModel("name1", "cate1"),
+            MyOfficeModel("name2", "cate2"),
+            MyOfficeModel("name3", "cate3"),
+            MyOfficeModel("name4", "cate4"),
+        )
+        val gridLayoutManager = GridLayoutManager(applicationContext, 2)
         adapter.addItems(testList)
-        binding.rvOffice.layoutManager=gridLayoutManager
-        binding.rvOffice.adapter=adapter
+        binding.rvOffice.layoutManager = gridLayoutManager
+        binding.rvOffice.adapter = adapter
     }
 }
