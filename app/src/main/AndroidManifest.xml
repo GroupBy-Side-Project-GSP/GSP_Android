@@ -14,11 +14,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GSP_Android">
         <activity
+            android:name=".ui.main.MemberInfoCategoryActivity"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".ui.main.MemberInfoWritingActivity"
             android:exported="false" />
         <activity
             android:name=".ui.main.SignUpActivity"
-            android:exported="false"></activity>
+            android:exported="false" />
         <activity
             android:name=".ui.main.SubAnnouncementActivity"
             android:exported="false" />
@@ -47,11 +56,7 @@
         <activity
             android:name=".ui.splash.SplashActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".ui.main.MainActivity"

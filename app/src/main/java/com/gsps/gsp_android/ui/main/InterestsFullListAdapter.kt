@@ -13,7 +13,7 @@ class InterestsFullListAdapter(
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): InterestsFullListAdapter.InterestsFullListHolder {
+    ): InterestsFullListHolder {
         val binding =
             InterestsFullListItemBinding.inflate(
                 LayoutInflater.from(parent.context),
@@ -23,10 +23,7 @@ class InterestsFullListAdapter(
         return InterestsFullListHolder(binding)
     }
 
-    override fun onBindViewHolder(
-        holder: InterestsFullListAdapter.InterestsFullListHolder,
-        position: Int
-    ) {
+    override fun onBindViewHolder(holder: InterestsFullListHolder, position: Int) {
         holder.bind(itemList[position])
     }
 
