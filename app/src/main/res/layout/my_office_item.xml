@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_marginStart="5dp"
+    android:layout_marginTop="20dp"
+    android:layout_marginEnd="5dp">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvRvItemMyOffice"
+        android:layout_width="155dp"
+        android:layout_height="90dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/ivRvItemMyOfficePhoto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#FFEB3B" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnMyOfficeFavorite"
+        android:layout_width="26dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="129dp"
+        android:layout_marginTop="65dp"
+        android:background="@color/main"
+        app:layout_constraintBottom_toBottomOf="@id/cvRvItemMyOffice"
+        app:layout_constraintEnd_toEndOf="@id/cvRvItemMyOffice"
+        app:layout_constraintStart_toStartOf="@id/cvRvItemMyOffice"
+        app:layout_constraintTop_toTopOf="@id/cvRvItemMyOffice" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvRvItemMyOfficeLog"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="8dp"
+        app:cardCornerRadius="4dp"
+        app:cardElevation="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cvRvItemMyOffice">
+
+        <ImageView
+            android:id="@+id/ivRvItemMyOfficeLog"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/black" />
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/tvRvItemMyOfficeName"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/noto_sans_kr_regular"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:text="tests"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@id/tvShapPoint"
+        app:layout_constraintStart_toEndOf="@id/cvRvItemMyOfficeLog"
+        app:layout_constraintTop_toBottomOf="@id/cvRvItemMyOffice" />
+
+    <TextView
+        android:id="@+id/tvRvItemMyOfficeCate"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/noto_sans_kr_regular"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:text="test2"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tvShapPoint"
+        app:layout_constraintTop_toBottomOf="@id/cvRvItemMyOffice" />
+
+    <TextView
+        android:id="@+id/tvShapPoint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="・"
+        app:layout_constraintEnd_toStartOf="@id/tvRvItemMyOfficeCate"
+        app:layout_constraintStart_toEndOf="@id/tvRvItemMyOfficeName"
+        app:layout_constraintTop_toBottomOf="@id/cvRvItemMyOffice" />
+</androidx.constraintlayout.widget.ConstraintLayout>

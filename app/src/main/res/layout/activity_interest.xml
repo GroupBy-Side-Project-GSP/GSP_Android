@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.main.InterestActivity">
+
+        <ImageButton
+            android:id="@+id/ibInterestBack"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="14dp"
+            android:layout_marginEnd="100dp"
+            android:background="@color/white"
+            android:src="@drawable/ic_go_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/black" />
+
+        <TextView
+            android:id="@+id/tvInterestTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:color="#000000"
+            android:fontFamily="@font/noto_sans_kr_bold"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="@string/title_select_interested_field"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvInterestExplan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="17dp"
+            android:fontFamily="@font/noto_sans_kr_regular"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="@string/sub_title_interested_field"
+            android:textColor="@color/dark_gray"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvInterestTitle" />
+
+        <TextView
+            android:id="@+id/tvInterestCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/notosan_font"
+            android:hint="(0/5)"
+            android:includeFontPadding="false"
+            android:text=""
+            android:textColor="@color/main_darken"
+            android:textColorHint="@color/main_darken"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvInterestExplan" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/conCheckBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvInterestCount">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/conInterestSettingInsideGuide"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.05" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/conInterestSettingInsideGuide2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.6" />
+
+            <CheckBox
+                android:id="@+id/designCheckBox"
+                android:layout_width="79dp"
+                android:layout_height="32dp"
+                android:background="@drawable/item_checkbox_background"
+                android:button="@null"
+                android:fontFamily="@font/noto_sans_kr_medium"
+                android:gravity="center"
+                android:text="@string/design_category"
+                android:textColor="@drawable/item_textcolor"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@id/conInterestSettingInsideGuide"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <CheckBox
+                android:id="@+id/managementCheckBox"
+                android:layout_width="101dp"
+                android:layout_height="32dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/item_checkbox_background"
+                android:button="@null"
+                android:fontFamily="@font/noto_sans_kr_medium"
+                android:gravity="center"
+                android:text="@string/management_category"
+                android:textColor="@drawable/item_textcolor"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toStartOf="@id/conInterestSettingInsideGuide2"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <CheckBox
+                android:id="@+id/healthCheckBox"
+                android:layout_width="101dp"
+                android:layout_height="32dp"
+                android:background="@drawable/item_checkbox_background"
+                android:button="@null"
+                android:fontFamily="@font/noto_sans_kr_medium"
+                android:gravity="center"
+                android:text="@string/health_category"
+                android:textColor="@drawable/item_textcolor"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@id/conInterestSettingInsideGuide2"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <CheckBox
+                android:id="@+id/environmentCheckBox"
+                android:layout_width="101dp"
+                android:layout_height="32dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/item_checkbox_background"
+                android:button="@null"
+                android:fontFamily="@font/noto_sans_kr_medium"
+                android:gravity="center"
+                android:text="@string/environment_category"
+                android:textColor="@drawable/item_textcolor"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@id/conInterestSettingInsideGuide"
+                app:layout_constraintTop_toBottomOf="@id/designCheckBox" />
+
+            <CheckBox
+                android:id="@+id/materialCheckBox"
+                android:layout_width="66dp"
+                android:layout_height="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="30dp"
+                android:background="@drawable/item_checkbox_background"
+                android:button="@null"
+                android:fontFamily="@font/noto_sans_kr_medium"
+                android:gravity="center"
+                android:text="@string/material_category"
+                android:textColor="@drawable/item_textcolor"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="@id/conInterestSettingInsideGuide2"
+                app:layout_constraintTop_toBottomOf="@id/managementCheckBox" />
+
+            <CheckBox
+                android:id="@+id/electronicCheckBox"
+                android:layout_width="101dp"
+                android:layout_height="32dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/item_checkbox_background"
+                android:button="@null"
+                android:fontFamily="@font/noto_sans_kr_medium"
+                android:gravity="center"
+                android:text="@string/electronic_category"
+                android:textColor="@drawable/item_textcolor"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@id/conInterestSettingInsideGuide2"
+                app:layout_constraintTop_toBottomOf="@id/healthCheckBox" />
+
+            <CheckBox
+                android:id="@+id/erectionCheckBox"
+                android:layout_width="66dp"
+                android:layout_height="32dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/item_checkbox_background"
+                android:button="@null"
+                android:fontFamily="@font/noto_sans_kr_medium"
+                android:gravity="center"
+                android:text="@string/erection_category"
+                android:textColor="@drawable/item_textcolor"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@id/conInterestSettingInsideGuide"
+                app:layout_constraintTop_toBottomOf="@id/environmentCheckBox" />
+
+            <CheckBox
+                android:id="@+id/chemistryCheckBox"
+                android:layout_width="114dp"
+                android:layout_height="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/item_checkbox_background"
+                android:button="@null"
+                android:fontFamily="@font/noto_sans_kr_medium"
+                android:gravity="center"
+                android:text="@string/chemistry_category"
+                android:textColor="@drawable/item_textcolor"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="@id/conInterestSettingInsideGuide2"
+                app:layout_constraintTop_toBottomOf="@id/materialCheckBox" />
+
+            <CheckBox
+                android:id="@+id/planCheckBox"
+                android:layout_width="114dp"
+                android:layout_height="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="22dp"
+                android:background="@drawable/item_checkbox_background"
+                android:button="@null"
+                android:fontFamily="@font/noto_sans_kr_medium"
+                android:gravity="center"
+                android:text="@string/plan_category"
+                android:textColor="@drawable/item_textcolor"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@id/conInterestSettingInsideGuide2"
+                app:layout_constraintTop_toBottomOf="@id/electronicCheckBox" />
+
+            <CheckBox
+                android:id="@+id/printCheckBox"
+                android:layout_width="101dp"
+                android:layout_height="32dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/item_checkbox_background"
+                android:button="@null"
+                android:fontFamily="@font/noto_sans_kr_medium"
+                android:gravity="center"
+                android:text="@string/print_category"
+                android:textColor="@drawable/item_textcolor"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@id/conInterestSettingInsideGuide"
+                app:layout_constraintTop_toBottomOf="@id/erectionCheckBox" />
+
+            <CheckBox
+                android:id="@+id/salesCheckBox"
+                android:layout_width="92dp"
+                android:layout_height="32dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/item_checkbox_background"
+                android:button="@null"
+                android:fontFamily="@font/noto_sans_kr_medium"
+                android:gravity="center"
+                android:text="@string/sales_category"
+                android:textColor="@drawable/item_textcolor"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="@id/conInterestSettingInsideGuide2"
+                app:layout_constraintTop_toBottomOf="@id/chemistryCheckBox" />
+
+            <CheckBox
+                android:id="@+id/welfareCheckBox"
+                android:layout_width="92dp"
+                android:layout_height="32dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/item_checkbox_background"
+                android:button="@null"
+                android:fontFamily="@font/noto_sans_kr_medium"
+                android:gravity="center"
+                android:text="@string/welfare_category"
+                android:textColor="@drawable/item_textcolor"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@id/salesCheckBox"
+                app:layout_constraintTop_toBottomOf="@id/planCheckBox" />
+
+            <CheckBox
+                android:id="@+id/affairsCheckBox"
+                android:layout_width="66dp"
+                android:layout_height="32dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/item_checkbox_background"
+                android:button="@null"
+                android:fontFamily="@font/noto_sans_kr_medium"
+                android:gravity="center"
+                android:text="@string/affairs_category"
+                android:textColor="@drawable/item_textcolor"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@id/conInterestSettingInsideGuide"
+                app:layout_constraintTop_toBottomOf="@id/printCheckBox" />
+
+            <CheckBox
+                android:id="@+id/clothCheckBox"
+                android:layout_width="101dp"
+                android:layout_height="32dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="40dp"
+                android:background="@drawable/item_checkbox_background"
+                android:button="@null"
+                android:fontFamily="@font/noto_sans_kr_medium"
+                android:gravity="center"
+                android:text="@string/cloth_category"
+                android:textColor="@drawable/item_textcolor"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="@id/conInterestSettingInsideGuide2"
+                app:layout_constraintTop_toBottomOf="@id/salesCheckBox" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnInterestComplete"
+            android:layout_width="320dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/button_style"
+            android:enabled="false"
+            android:fontFamily="@font/noto_sans_kr_medium"
+            android:text="완료"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@id/btnInterestSigin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnInterestSigin"
+            android:layout_width="320dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/button_style2"
+            android:fontFamily="@font/noto_sans_kr_regular"
+            android:text="건너뛰기"
+            android:textColor="@color/dark_gray"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
