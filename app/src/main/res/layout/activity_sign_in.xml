@@ -12,12 +12,8 @@
             android:id="@+id/rlTop"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:fontFamily="@font/noto_sans_kr_bold"
-            android:includeFontPadding="false"
-            android:text="@string/sign_in"
-            android:textColor="@color/black"
-            android:textSize="18sp" />
+            android:layout_marginTop="14dp"
+            app:layout_constraintTop_toTopOf="parent">
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnGoFirstPage"
@@ -44,14 +40,16 @@
             android:id="@+id/tilId"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/noto_sans_kr_regular"
-            android:hint="@string/input_id"
-            android:includeFontPadding="false"
-            android:inputType="text"
-            android:textColor="@color/black"
-            android:textColorHint="@color/dark_gray"
-            android:textSize="14sp" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="59dp"
+            app:boxBackgroundColor="@color/white"
+            app:boxStrokeColor="@color/dark_gray"
+            app:boxStrokeWidthFocused="1dp"
+            app:errorEnabled="true"
+            app:hintEnabled="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rlTop">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etId"
@@ -71,13 +69,16 @@
             android:id="@+id/tilPw"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/noto_sans_kr_regular"
-            android:hint="@string/input_pw"
-            android:includeFontPadding="false"
-            android:inputType="textPassword"
-            android:textColor="@color/black"
-            android:textColorHint="@color/dark_gray"
-            android:textSize="14sp" />
+            android:layout_marginHorizontal="20dp"
+            app:boxBackgroundColor="@color/white"
+            app:boxStrokeColor="@color/dark_gray"
+            app:boxStrokeWidthFocused="1dp"
+            app:endIconMode="password_toggle"
+            app:endIconTint="@color/dark_gray"
+            app:hintEnabled="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tilId">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etPw"
@@ -92,36 +93,15 @@
                 android:textSize="14sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/sign_in_btn_sign_in"
-        android:layout_width="320dp"
-        android:layout_height="36dp"
-        android:layout_marginTop="40dp"
-        android:background="@drawable/rounded_corner_main_lignten"
-        android:fontFamily="@font/noto_sans_kr_medium"
-        android:gravity="center"
-        android:includeFontPadding="false"
-        android:text="@string/sign_in"
-        android:textColor="@color/white"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/sign_in_til_pw" />
-
-    <RelativeLayout
-        android:id="@+id/sign_in_rl_find"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        app:layout_constraintTop_toBottomOf="@id/sign_in_btn_sign_in">
-
-        <TextView
-            android:id="@+id/sign_in_tv_find_id"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_toStartOf="@id/sign_in_tv_divider"
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnSignIn"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/rounded_corner_main_lignten"
             android:fontFamily="@font/noto_sans_kr_medium"
+            android:gravity="center"
             android:includeFontPadding="false"
             android:text="@string/sign_in"
             android:textColor="@color/white"
@@ -137,18 +117,17 @@
             android:layout_marginTop="16dp"
             app:layout_constraintTop_toBottomOf="@id/btnSignIn">
 
-        <TextView
-            android:id="@+id/sign_in_tv_find_pw"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginTop="16dp"
-            android:layout_toEndOf="@id/sign_in_tv_divider"
-            android:fontFamily="@font/noto_sans_kr_medium"
-            android:includeFontPadding="false"
-            android:text="@string/find_pw"
-            android:textColor="@color/dark_gray"
-            android:textSize="11sp" />
+            <TextView
+                android:id="@+id/tvFindId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@id/tvDivider"
+                android:fontFamily="@font/noto_sans_kr_medium"
+                android:includeFontPadding="false"
+                android:text="@string/find_id"
+                android:textColor="@color/dark_gray"
+                android:textSize="11sp" />
 
             <TextView
                 android:id="@+id/tvDivider"
@@ -160,22 +139,19 @@
                 android:text="|"
                 android:textColor="@color/dark_gray" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/sign_in_btn_sign_up"
-        android:layout_width="320dp"
-        android:layout_height="36dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginBottom="20dp"
-        android:background="@drawable/rounded_corner_dark_gray_stroke"
-        android:fontFamily="@font/noto_sans_kr_regular"
-        android:gravity="center"
-        android:includeFontPadding="false"
-        android:text="@string/sign_up_with_email"
-        android:textColor="@color/dark_gray"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+            <TextView
+                android:id="@+id/tvFindPw"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="16dp"
+                android:layout_toEndOf="@id/tvDivider"
+                android:fontFamily="@font/noto_sans_kr_medium"
+                android:includeFontPadding="false"
+                android:text="@string/find_pw"
+                android:textColor="@color/dark_gray"
+                android:textSize="11sp" />
+        </RelativeLayout>
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnSignUp"
