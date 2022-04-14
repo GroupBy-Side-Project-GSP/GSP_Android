@@ -14,7 +14,7 @@ class CalendarFragment : BaseFragment<FragmentCalendarBinding>(R.layout.fragment
             adapter = calendarAdapter
         }
 
-        val calendar = Calendar.getInstance()
+        var calendar = Calendar.getInstance()
 
         calendar.timeInMillis = System.currentTimeMillis()
         calendar.set(Calendar.DAY_OF_MONTH, 1)
@@ -24,9 +24,49 @@ class CalendarFragment : BaseFragment<FragmentCalendarBinding>(R.layout.fragment
 
         setCalendar(calendar)
 
+        binding.btnLastMonth.setOnClickListener {
+            calendar = changeCalendar(calendar, -1)
+            setCalendar(calendar)
+        }
+
+        binding.btnNextMonth.setOnClickListener {
+            calendar = changeCalendar(calendar, +1)
+            setCalendar(calendar)
+        }
+
+        binding.tvMonth.setOnClickListener {
+            calendar.timeInMillis = System.currentTimeMillis()
+            calendar.set(Calendar.DAY_OF_MONTH, 1)
+
+            val tmpCal = calendar.timeInMillis
+            calendar.timeInMillis = tmpCal
+
+            setCalendar(calendar)
+        }
     }
 
-    fun setCalendar(calendar: Calendar) {
+    private fun changeCalendar(calendar: Calendar, factor: Int): Calendar {
+        val year = calendar.get(Calendar.YEAR)
+        val month = calendar.get(Calendar.MONTH) + 1
+
+        when (factor) {
+            -1 -> {
+                if (month == 1)
+                    calendar.set(year - 1, 11, 1)
+                else
+                    calendar.set(year, month - 2, 1)
+            }
+            +1 -> {
+                if (month == 12)
+                    calendar.set(year + 1, 0, 1)
+                else
+                    calendar.set(year, month, 1)
+            }
+        }
+        return calendar
+    }
+
+    private fun setCalendar(calendar: Calendar) {
         val maxDate = calendar.getActualMaximum(Calendar.DATE)
         val week = calendar.get(Calendar.DAY_OF_WEEK) - 1
         val month = calendar.get(Calendar.MONTH) + 1
