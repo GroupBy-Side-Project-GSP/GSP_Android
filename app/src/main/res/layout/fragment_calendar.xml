@@ -38,7 +38,7 @@
             app:layout_constraintTop_toBottomOf="@id/llTop">
 
             <!--헤더-->
-            <RelativeLayout
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/rlMonth"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -51,30 +51,35 @@
                     android:id="@+id/btnLastMonth"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
-                    android:layout_centerVertical="true"
-                    android:layout_marginEnd="46dp"
-                    android:layout_toStartOf="@id/tvMonth"
-                    android:background="@color/dark_gray" />
+                    android:layout_marginStart="55dp"
+                    android:background="@color/dark_gray"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/tvMonth"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
                     android:fontFamily="@font/noto_sans_kr_bold"
                     android:includeFontPadding="false"
                     android:textColor="@color/black"
-                    android:textSize="14sp" />
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btnNextMonth"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
-                    android:layout_centerVertical="true"
-                    android:layout_marginStart="46dp"
-                    android:layout_toEndOf="@id/tvMonth"
-                    android:background="@color/dark_gray" />
-            </RelativeLayout>
+                    android:layout_marginEnd="55dp"
+                    android:background="@color/dark_gray"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <!--요일-->
             <LinearLayout

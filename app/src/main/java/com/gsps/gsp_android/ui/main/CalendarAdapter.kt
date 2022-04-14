@@ -10,6 +10,8 @@ import com.gsps.gsp_android.databinding.ItemDayBinding
 
 class CalendarAdapter :
     ListAdapter<CalendarDayModel, RecyclerView.ViewHolder>(CalendarDiffCallback()) {
+    var lastCheckedPosition = -1
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return CalendarViewHolder(
             ItemDayBinding.inflate(
@@ -25,52 +27,71 @@ class CalendarAdapter :
             holder.bind(getItem(position))
         }
     }
-}
 
-class CalendarViewHolder(private val binding: ItemDayBinding) :
-    RecyclerView.ViewHolder(binding.root) {
-    fun bind(item: CalendarDayModel) {
-        with(binding) {
+    fun initCheck() {
+        lastCheckedPosition = -1
+    }
+
+    inner class CalendarViewHolder(private val binding: ItemDayBinding) :
+        RecyclerView.ViewHolder(binding.root) {
+        fun bind(item: CalendarDayModel) {
+            binding.rbDay.text = item.dayOfMonth.toString()
+
+            setVisibility(binding, item)
+
+            binding.rbDay.setOnClickListener {
+                // rbDay 클릭 리스너
+                // 2. 달력 하단에 스케쥴 리스트 생성 됨.
+                if (lastCheckedPosition == adapterPosition && item.isChecked) {
+                    lastCheckedPosition = -1
+                    item.isChecked = false
+                } else {
+                    item.isChecked = true
+                    if (lastCheckedPosition != -1) {
+                        getItem(lastCheckedPosition).isChecked = false
+                        setVisibility(binding, getItem(lastCheckedPosition))
+                        notifyItemChanged(lastCheckedPosition)
+                    }
+                    lastCheckedPosition = adapterPosition
+                }
+                setVisibility(binding, item)
+            }
+        }
+
+        private fun setDateType(item: CalendarDayModel) {
+            if (item.plan.isEmpty()) item.dateType = DateType.NORMAL
+            else item.dateType = DateType.PLANNED
+
+            if (item.isChecked) item.dateType = DateType.SELECTED
+
+            if (item.month == 0) item.dateType = DateType.EMPTY
+        }
+
+        private fun setVisibility(binding: ItemDayBinding, item: CalendarDayModel) {
             setDateType(item)
-            rbDay.text = item.dayOfMonth.toString()
 
             when (item.dateType) {
                 DateType.EMPTY -> {
-                    rbDay.visibility = View.INVISIBLE
-                    ivPlan.visibility = View.INVISIBLE
+                    binding.rbDay.visibility = View.INVISIBLE
+                    binding.ivPlan.visibility = View.INVISIBLE
                 }
                 DateType.NORMAL -> {
-                    rbDay.visibility = View.VISIBLE
-                    rbDay.isChecked = false
-                    ivPlan.visibility = View.INVISIBLE
+                    binding.rbDay.isChecked = false
+                    binding.rbDay.visibility = View.VISIBLE
+                    binding.ivPlan.visibility = View.INVISIBLE
                 }
                 DateType.PLANNED -> {
-                    rbDay.visibility = View.VISIBLE
-                    rbDay.isChecked = false
-                    ivPlan.visibility = View.VISIBLE
+                    binding.rbDay.isChecked = false
+                    binding.rbDay.visibility = View.VISIBLE
+                    binding.ivPlan.visibility = View.VISIBLE
                 }
                 DateType.SELECTED -> {
-                    rbDay.visibility = View.VISIBLE
-                    rbDay.isChecked = true
-                    ivPlan.visibility = View.INVISIBLE
+                    binding.rbDay.isChecked = true
+                    binding.rbDay.visibility = View.VISIBLE
+                    binding.ivPlan.visibility = View.INVISIBLE
                 }
             }
-
-            rbDay.setOnClickListener {
-                // rbDay 클릭 리스너
-                // 1. 배경 색 바뀜, 하단 원 안 보임.
-                // 2. 달력 하단에 스케쥴 리스트 생성 됨.
-            }
         }
-    }
-
-    fun setDateType(item: CalendarDayModel) {
-        if (item.plan.isEmpty()) item.dateType = DateType.NORMAL
-        else item.dateType = DateType.PLANNED
-
-        if (item.isChecked) item.dateType = DateType.SELECTED
-
-        if (item.month == 0) item.dateType = DateType.EMPTY
     }
 }
 

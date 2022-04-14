@@ -10,6 +10,7 @@ class CalendarFragment : BaseFragment<FragmentCalendarBinding>(R.layout.fragment
     private val calendarAdapter: CalendarAdapter by lazy { CalendarAdapter() }
     override fun initView() {
         binding.dayContainer.apply {
+            itemAnimator = null
             layoutManager = GridLayoutManager(context, 7, GridLayoutManager.VERTICAL, false)
             adapter = calendarAdapter
         }
@@ -74,10 +75,10 @@ class CalendarFragment : BaseFragment<FragmentCalendarBinding>(R.layout.fragment
 
         for (i in 1..maxDate) {
             list.add(CalendarDayModel(DateType.NORMAL, month, i))
-            list[week + i - 1].plan.add(ScheduleModel(title = "임시 약속"))
         }
 
         binding.tvMonth.text = "${calendar.get(Calendar.YEAR)}년 ${month}월"
+        calendarAdapter.initCheck()
         calendarAdapter.submitList(list)
     }
 }
