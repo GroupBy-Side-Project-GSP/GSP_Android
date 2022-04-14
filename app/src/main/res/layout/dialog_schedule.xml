@@ -41,7 +41,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/noto_sans_kr_medium"
             android:includeFontPadding="true"
-            android:text="@{scheduleModel.info}"
+            android:text="@{scheduleModel.title}"
             android:textColor="@color/black"
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="@id/ivSchedule"
