@@ -1,6 +1,5 @@
 package com.gsps.gsp_android.ui.main
 
-import android.util.Log
 import com.gsps.gsp_android.R
 import com.gsps.gsp_android.databinding.FragmentCalendarBinding
 import com.gsps.gsp_android.ui.base.BaseFragment
@@ -8,31 +7,36 @@ import java.util.*
 
 class CalendarFragment : BaseFragment<FragmentCalendarBinding>(R.layout.fragment_calendar) {
     override fun initView() {
-        val calendarAdapter = CalendarAdapter()
-        binding.calendar.adapter = calendarAdapter
-
         var calendar = Calendar.getInstance()
 
         calendar.timeInMillis = System.currentTimeMillis()
         calendar.set(Calendar.DAY_OF_MONTH, 1)
 
-        val tempCalendar = calendar.timeInMillis
-        calendar.timeInMillis = tempCalendar
+        val itemList: MutableList<CalendarDayModel> = setCalendar(calendar)
+        val plan: MutableList<ScheduleModel> = mutableListOf(ScheduleModel())
+        itemList[15].setPlan(plan)
+        val calendarAdapter = CalendarAdapter(requireContext(), itemList)
 
-        setCalendar(calendarAdapter, calendar)
+        binding.calendar.adapter = calendarAdapter
 
         binding.btnLastMonth.setOnClickListener {
-            Log.d("CalendarFragment", "Last Button Clicked!!!")
-
             calendar = changeMonth(calendar, -1)
-            setCalendar(calendarAdapter, calendar)
+
+            val lastItemList: MutableList<CalendarDayModel> = setCalendar(calendar)
+            val lastCalendarAdapter = CalendarAdapter(requireContext(), lastItemList)
+
+            binding.calendar.removeAllViewsInLayout()
+            binding.calendar.adapter = lastCalendarAdapter
         }
 
         binding.btnNextMonth.setOnClickListener {
-            Log.d("CalendarFragment", "Next Button Clicked!!!")
-
             calendar = changeMonth(calendar, +1)
-            setCalendar(calendarAdapter, calendar)
+
+            val nextItemList: MutableList<CalendarDayModel> = setCalendar(calendar)
+            val nextCalendarAdapter = CalendarAdapter(requireContext(), nextItemList)
+
+            binding.calendar.removeAllViewsInLayout()
+            binding.calendar.adapter = nextCalendarAdapter
         }
     }
 
@@ -69,18 +73,24 @@ class CalendarFragment : BaseFragment<FragmentCalendarBinding>(R.layout.fragment
         return calendarPast
     }
 
-    private fun setCalendar(adapter: CalendarAdapter, calendar: Calendar) {
+    private fun setCalendar(calendar: Calendar): MutableList<CalendarDayModel> {
         val maxDate = calendar.getActualMaximum(Calendar.DATE)
         val week = calendar.get(Calendar.DAY_OF_WEEK) - 1
         val month = calendar.get(Calendar.MONTH) + 1
-        val list: MutableList<CalendarDayModel> = MutableList(week, init = { CalendarDayModel() })
+        val list: MutableList<CalendarDayModel> = mutableListOf()
+        val plan: MutableList<ScheduleModel> = mutableListOf()
+
+        for (i in 1..week) {
+            list.add(CalendarDayModel(0, 0, plan, false, 0))
+        }
 
         for (i in 1..maxDate) {
-            list.add(CalendarDayModel(month, i))
+            list.add(CalendarDayModel(month, i, plan, false, week))
         }
-        adapter.submitList(list)
 
         binding.tvMonth.text =
             String.format(getString(R.string.set_year), calendar.get(Calendar.YEAR), month)
+
+        return list
     }
 }

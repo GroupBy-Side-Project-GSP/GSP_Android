@@ -6,14 +6,12 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.gsps.gsp_android.databinding.InterestsFullListItemBinding
 
-class InterestsFullListAdapter(
-    context: Context,
-    private val itemList: MutableList<MemberModel>
-) : RecyclerView.Adapter<InterestsFullListAdapter.InterestsFullListHolder>() {
+class InterestsFullListAdapter(context: Context, private val itemList: MutableList<MemberModel>) :
+    RecyclerView.Adapter<InterestsFullListAdapter.InterestsFullListHolder>() {
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): InterestsFullListAdapter.InterestsFullListHolder {
+    ): InterestsFullListHolder {
         val binding =
             InterestsFullListItemBinding.inflate(
                 LayoutInflater.from(parent.context),
@@ -24,7 +22,7 @@ class InterestsFullListAdapter(
     }
 
     override fun onBindViewHolder(
-        holder: InterestsFullListAdapter.InterestsFullListHolder,
+        holder: InterestsFullListHolder,
         position: Int
     ) {
         holder.bind(itemList[position])

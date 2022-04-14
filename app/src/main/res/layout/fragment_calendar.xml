@@ -62,7 +62,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
                     android:fontFamily="@font/noto_sans_kr_bold"
-                    android:text="2022년 3월"
+                    android:includeFontPadding="false"
                     android:textColor="@color/black"
                     android:textSize="14sp" />
 
