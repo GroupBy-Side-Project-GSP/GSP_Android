@@ -5,9 +5,8 @@
     android:layout_height="match_parent"
     tools:context=".ui.main.MainActivity">
 
-    <androidx.fragment.app.FragmentContainerView
+    <FrameLayout
         android:id="@+id/calendarContainer"
-        android:name="com.gsps.gsp_android.ui.main.CalendarFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
