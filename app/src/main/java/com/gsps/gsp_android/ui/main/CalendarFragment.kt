@@ -1,5 +1,6 @@
 package com.gsps.gsp_android.ui.main
 
+import android.util.Log
 import androidx.recyclerview.widget.GridLayoutManager
 import com.gsps.gsp_android.R
 import com.gsps.gsp_android.databinding.FragmentCalendarBinding
@@ -27,8 +28,10 @@ class CalendarFragment : BaseFragment<FragmentCalendarBinding>(R.layout.fragment
         val month = calendar.get(Calendar.MONTH) + 1
         val list = MutableList(week, init = { CalendarDayModel() })
 
-        for (i in 1..maxDate)
+        for (i in 1..maxDate) {
             list.add(CalendarDayModel(DateType.NORMAL, month, i))
+            list[week + i - 1].plan.add(ScheduleModel(title = "임시 약속"))
+        }
 
         calendarAdapter.submitList(list)
     }

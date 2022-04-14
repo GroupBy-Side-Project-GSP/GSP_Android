@@ -1,6 +1,7 @@
 package com.gsps.gsp_android.ui.main
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
@@ -30,7 +31,30 @@ class CalendarViewHolder(private val binding: ItemDayBinding) :
     RecyclerView.ViewHolder(binding.root) {
     fun bind(item: CalendarDayModel) {
         with(binding) {
+            setDateType(item)
             rbDay.text = item.dayOfMonth.toString()
+
+            when (item.dateType) {
+                DateType.EMPTY -> {
+                    rbDay.visibility = View.INVISIBLE
+                    ivPlan.visibility = View.INVISIBLE
+                }
+                DateType.NORMAL -> {
+                    rbDay.visibility = View.VISIBLE
+                    rbDay.isChecked = false
+                    ivPlan.visibility = View.INVISIBLE
+                }
+                DateType.PLANNED -> {
+                    rbDay.visibility = View.VISIBLE
+                    rbDay.isChecked = false
+                    ivPlan.visibility = View.VISIBLE
+                }
+                DateType.SELECTED -> {
+                    rbDay.visibility = View.VISIBLE
+                    rbDay.isChecked = true
+                    ivPlan.visibility = View.INVISIBLE
+                }
+            }
 
             rbDay.setOnClickListener {
                 // rbDay 클릭 리스너
@@ -38,6 +62,15 @@ class CalendarViewHolder(private val binding: ItemDayBinding) :
                 // 2. 달력 하단에 스케쥴 리스트 생성 됨.
             }
         }
+    }
+
+    fun setDateType(item: CalendarDayModel) {
+        if (item.plan.isEmpty()) item.dateType = DateType.NORMAL
+        else item.dateType = DateType.PLANNED
+
+        if (item.isChecked) item.dateType = DateType.SELECTED
+
+        if (item.month == 0) item.dateType = DateType.EMPTY
     }
 }
 
