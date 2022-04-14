@@ -1,6 +1,5 @@
 package com.gsps.gsp_android.ui.main
 
-import android.util.Log
 import androidx.recyclerview.widget.GridLayoutManager
 import com.gsps.gsp_android.R
 import com.gsps.gsp_android.databinding.FragmentCalendarBinding
@@ -23,6 +22,11 @@ class CalendarFragment : BaseFragment<FragmentCalendarBinding>(R.layout.fragment
         val tmpCal = calendar.timeInMillis
         calendar.timeInMillis = tmpCal
 
+        setCalendar(calendar)
+
+    }
+
+    fun setCalendar(calendar: Calendar) {
         val maxDate = calendar.getActualMaximum(Calendar.DATE)
         val week = calendar.get(Calendar.DAY_OF_WEEK) - 1
         val month = calendar.get(Calendar.MONTH) + 1
@@ -33,6 +37,7 @@ class CalendarFragment : BaseFragment<FragmentCalendarBinding>(R.layout.fragment
             list[week + i - 1].plan.add(ScheduleModel(title = "임시 약속"))
         }
 
+        binding.tvMonth.text = "${calendar.get(Calendar.YEAR)}년 ${month}월"
         calendarAdapter.submitList(list)
     }
 }

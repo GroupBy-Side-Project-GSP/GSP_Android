@@ -45,6 +45,5 @@
     <string name="apply_collaboration">협업 신청하러가기</string>
     <string name="new_member">신규가입회사</string>
     <string name="calendar">일정</string>
-    <string name="set_year">%d년 %d월</string>
     <string name="show_detail"><u>상세보기</u></string>
 </resources>
