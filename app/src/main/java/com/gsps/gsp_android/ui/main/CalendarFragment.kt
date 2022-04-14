@@ -4,15 +4,32 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.gsps.gsp_android.R
 import com.gsps.gsp_android.databinding.FragmentCalendarBinding
 import com.gsps.gsp_android.ui.base.BaseFragment
+import java.util.*
 
 class CalendarFragment : BaseFragment<FragmentCalendarBinding>(R.layout.fragment_calendar) {
-    val calendarAdapter: CalendarAdapter by lazy { CalendarAdapter() }
+    private val calendarAdapter: CalendarAdapter by lazy { CalendarAdapter() }
     override fun initView() {
-        binding.calendar.apply {
+        binding.dayContainer.apply {
             layoutManager = GridLayoutManager(context, 7, GridLayoutManager.VERTICAL, false)
             adapter = calendarAdapter
         }
 
-        /calendarAdapter.submitList()
+        val calendar = Calendar.getInstance()
+
+        calendar.timeInMillis = System.currentTimeMillis()
+        calendar.set(Calendar.DAY_OF_MONTH, 1)
+
+        val tmpCal = calendar.timeInMillis
+        calendar.timeInMillis = tmpCal
+
+        val maxDate = calendar.getActualMaximum(Calendar.DATE)
+        val week = calendar.get(Calendar.DAY_OF_WEEK) - 1
+        val month = calendar.get(Calendar.MONTH) + 1
+        val list = MutableList(week, init = { CalendarDayModel() })
+
+        for (i in 1..maxDate)
+            list.add(CalendarDayModel(DateType.NORMAL, month, i))
+
+        calendarAdapter.submitList(list)
     }
 }
