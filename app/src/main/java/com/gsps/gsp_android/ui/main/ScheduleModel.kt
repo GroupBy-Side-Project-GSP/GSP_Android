@@ -1,10 +1,10 @@
 package com.gsps.gsp_android.ui.main
 
-import java.util.*
+import java.time.LocalTime
 
 data class ScheduleModel(
-    var start: Calendar,
-    var end: Calendar,
+    var start: LocalTime,
+    var end: LocalTime,
     var title: String,
     var place: String,
     var companyName: String,
