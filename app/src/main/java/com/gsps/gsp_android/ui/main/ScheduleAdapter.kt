@@ -1,39 +1,51 @@
 package com.gsps.gsp_android.ui.main
 
-import android.content.Context
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.gsps.gsp_android.databinding.ItemScheduleBinding
+import java.time.format.DateTimeFormatter
 
-class ScheduleAdapter(
-    context: Context,
-    private val itemList: MutableList<ScheduleModel>
-) : RecyclerView.Adapter<ScheduleAdapter.ScheduleHolder>() {
-    override fun onCreateViewHolder(
-        parent: ViewGroup,
-        viewType: Int
-    ): ScheduleAdapter.ScheduleHolder {
+class ScheduleAdapter :
+    ListAdapter<ScheduleModel, RecyclerView.ViewHolder>(ScheduleDiffCallback()) {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ScheduleViewHolder {
         val binding =
             ItemScheduleBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return ScheduleHolder(binding)
+        return ScheduleViewHolder(binding)
     }
 
-    override fun onBindViewHolder(
-        holder: ScheduleAdapter.ScheduleHolder,
-        position: Int
-    ) {
-        holder.bind(itemList[position])
-    }
-
-    override fun getItemCount(): Int {
-        return itemList.size
-    }
-
-    inner class ScheduleHolder(var binding: ItemScheduleBinding) :
-        RecyclerView.ViewHolder(binding.root) {
-        fun bind(item: ScheduleModel) {
-            binding.scheduleModel = item
+    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+        if (holder is ScheduleViewHolder) {
+            holder.bind(getItem(position))
         }
+    }
+}
+
+class ScheduleViewHolder(private val binding: ItemScheduleBinding) :
+    RecyclerView.ViewHolder(binding.root) {
+    fun bind(item: ScheduleModel) {
+        with(binding) {
+            tvScheduleTitle.text = item.title
+            tvLocation.text = item.place
+            tvUserName.text = item.companyName
+            tvScheduleTime.text = item.start.format(DateTimeFormatter.ofPattern("a H:mm"))
+
+            clItem.setOnClickListener {
+                
+            }
+        }
+    }
+}
+
+class ScheduleDiffCallback : DiffUtil.ItemCallback<ScheduleModel>() {
+    override fun areItemsTheSame(oldItem: ScheduleModel, newItem: ScheduleModel): Boolean {
+        return oldItem === newItem
+    }
+
+    override fun areContentsTheSame(oldItem: ScheduleModel, newItem: ScheduleModel): Boolean {
+        return oldItem == newItem
     }
 }

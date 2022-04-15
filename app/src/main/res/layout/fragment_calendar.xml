@@ -195,8 +195,10 @@
                 app:layout_constraintTop_toBottomOf="@id/guidelineStart"
                 app:spanCount="7" />
 
-            <androidx.fragment.app.FragmentContainerView
+            <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/scheduleContainer"
+                android:background="@drawable/rounded_corner_main_lignten"
+                android:backgroundTint="@color/light_gray"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="13dp"

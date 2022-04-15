@@ -12,6 +12,7 @@ class CalendarAdapter :
     ListAdapter<CalendarDayModel, RecyclerView.ViewHolder>(CalendarDiffCallback()) {
     var lastCheckedPosition = -1
 
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return CalendarViewHolder(
             ItemDayBinding.inflate(
@@ -40,8 +41,6 @@ class CalendarAdapter :
             setVisibility(binding, item)
 
             binding.rbDay.setOnClickListener {
-                // rbDay 클릭 리스너
-                // 2. 달력 하단에 스케쥴 리스트 생성 됨.
                 if (lastCheckedPosition == adapterPosition && item.isChecked) {
                     lastCheckedPosition = -1
                     item.isChecked = false
@@ -55,6 +54,12 @@ class CalendarAdapter :
                     lastCheckedPosition = adapterPosition
                 }
                 setVisibility(binding, item)
+
+                if (item.dateType == DateType.SELECTED) {
+                    scheduleAdapter.submitList(item.plan)
+                } else {
+                    scheduleAdapter.submitList(null)
+                }
             }
         }
 

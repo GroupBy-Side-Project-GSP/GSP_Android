@@ -1,18 +1,28 @@
 package com.gsps.gsp_android.ui.main
 
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.gsps.gsp_android.R
 import com.gsps.gsp_android.databinding.FragmentCalendarBinding
 import com.gsps.gsp_android.ui.base.BaseFragment
 import java.util.*
 
+val scheduleAdapter: ScheduleAdapter by lazy { ScheduleAdapter() }
+
 class CalendarFragment : BaseFragment<FragmentCalendarBinding>(R.layout.fragment_calendar) {
     private val calendarAdapter: CalendarAdapter by lazy { CalendarAdapter() }
+
     override fun initView() {
         binding.dayContainer.apply {
             itemAnimator = null
             layoutManager = GridLayoutManager(context, 7, GridLayoutManager.VERTICAL, false)
             adapter = calendarAdapter
+        }
+
+        binding.scheduleContainer.apply {
+            itemAnimator = null
+            layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+            adapter = scheduleAdapter
         }
 
         var calendar = Calendar.getInstance()
@@ -75,6 +85,7 @@ class CalendarFragment : BaseFragment<FragmentCalendarBinding>(R.layout.fragment
 
         for (i in 1..maxDate) {
             list.add(CalendarDayModel(DateType.NORMAL, month, i))
+            list[week + i - 1].plan.add(ScheduleModel(title = "언니한테 붙잡힘", place = "인천시 연수구", companyName = "구름컴퍼니"))
         }
 
         binding.tvMonth.text = "${calendar.get(Calendar.YEAR)}년 ${month}월"
