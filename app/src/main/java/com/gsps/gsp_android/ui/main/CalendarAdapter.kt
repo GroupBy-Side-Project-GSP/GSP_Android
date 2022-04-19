@@ -1,17 +1,19 @@
 package com.gsps.gsp_android.ui.main
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.gsps.gsp_android.R
 import com.gsps.gsp_android.databinding.ItemDayBinding
 
-class CalendarAdapter :
+class CalendarAdapter(val context: Context) :
     ListAdapter<CalendarDayModel, RecyclerView.ViewHolder>(CalendarDiffCallback()) {
     var lastCheckedPosition = -1
-
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return CalendarViewHolder(
@@ -31,6 +33,7 @@ class CalendarAdapter :
 
     fun initCheck() {
         lastCheckedPosition = -1
+        scheduleAdapter.submitList(null)
     }
 
     inner class CalendarViewHolder(private val binding: ItemDayBinding) :
@@ -89,6 +92,12 @@ class CalendarAdapter :
                     binding.rbDay.isChecked = false
                     binding.rbDay.visibility = View.VISIBLE
                     binding.ivPlan.visibility = View.VISIBLE
+                    binding.ivPlan.setColorFilter(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.main_lighten
+                        )
+                    )
                 }
                 DateType.SELECTED -> {
                     binding.rbDay.isChecked = true

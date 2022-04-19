@@ -25,6 +25,7 @@
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:layout_marginTop="24dp"
+            android:background="@drawable/rounded_corner_4dp"
             app:layout_constraintStart_toStartOf="@id/guidelineStart"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -41,7 +42,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/noto_sans_kr_medium"
             android:includeFontPadding="true"
-            android:text="@{scheduleModel.title}"
+            android:text="임시 회의"
             android:textColor="@color/black"
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="@id/ivSchedule"
@@ -117,7 +118,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/noto_sans_kr_regular"
             android:includeFontPadding="true"
-            android:text="@{scheduleModel.place}"
+            android:text="00시 00구 00동 00-00 00빌딩 0층"
             android:textColor="@color/black"
             android:textSize="14sp"
             app:layout_constraintStart_toStartOf="@id/guidelineMiddle"
@@ -156,7 +157,7 @@
                 android:layout_marginStart="4dp"
                 android:fontFamily="@font/noto_sans_kr_regular"
                 android:includeFontPadding="true"
-                android:text="@{scheduleModel.companyName}"
+                android:text="Adobe"
                 android:textColor="@color/black"
                 android:textSize="14sp" />
         </LinearLayout>
@@ -175,6 +176,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="20dp"
             android:layout_marginBottom="24dp"
+            android:clickable="true"
             android:fontFamily="@font/noto_sans_kr_regular"
             android:text="@string/show_detail"
             android:textColor="@color/main"

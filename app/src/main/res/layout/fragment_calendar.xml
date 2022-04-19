@@ -197,11 +197,11 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/scheduleContainer"
-                android:background="@drawable/rounded_corner_main_lignten"
-                android:backgroundTint="@color/light_gray"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="13dp"
+                android:background="@drawable/rounded_corner_main_lignten"
+                android:backgroundTint="@color/light_gray"
                 app:layout_constraintTop_toBottomOf="@id/dayContainer" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
