@@ -82,4 +82,7 @@ dependencies {
 
     implementation(Dependency.BottomNav.NAV_FRAGMENT)
     implementation(Dependency.BottomNav.NAV_UI)
+
+    implementation("com.github.bumptech.glide:glide:4.13.0")
+    annotationProcessor("com.github.bumptech.glide:compiler:4.13.0")
 }
