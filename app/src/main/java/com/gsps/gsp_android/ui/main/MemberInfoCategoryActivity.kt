@@ -1,6 +1,6 @@
 package com.gsps.gsp_android.ui.main
 
-import android.util.Log
+import android.content.Intent
 import android.widget.LinearLayout
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.gsps.gsp_android.R
@@ -8,11 +8,13 @@ import com.gsps.gsp_android.databinding.ActivityMemberInfoCategoryBinding
 import com.gsps.gsp_android.ui.base.BaseActivity
 
 class MemberInfoCategoryActivity :
-    BaseActivity<ActivityMemberInfoCategoryBinding>(R.layout.activity_member_info_category), SetFinish {
+    BaseActivity<ActivityMemberInfoCategoryBinding>(R.layout.activity_member_info_category),
+    SetFinish, SetResult {
     var category: String = ""
-    var isSelected: Boolean = false
     override fun initView() {
-        val category: MutableList<CategoryModel> = mutableListOf(
+        initCategory()
+
+        val categoryList: MutableList<CategoryModel> = mutableListOf(
             CategoryModel("디자인", false),
             CategoryModel("건설", false),
             CategoryModel("인쇄&공예", false),
@@ -28,12 +30,31 @@ class MemberInfoCategoryActivity :
             CategoryModel("사회복지", false),
             CategoryModel("재료", false)
         )
-        binding.categoryContainer.adapter = CategoryAdapter(this, category, this)
+        binding.categoryContainer.adapter = CategoryAdapter(this, categoryList, this, this)
         binding.categoryContainer.layoutManager =
             StaggeredGridLayoutManager(5, LinearLayout.HORIZONTAL)
+
+        binding.btnFinish.setOnClickListener {
+            val intent = Intent()
+            intent.putExtra("category", category)
+            setResult(RESULT_OK, intent)
+            finish()
+        }
+
+        binding.btnGoBack.setOnClickListener {
+            finish()
+        }
     }
 
     override fun setFinish(status: Boolean) {
         binding.btnFinish.isEnabled = status
+    }
+
+    override fun setResult(category: String) {
+        this.category = category
+    }
+
+    fun initCategory() {
+        this.category = ""
     }
 }

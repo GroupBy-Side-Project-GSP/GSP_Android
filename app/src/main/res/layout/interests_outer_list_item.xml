@@ -14,7 +14,7 @@
         android:layout_height="wrap_content">
         <!--글씨 일부 속성 변경 -> SpannableString-->
         <TextView
-            android:id="@+id/rbCategory"
+            android:id="@+id/tvCategory"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/noto_sans_kr_bold"

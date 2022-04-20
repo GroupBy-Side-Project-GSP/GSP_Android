@@ -7,9 +7,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.gsps.gsp_android.databinding.ItemCategoryBinding
 
 class CategoryAdapter(
-    context: Context,
+    val context: Context,
     private val itemList: MutableList<CategoryModel>,
-    private val mCallback: SetFinish
+    private val mFinishCallback: SetFinish,
+    private val mResultCallback: SetResult
 ) : RecyclerView.Adapter<CategoryAdapter.CategoryHolder>() {
     private var isNewRadioButtonChecked: Boolean = false
     private var lastCheckedPosition = -1
@@ -62,7 +63,10 @@ class CategoryAdapter(
                     notifyDataSetChanged()
                 }
 
-                mCallback.setFinish(isSomethingChecked)
+                mFinishCallback.setFinish(isSomethingChecked)
+                if (isSomethingChecked) {
+                    mResultCallback.setResult(itemList[lastCheckedPosition].getCategory())
+                }
             }
         }
 

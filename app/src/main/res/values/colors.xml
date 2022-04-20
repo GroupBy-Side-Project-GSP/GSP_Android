@@ -16,7 +16,9 @@
     <color name="system_yellow">#ffcb22</color>
     <color name="system_green">#2bd131</color>
     <color name="system_blue">#1aa8ff</color>
+    <color name="lightest_gray">#FFFDFDFD</color>
     <color name="light_gray">#ebebeb</color>
+    <color name="little_light_gray">#E7E7E7</color>
     <color name="semi_light_gray">#E3E3E3</color>
     <color name="medium_gray">#cccccc</color>
     <color name="dark_gray">#939393</color>
