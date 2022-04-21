@@ -1,23 +1,25 @@
 package com.gsps.gsp_android.ui.main
 
-import android.content.ContentValues
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.graphics.Bitmap
 import android.graphics.ImageDecoder
 import android.net.Uri
 import android.os.Build
+import android.os.Environment
 import android.provider.MediaStore
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.core.content.FileProvider
 import com.gsps.gsp_android.R
 import com.gsps.gsp_android.databinding.ActivityMemberInfoWritingBinding
 import com.gsps.gsp_android.ui.base.BaseActivity
-import java.io.FileOutputStream
+import java.io.File
+import java.io.IOException
 import java.text.SimpleDateFormat
 
 class MemberInfoWritingActivity :
@@ -31,6 +33,9 @@ class MemberInfoWritingActivity :
         )
     }
 
+    private lateinit var photoUri: Uri
+    private lateinit var imageFilePath: String
+
     private val categoryResultLauncher: ActivityResultLauncher<Intent> =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
             if (it.resultCode == RESULT_OK && it.data != null) {
@@ -40,11 +45,15 @@ class MemberInfoWritingActivity :
 
     private val cameraResultLauncher: ActivityResultLauncher<Intent> =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
-            if (it.resultCode == RESULT_OK && it.data?.extras?.get("data") != null) {
-                binding.llPictureBox.visibility = View.GONE
-                val bitmap = it.data?.extras?.get("data") as Bitmap
-                val uri = saveFile(randomFileName(), "image/*", bitmap)
-                binding.ivMain.setImageURI(uri)
+            when (it.resultCode) {
+                RESULT_OK -> {
+                    binding.llPictureBox.visibility = View.GONE
+                    binding.ivMain.setImageURI(photoUri)
+                }
+                RESULT_CANCELED -> {
+                    binding.llPictureBox.visibility = View.GONE
+
+                }
             }
         }
 
@@ -85,7 +94,41 @@ class MemberInfoWritingActivity :
         binding.btnCamera.setOnClickListener {
             if (permissionCheck()) {
                 val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-                cameraResultLauncher.launch(intent)
+                if (intent.resolveActivity(packageManager) != null) {
+                    var photoFile: File? = null
+
+                    try {
+                        photoFile = createImageFile()
+                    } catch (ex: IOException) {
+                        Log.d(
+                            "MemberInfoWritingActivity!",
+                            "Error occurred while creating the File"
+                        )
+                    }
+
+                    if (photoFile != null) {
+                        Log.d(
+                            "MemberInfoWritingActivity!",
+                            "btnCamera.setOnClickListener1"
+                        )
+                        photoUri =
+                            FileProvider.getUriForFile(this, "com.gsps.gsp_android", photoFile)
+                        Log.d(
+                            "MemberInfoWritingActivity!",
+                            "btnCamera.setOnClickListener2"
+                        )
+                        intent.putExtra(MediaStore.EXTRA_OUTPUT, photoUri)
+                        Log.d(
+                            "MemberInfoWritingActivity!",
+                            "btnCamera.setOnClickListener3"
+                        )
+                        cameraResultLauncher.launch(intent)
+                        Log.d(
+                            "MemberInfoWritingActivity!",
+                            "btnCamera.setOnClickListener4"
+                        )
+                    }
+                }
             }
         }
 
@@ -127,37 +170,15 @@ class MemberInfoWritingActivity :
         }
     }
 
-    private fun saveFile(fileName: String, mimeType: String, bitmap: Bitmap): Uri? {
-        val contentValues = ContentValues()
-        contentValues.put(MediaStore.Images.Media.DISPLAY_NAME, fileName)
-        contentValues.put(MediaStore.Images.Media.MIME_TYPE, mimeType)
+    @Throws(IOException::class)
+    private fun createImageFile(): File {
+        val timeStamp =
+            SimpleDateFormat(getString(R.string.pattern_yyyyMMdd_HHmmss)).format(System.currentTimeMillis())
+        val imageFileName = "BRIDGE_${timeStamp}"
+        val storageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES)
+        val image = File.createTempFile(imageFileName, ".jpg", storageDir)
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-            contentValues.put(MediaStore.Images.Media.IS_PENDING, 1)
-        }
-
-        val uri =
-            contentResolver.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, contentValues)
-
-        if (uri != null) {
-            val descriptor = contentResolver.openFileDescriptor(uri, "w")
-
-            if (descriptor != null) {
-                val fileOutputStream = FileOutputStream(descriptor.fileDescriptor)
-                bitmap.compress(Bitmap.CompressFormat.PNG, 0, fileOutputStream)
-                fileOutputStream.close()
-
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-                    contentValues.clear()
-                    contentValues.put(MediaStore.Images.Media.IS_PENDING, 1)
-                    contentResolver.update(uri, contentValues, null, null)
-                }
-            }
-        }
-        return uri
-    }
-
-    private fun randomFileName(): String {
-        return SimpleDateFormat(getString(R.string.pattern_yyyyMMdd_HHmmss)).format(System.currentTimeMillis())
+        imageFilePath = image.absolutePath
+        return image
     }
 }
