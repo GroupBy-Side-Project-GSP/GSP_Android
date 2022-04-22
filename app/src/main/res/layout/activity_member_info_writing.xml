@@ -11,15 +11,14 @@
             type="com.gsps.gsp_android.ui.main.MemberInfoModel" />
     </data>
 
-    <androidx.appcompat.widget.LinearLayoutCompat
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1">
+            android:layout_alignParentTop="true">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -165,7 +164,8 @@
                         android:id="@+id/ivMain"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/tvMain" />
+                        android:layout_below="@id/tvMain"
+                        android:paddingBottom="80dp" />
 
                     <LinearLayout
                         android:id="@+id/llPictureBox"
@@ -235,6 +235,7 @@
             android:id="@+id/btnFinish"
             android:layout_width="match_parent"
             android:layout_height="36dp"
+            android:layout_alignParentBottom="true"
             android:layout_marginHorizontal="20dp"
             android:layout_marginBottom="24dp"
             android:background="@drawable/button_style"
@@ -245,5 +246,5 @@
             android:text="완료"
             android:textColor="@color/white"
             android:textSize="14sp" />
-    </androidx.appcompat.widget.LinearLayoutCompat>
+    </RelativeLayout>
 </layout>

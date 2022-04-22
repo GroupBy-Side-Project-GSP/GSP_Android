@@ -5,7 +5,7 @@ data class CategoryModel(
     private var isChecked: Boolean
 ) {
     fun getCategory(): String {
-        return category.toString()
+        return category
     }
 
     fun setCategory(category: String) {

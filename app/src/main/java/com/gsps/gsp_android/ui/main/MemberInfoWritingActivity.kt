@@ -78,6 +78,10 @@ class MemberInfoWritingActivity :
             )
         }
 
+        binding.btnGoBack.setOnClickListener {
+            finish()
+        }
+
         binding.tvCategory.setOnClickListener {
             val intent = Intent(this, MemberInfoCategoryActivity::class.java)
             categoryResultLauncher.launch(intent)
