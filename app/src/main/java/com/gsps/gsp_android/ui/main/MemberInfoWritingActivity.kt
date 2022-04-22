@@ -3,6 +3,7 @@ package com.gsps.gsp_android.ui.main
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.ImageDecoder
+import android.media.MediaScannerConnection
 import android.net.Uri
 import android.os.Build
 import android.os.Environment
@@ -45,7 +46,11 @@ class MemberInfoWritingActivity :
 
     private val cameraResultLauncher: ActivityResultLauncher<Intent> =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+            binding.llPictureBox.visibility = View.GONE
+
             when (it.resultCode) {
+
+                /*
                 RESULT_OK -> {
                     binding.llPictureBox.visibility = View.GONE
                     binding.ivMain.setImageURI(photoUri)
@@ -54,6 +59,34 @@ class MemberInfoWritingActivity :
                     binding.llPictureBox.visibility = View.GONE
 
                 }
+                */
+
+                RESULT_OK -> {
+                    val file = File(imageFilePath)
+                    if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.Q) {
+                        val mediaScanIntent = Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE)
+                        mediaScanIntent.data = Uri.fromFile(file)
+                        sendBroadcast(mediaScanIntent)
+
+                    } else {
+                        var mediaScannerConnection: MediaScannerConnection? = null
+                        val mMediaScannerClient =
+                            object : MediaScannerConnection.MediaScannerConnectionClient {
+                                override fun onMediaScannerConnected() {
+                                    mediaScannerConnection?.scanFile(imageFilePath, null)
+                                }
+
+                                override fun onScanCompleted(path: String, uri: Uri) {
+                                    mediaScannerConnection?.disconnect()
+                                }
+                            }
+
+                        mediaScannerConnection = MediaScannerConnection(this, mMediaScannerClient)
+                        mediaScannerConnection.connect()
+                    }
+                    binding.ivMain.setImageURI(photoUri)
+                }
+                RESULT_CANCELED -> {}
             }
         }
 
@@ -172,13 +205,16 @@ class MemberInfoWritingActivity :
 
     @Throws(IOException::class)
     private fun createImageFile(): File {
-        val timeStamp =
-            SimpleDateFormat(getString(R.string.pattern_yyyyMMdd_HHmmss)).format(System.currentTimeMillis())
-        val imageFileName = "BRIDGE_${timeStamp}"
-        val storageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES)
-        val image = File.createTempFile(imageFileName, ".jpg", storageDir)
-
-        imageFilePath = image.absolutePath
-        return image
+        val timeStamp: String =
+            SimpleDateFormat("yyyyMMdd_HHmmss").format(System.currentTimeMillis())
+        val imageFileName = "BRIDGE_$timeStamp.jpg"
+        val storageDir = File("${Environment.getExternalStorageDirectory()}/Pictures")
+        if (!storageDir.exists()) {
+            Log.d("MemberInfoWritingActivity!", storageDir.toString())
+            storageDir.mkdirs()
+        }
+        val imageFile = File(storageDir, imageFileName)
+        imageFilePath = imageFile.absolutePath
+        return imageFile
     }
 }
