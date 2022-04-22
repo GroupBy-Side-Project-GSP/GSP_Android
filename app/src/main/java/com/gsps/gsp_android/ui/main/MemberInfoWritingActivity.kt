@@ -49,18 +49,6 @@ class MemberInfoWritingActivity :
             binding.llPictureBox.visibility = View.GONE
 
             when (it.resultCode) {
-
-                /*
-                RESULT_OK -> {
-                    binding.llPictureBox.visibility = View.GONE
-                    binding.ivMain.setImageURI(photoUri)
-                }
-                RESULT_CANCELED -> {
-                    binding.llPictureBox.visibility = View.GONE
-
-                }
-                */
-
                 RESULT_OK -> {
                     val file = File(imageFilePath)
                     if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.Q) {
@@ -209,11 +197,14 @@ class MemberInfoWritingActivity :
             SimpleDateFormat("yyyyMMdd_HHmmss").format(System.currentTimeMillis())
         val imageFileName = "BRIDGE_$timeStamp.jpg"
         val storageDir = File("${Environment.getExternalStorageDirectory()}/Pictures")
+
         if (!storageDir.exists()) {
             Log.d("MemberInfoWritingActivity!", storageDir.toString())
             storageDir.mkdirs()
         }
+
         val imageFile = File(storageDir, imageFileName)
+
         imageFilePath = imageFile.absolutePath
         return imageFile
     }
