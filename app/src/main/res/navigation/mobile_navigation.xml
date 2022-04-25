@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <fragment
+        android:id="@+id/navigation_main"
+        android:name="com.gsps.gsp_android.ui.main.MainPageFragment"
+        android:label="메인"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/navigation_plan"
+        android:name="com.gsps.gsp_android.ui.main.PlanFragment"
+        android:label="일정"
+        tools:layout="@layout/fragment_hub" />
+
+    <fragment
+        android:id="@+id/navigation_challenge"
+        android:name="com.gsps.gsp_android.ui.main.SearchFragment"
+        android:label="학교 찾기"
+        tools:layout="@layout/fragment_search" />
+
+    <fragment
+        android:id="@+id/navigation_chat"
+        android:name="com.gsps.gsp_android.ui.main.ChatFragment"
+        android:label="채팅"
+        tools:layout="@layout/chat_fragment" />
+
+    <fragment
+        android:id="@+id/navigation_mypage"
+        android:name="com.gsps.gsp_android.ui.main.MyPageFragment"
+        android:label="마이페이지"
+        tools:layout="@layout/fragment_mypage" />
+</menu>
