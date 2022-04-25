@@ -44,4 +44,6 @@
     <string name="recent_search">최근 검색어</string>
     <string name="apply_collaboration">협업 신청하러가기</string>
     <string name="new_member">신규가입회사</string>
+    <string name="introduce_company">회사소개</string>
+    <string name="pattern_yyyyMMdd_HHmmss">yyyyMMdd_HHmmss</string>
 </resources>
