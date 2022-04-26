@@ -22,7 +22,7 @@
 
     <fragment
         android:id="@+id/navigation_chat"
-        android:name="com.gsps.gsp_android.ui.main.ChatFragment"
+        android:name="com.gsps.gsp_android.ui.chat.ChatActivity"
         android:label="채팅"
         tools:layout="@layout/chat_fragment" />
 
