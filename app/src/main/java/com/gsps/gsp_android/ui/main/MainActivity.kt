@@ -12,9 +12,6 @@ import com.gsps.gsp_android.ui.base.BaseActivity
 class MainActivity : BaseActivity<ActivityMainBinding>(
     R.layout.activity_main
 ) {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
 
     private fun initBottomNav() {
         val navController =
